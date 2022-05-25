@@ -7,11 +7,12 @@
 
 
 <script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
-<title>midilab – DIY Audio and Video Gears</title>
+<title>Touch Sensor MIDI Controller for Linux – midilab</title>
 <meta name="robots" content="max-image-preview:large">
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
 <link rel="dns-prefetch" href="//s.w.org">
 <link href="https://fonts.gstatic.com" crossorigin rel="preconnect">
+
 
 
 <link rel="stylesheet" id="wp-block-library-css" href="https://midilab.github.io/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
@@ -136,7 +137,7 @@ a, a:visited {
 */		</style>
 		</head>
 
-<body class="home page-template-default page page-id-728 no-social-menu before-footer-widgets-0 footer-widgets-0">
+<body class="post-template-default single single-post postid-370 single-format-standard no-social-menu before-footer-widgets-0 footer-widgets-0">
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 
@@ -167,7 +168,7 @@ a, a:visited {
 	<div class="main-navigation-wrapper" id="main-navigation-wrapper">
 		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Primary Menu">
 			<div class="primary-menu-wrapper"><ul id="primary-menu" class="primary-menu"><li id="menu-item-1005" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1005"><a href="https://midilab.github.io/shop/">Shop</a></li>
-<li id="menu-item-751" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-751"><a href="https://midilab.github.io/news/">News</a></li>
+<li id="menu-item-751" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-751"><a href="https://midilab.github.io/news/">News</a></li>
 <li id="menu-item-841" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-841"><a href="#">Projects<svg class="icon icon-angle-down" aria-hidden="true" role="img"> <use xlink:href="#icon-angle-down"></use> </svg></a>
 <ul class="sub-menu">
 	<li id="menu-item-666" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-666"><a href="https://midilab.github.io/opendsp/">OpenDSP</a></li>
@@ -188,183 +189,89 @@ a, a:visited {
 	
 	<div id="content" class="site-content">
 
-	<div id="primary" class="content-area main-padding">
-		<main id="main" class="site-main main-width" role="main">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+<article id="post-370" class="post-370 post type-post status-publish format-standard has-post-thumbnail hentry category-linux tag-linux tag-midi tag-touch">
+
+	
+		<div class="entry-inner-singular">
+
+			<header class="entry-header page-header text-center">
+				<span class="posted-on"><span class="screen-reader-text">Posted on</span> <a class="soft-color" href="https://midilab.github.io/pymidicapsense/" rel="bookmark"><time class="entry-date published" datetime="2014-11-19T15:57:28-02:00">November 19, 2014</time><time class="updated" datetime="2019-06-26T09:55:33-03:00">June 26, 2019</time></a></span><h1 class="entry-title title-font text-italic">Touch Sensor MIDI Controller for Linux</h1>				<div class="entry-front-page-content archive-description text-center soft-color">
+					<p>pyMIDICapSense is a Capacitive Sensor MIDI Controller for plataforms with Physical GPIO pins access like Raspberry(s), Odroid(s) and Cubieboard(s) writed in python.</p>
+				</div>						
+			</header>
 
 			
-				<header class="page-header">
+		<div class="entry-media post-thumbnail post-thumbnail-singular">
+			<img width="950" height="572" src="https://midilab.github.io/wp-content/uploads/2014/11/pycapsense.jpg" class="attachment-checathlon-singular size-checathlon-singular wp-post-image" alt="" srcset="https://midilab.github.io/wp-content/uploads/2014/11/pycapsense.jpg 950w,https://midilab.github.io/wp-content/uploads/2014/11/pycapsense-300x181.jpg 300w,https://midilab.github.io/wp-content/uploads/2014/11/pycapsense-581x350.jpg 581w" sizes="(max-width: 950px) 100vw, 950px">		</div>
 
-											
-							<h1 class="page-title title-font no-margin-bottom text-center text-italic">
-  Do it your self <span class="highlight-color">audio & video</span> gears!</h1>
-<div class="entry-front-page-content archive-description text-center soft-color">
-<p>Opensource projects for peoples interested in do it by their own, cheap and hackable audio and video gears, for music, theatre, cinema or art installations.</p>
-<p><a class="button" href="/news">Checkout News</a></p>
-</div>
+	
+			<div class="entry-inner-singular-wrapper">
+
+				<div class="entry-inner-content">
+					<div class="entry-content">
+					<p>pyMIDICapSense is a Capacitive Sensor MIDI Controller for plataforms with Physical GPIO pins access like Raspberry(s), Odroid(s) and Cubieboard(s) writed in python.</p>
+<p>It creates a ALSA MIDI interface capable of interact with ALSA instruments or other plugins by it self or via JACK AUDIO KIT MIDI routing(in this case select alsa seq as MIDI driver for Jack).</p>
+<p>It was primarily writed for a <a href="https://midilab.github.io/water-oracle/">interactive instalation project</a> and goes to anyone that can find this usefull. The source code can be found on <a href="https://github.com/midilab/pyMIDICapSense">github</a>, under MIT license.</p>
+<p>With pyMIDICapSense you can:</p>
+<ol>
+<li>Turn nearly everything you could imagine, like water cup, fruits or your pet into a touchable MIDI Controller.</li>
+<li>Transform your touches into MIDI Commands to interact with instruments or plugins. For now only MIDI Notes are supported.</li>
+<li>Configure each Capacitive Sensor to be trigguered into 4 different modes: <em>RANDOM</em>: you create a list of (n) MIDI notes for a sensor and each touch it will send a random MIDI note within the list. <em>SEQUENTIAL</em>: you create a list of (n) MIDI notes for a sensor and each touch it will send the (n)+1 MIDI note within the list. <em>BANK_SELECT</em>: you create more than one BANK to handle more complex setups. you create a list of (n) MIDI notes for a sensor and each touch it will send the selected BANK (n) MIDI note within the list. <em>BANK_CHANGE</em>: you setup the sensor as a functional touchable BANK changer.</li>
+<li>Configure a user feedback for each sensor. Eg. On each sensor touch, ligth a LED or Start a engine.</li>
+</ol>
+<h2>Installation</h2>
+<p>RTMIDI and wiringPI2 are required to run this project</p>
+<p><strong>Dependencies</strong></p>
+<p>On Debian/Ubuntu <code>sudo apt-get install build-essential python-dev python-pip python-setuptools libasound-dev git libjack-dev</code></p>
+<p>On Archlinux <code>sudo pacman -S base-devel python python-pip python-setuptools git alsa-lib</code></p>
+<p><strong>RTMidi for python</strong> Install via pip <code>sudo pip install --pre python-rtmidi</code></p>
+<p><strong>WiringPI2 for python</strong></p>
+<p><a href="https://github.com/Gadgetoid/WiringPi2-Python/">Raspberry</a></p>
+<p>Compile WiringPI C version <code>git clone git://git.drogon.net/wiringPi; cd wiringPi; sudo ./build</code></p>
+<p>Compile the WiringPI2 python version <code>git clone https://github.com/Gadgetoid/WiringPi2-Python.git; cd WiringPi2-Python; sudo python setup.py install</code></p>
+<p><a href="https://github.com/gootoomoon/WiringCB-python/">Cubieboard</a></p>
+<p>Compile the WiringPI C and python version once <code>git clone<br>
+https://github.com/gootoomoon/WiringCB-python.git; cd WiringCB-python; sudo python setup.py install</code></p>
+<p><a href="https://github.com/mlinuxguy/WiringPi2-odroid-c1/">ODROID-C1</a></p>
+<p>Compile WiringPI C version <code>git clone git://git.drogon.net/wiringPi; cd wiringPi; sudo ./build</code></p>
+<p>Compile the WiringPI2 python version <code>git clone https://github.com/Gadgetoid/WiringPi2-Python.git; cd WiringPi2-Python; sudo python setup.py install</code></p>
+<h2>Usage</h2>
+<p>Configure your sensors</p>
+<ol>
+<li>How many sensor are you going to use?</li>
+<li>Do you want to make usage of BANKS for more complex setups?</li>
+<li>Do you feel good about a user feedback for each sensor?</li>
+</ol>
+<p>After answer those questions use the config.py to setup your sensors, inside this file you have a example used for the <a href="https://midilab.github.io/water-oracle/">interactive instalation water oracle</a>, you can use it as basis for your own.</p>
+<p>After all, run pyMIDICapSense.py <code>python pyMIDICapSense.py</code></p>
+<h2>Hardware schematic</h2>
+<p>Soon, updates on how to wire and setup your sensors! Sorry for my lack of time for this :(</p>
+					</div>
+
 					
-				</header>
 
-			
-	<div id="front-page-featured-area" class="front-page-featured-area front-page-area">
+	<footer class="entry-footer clear">
+		<div class="entry-terms-wrapper entry-categories-wrapper clear"><span class="screen-reader-text">Categories: </span><span class="icon-wrapper"><svg class="icon icon-folder-open" aria-hidden="true" role="img"> <use xlink:href="#icon-folder-open"></use> </svg></span><span class="entry-terms category"><a href="https://midilab.github.io/category/linux/" rel="tag">linux</a></span></div><div class="entry-terms-wrapper entry-tags-wrapper clear"><span class="screen-reader-text">Tags: </span><span class="icon-wrapper"><svg class="icon icon-tag" aria-hidden="true" role="img"> <use xlink:href="#icon-tag"></use> </svg></span><span class="entry-terms post_tag"><a href="https://midilab.github.io/tag/linux/" rel="tag">linux</a><span class="screen-reader-text">, </span><a href="https://midilab.github.io/tag/midi/" rel="tag">midi</a><span class="screen-reader-text">, </span><a href="https://midilab.github.io/tag/touch/" rel="tag">touch</a></span></div>	</footer>
 
-	<h2 class="front-page-featured-title front-page-title widget-title">DIY Projects</h2>
-		<div class="grid-wrapper grid-wrapper-2">
 
-			
-<article id="post-662" class="post-662 page type-page status-publish has-post-thumbnail hentry">
+				</div>
 
-	
-		<div class="entry-inner-wrapper">
-
-			<div class="entry-header-bg" style="background-image:url(https://midilab.github.io/wp-content/uploads/2018/04/preview.jpg);"><a class="entry-header-bg-link" href="https://midilab.github.io/aciduino/" rel="bookmark"><span class="screen-reader-text">Continue reading Aciduino</span></a></div>
-		<div class="entry-inner">
-
-			<header class="entry-header">
-				<h2 class="entry-title"><a href="https://midilab.github.io/aciduino/" rel="bookmark">Aciduino</a></h2>
-			</header>
-
-			<div class="entry-summary">
-				<p>Cheap and DIY make in 1 hour, 2 tracks, 14 patterns, Roland TB-303 step sequencer clone +plus features aimed for musicians and djs to use it on live performance or for the studio create process.</p>
+				
 			</div>
-
-		</div>
-
-		<div class="entry-product-info">
-			<div class="entry-product-info-wrapper grid-same-line align-items-end">
-				<span class="product-purchase-link">
-					<a class="button" href="https://midilab.github.io/aciduino/" rel="bookmark">Make</a>		
-				</span>
-			</div>
-		</div>
-
-	</div>
-
-	
-</article>
-
-<article id="post-463" class="post-463 page type-page status-publish has-post-thumbnail hentry">
-
-	
-		<div class="entry-inner-wrapper">
-
-			<div class="entry-header-bg" style="background-image:url(https://midilab.github.io/wp-content/uploads/2019/01/plugmod-opendsp.jpg);"><a class="entry-header-bg-link" href="https://midilab.github.io/opendsp/" rel="bookmark"><span class="screen-reader-text">Continue reading OpenDSP</span></a></div>
-		<div class="entry-inner">
-
-			<header class="entry-header">
-				<h2 class="entry-title"><a href="https://midilab.github.io/opendsp/" rel="bookmark">OpenDSP</a></h2>
-			</header>
-
-			<div class="entry-summary">
-				<p>Realtime Operational System aimed for audio and video Digital Signal Processing on embeded devices like raspberry or headless personal computers.<br>
-Achieve professional realtime low-latency audio and video processing on low budget computers!</p>
-			</div>
-
-		</div>
-
-		<div class="entry-product-info">
-			<div class="entry-product-info-wrapper grid-same-line align-items-end">
-				<span class="product-purchase-link">
-					<a class="button" href="https://midilab.github.io/opendsp/" rel="bookmark">Make</a>		
-				</span>
-			</div>
-		</div>
-
-	</div>
-
-	
-</article>
-
-<article id="post-461" class="post-461 page type-page status-publish has-post-thumbnail hentry">
-
-	
-		<div class="entry-inner-wrapper">
-
-			<div class="entry-header-bg" style="background-image:url(https://midilab.github.io/wp-content/uploads/2018/06/umodular-v02.jpeg);"><a class="entry-header-bg-link" href="https://midilab.github.io/umodular/" rel="bookmark"><span class="screen-reader-text">Continue reading uModular</span></a></div>
-		<div class="entry-inner">
-
-			<header class="entry-header">
-				<h2 class="entry-title"><a href="https://midilab.github.io/umodular/" rel="bookmark">uModular</a></h2>
-			</header>
-
-			<div class="entry-summary">
-				<p>Modular hardware framework to create multi protocol exchange controllers, musical sequencers, routers, automators within MIDI, OSC, DMX and other audio, video and open industry protocols universe.</p>
-			</div>
-
-		</div>
-
-		<div class="entry-product-info">
-			<div class="entry-product-info-wrapper grid-same-line align-items-end">
-				<span class="product-purchase-link">
-					<a class="button" href="https://midilab.github.io/umodular/" rel="bookmark">Make</a>		
-				</span>
-			</div>
-		</div>
-
-	</div>
-
-	
-</article>
-
-		</div>
-	</div>
-
-
-	<div id="front-page-blog-area" class="front-page-blog-area front-page-area">
-
-	<h2 class="front-page-blog-title front-page-title widget-title">Recent news</h2>
-		<div class="blog-wrapper">
-
-			
-<article id="post-904" class="post-904 post type-post status-publish format-standard has-post-thumbnail hentry category-acid category-pcb-design category-step-sequencer tag-midi tag-midi-controller tag-midi-sequencer tag-tb303">
-
-	<div class="entry-header-bg" style="background-image:url(https://midilab.github.io/wp-content/uploads/2022/05/aciduino_mk2-768x474.jpg);"><a class="entry-header-bg-link" href="https://midilab.github.io/aciduino-pcb/" rel="bookmark"><span class="screen-reader-text">Continue reading Aciduino PCB</span></a></div>
-		<div class="entry-inner">
-
-			<header class="entry-header">
-					<div class="entry-meta soft-color medium-font-weight smaller-font-size">
-		<span class="posted-on"><span class="screen-reader-text">Posted on</span> <a class="soft-color" href="https://midilab.github.io/aciduino-pcb/" rel="bookmark"><time class="entry-date published" datetime="2022-05-21T13:06:34-03:00">May 21, 2022</time><time class="updated" datetime="2022-05-25T08:05:04-03:00">May 25, 2022</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n soft-color" href="https://midilab.github.io/author/midilab/">midilab</a></span></span>	</div>
-<h2 class="entry-title"><a href="https://midilab.github.io/aciduino-pcb/" rel="bookmark">Aciduino PCB</a></h2>			</header>
-
-			<div class="entry-summary">
-				<p>Shiny new aciduino pcb opensourced to you, bring by community member ijnekenamay.</p>
-			</div>
-
-			
-<div class="entry-comment grid-same-line">
-	<a href="https://midilab.github.io/aciduino-pcb/" class="more-link underline-link medium-font-weight">Read more <span class="screen-reader-text">Aciduino PCB</span> <svg class="icon icon-next" aria-hidden="true" role="img"> <use xlink:href="#icon-next"></use> </svg></a></div>
 
 		</div>
 
 	
 </article>
 
-<article id="post-878" class="post-878 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
-
-	<div class="entry-header-bg" style="background-image:url(https://midilab.github.io/wp-content/uploads/2020/05/lebiniou-768x439.png);"><a class="entry-header-bg-link" href="https://midilab.github.io/opendsp-0-10-0/" rel="bookmark"><span class="screen-reader-text">Continue reading OpenDSP 0.10.0</span></a></div>
-		<div class="entry-inner">
-
-			<header class="entry-header">
-					<div class="entry-meta soft-color medium-font-weight smaller-font-size">
-		<span class="posted-on"><span class="screen-reader-text">Posted on</span> <a class="soft-color" href="https://midilab.github.io/opendsp-0-10-0/" rel="bookmark"><time class="entry-date published" datetime="2020-05-03T16:08:33-03:00">May 3, 2020</time><time class="updated" datetime="2020-05-04T06:44:37-03:00">May 4, 2020</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n soft-color" href="https://midilab.github.io/author/midilab/">midilab</a></span></span>	</div>
-<h2 class="entry-title"><a href="https://midilab.github.io/opendsp-0-10-0/" rel="bookmark">OpenDSP 0.10.0</a></h2>			</header>
-
-			<div class="entry-summary">
-				<p>Release focus on video processing tunning, system stability for the app ecosystem and basic MIDI/OSC interface for generic remote control.</p>
-			</div>
-
-			
-<div class="entry-comment grid-same-line">
-	<a href="https://midilab.github.io/opendsp-0-10-0/" class="more-link underline-link medium-font-weight">Read more <span class="screen-reader-text">OpenDSP 0.10.0</span> <svg class="icon icon-next" aria-hidden="true" role="img"> <use xlink:href="#icon-next"></use> </svg></a></div>
-
-		</div>
-
-	
-</article>
-
-		</div>
-	</div>
-
-
+	<nav class="navigation post-navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://midilab.github.io/water-oracle/" rel="prev"><span class="meta-nav" aria-hidden="true"><svg class="icon icon-arrow-circle-left" aria-hidden="true" role="img"> <use xlink:href="#icon-arrow-circle-left"></use> </svg>Previous</span> <span class="screen-reader-text">Previous post:</span> <span class="post-title">Water Oracle</span></a></div><div class="nav-next"><a href="https://midilab.github.io/first-pcb-batch-for-umodular/" rel="next"><span class="meta-nav" aria-hidden="true">Next<svg class="icon icon-arrow-circle-right" aria-hidden="true" role="img"> <use xlink:href="#icon-arrow-circle-right"></use> </svg></span> <span class="screen-reader-text">Next post:</span> <span class="post-title">First PCB Batch for uMODULAR!</span></a></div></div>
+	</nav>
 		</main>
 	</div>
 

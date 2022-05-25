@@ -7,11 +7,12 @@
 
 
 <script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
-<title>midilab – DIY Audio and Video Gears</title>
+<title>OpenDSP v0.8b pre-release – midilab</title>
 <meta name="robots" content="max-image-preview:large">
 <link rel="dns-prefetch" href="//fonts.googleapis.com">
 <link rel="dns-prefetch" href="//s.w.org">
 <link href="https://fonts.gstatic.com" crossorigin rel="preconnect">
+
 
 
 <link rel="stylesheet" id="wp-block-library-css" href="https://midilab.github.io/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
@@ -136,7 +137,7 @@ a, a:visited {
 */		</style>
 		</head>
 
-<body class="home page-template-default page page-id-728 no-social-menu before-footer-widgets-0 footer-widgets-0">
+<body class="post-template-default single single-post postid-702 single-format-standard no-social-menu before-footer-widgets-0 footer-widgets-0">
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 
@@ -167,7 +168,7 @@ a, a:visited {
 	<div class="main-navigation-wrapper" id="main-navigation-wrapper">
 		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Primary Menu">
 			<div class="primary-menu-wrapper"><ul id="primary-menu" class="primary-menu"><li id="menu-item-1005" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1005"><a href="https://midilab.github.io/shop/">Shop</a></li>
-<li id="menu-item-751" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-751"><a href="https://midilab.github.io/news/">News</a></li>
+<li id="menu-item-751" class="menu-item menu-item-type-post_type menu-item-object-page current_page_parent menu-item-751"><a href="https://midilab.github.io/news/">News</a></li>
 <li id="menu-item-841" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-841"><a href="#">Projects<svg class="icon icon-angle-down" aria-hidden="true" role="img"> <use xlink:href="#icon-angle-down"></use> </svg></a>
 <ul class="sub-menu">
 	<li id="menu-item-666" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-666"><a href="https://midilab.github.io/opendsp/">OpenDSP</a></li>
@@ -188,183 +189,67 @@ a, a:visited {
 	
 	<div id="content" class="site-content">
 
-	<div id="primary" class="content-area main-padding">
-		<main id="main" class="site-main main-width" role="main">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
+
+		
+<article id="post-702" class="post-702 post type-post status-publish format-standard has-post-thumbnail hentry category-acid category-linux category-opendsp category-realtime category-sampler tag-dj-mixing tag-plugin-host tag-samplers tag-synthesizers tag-video-art">
+
+	
+		<div class="entry-inner-singular">
+
+			<header class="entry-header page-header text-center">
+				<span class="posted-on"><span class="screen-reader-text">Posted on</span> <a class="soft-color" href="https://midilab.github.io/opendsp-v0-8b-pre-release/" rel="bookmark"><time class="entry-date published" datetime="2019-01-10T08:06:51-02:00">January 10, 2019</time><time class="updated" datetime="2019-06-26T11:07:26-03:00">June 26, 2019</time></a></span><h1 class="entry-title title-font text-italic">OpenDSP v0.8b pre-release</h1>				<div class="entry-front-page-content archive-description text-center soft-color">
+					<p>First public image release aimed for Raspberry PI 2 and 3 only, other platforms are on the roadmap, like arm odroid XU3 and X86/X86_64.</p>
+				</div>						
+			</header>
 
 			
-				<header class="page-header">
+		<div class="entry-media post-thumbnail post-thumbnail-singular">
+			<img width="1024" height="768" src="https://midilab.github.io/wp-content/uploads/2019/01/plugmod-opendsp.jpg" class="attachment-checathlon-singular size-checathlon-singular wp-post-image" alt="">		</div>
 
-											
-							<h1 class="page-title title-font no-margin-bottom text-center text-italic">
-  Do it your self <span class="highlight-color">audio & video</span> gears!</h1>
-<div class="entry-front-page-content archive-description text-center soft-color">
-<p>Opensource projects for peoples interested in do it by their own, cheap and hackable audio and video gears, for music, theatre, cinema or art installations.</p>
-<p><a class="button" href="/news">Checkout News</a></p>
-</div>
+	
+			<div class="entry-inner-singular-wrapper">
+
+				<div class="entry-inner-content">
+					<div class="entry-content">
+					<p>A really, really opensource Muse receptor? Your new djing environment? Need a video art dedicated computer?</p>
+<p><a href="https://github.com/midilab/opendsp/releases/download/v0.8b/opendsp_armv7_raspberry_pi2-2018-11-29.img.zip">Download Raspberry PI2 and PI3 OpenDSP image</a></p>
+<p>It has support for 2 apps:</p>
+<p>Plugmod -> Modular audio enviroment based on Ingen from drobilla.</p>
+<p>Djing -> Djing environemnt based on Mixxx</p>
+<p>On first boot opendsp will resize your sdcard /data partition to the maximun size of it. Turn on and wait until you got the OPENDSP login screen.</p>
+<p>At this time you should have Plugmod environment up and running, also a projectM based visualizer for your fresh music ideas to become visual art. All the parameters can be configured on system.cfg</p>
+<p>Connect via Network ethernet: If your network has DHCP server you only need to open your web browser and go to http://opendsp to have access to virtual display. On main display you can plug your hdmi monitor to have a nice visualizer responds to your music.</p>
+<p>Connect via Network Wifi dongle: connect your dongle at boot time, find the access point named “OpenDSP”, use the password default “opendspd”</p>
+<p>Connect via SSH: # ssh opendsp@opendsp, password: “opendsp”</p>
+<p>Connect via VNC: opendsp:5900</p>
+<p>Connect via WEB Browser: http://opendsp</p>
+<p>You can access all your user data via windows network to be accessed at Mac, windows or linux. Just open your network share area and find the one named “opendsp”</p>
+<p>A djing environment can be setup at boot by just configuring the system.cfg at user data partition.</p>
+<p>Find out more information about on oficial webpage: https://midilab.github.io/opendsp/</p>
+					</div>
+
 					
-				</header>
 
-			
-	<div id="front-page-featured-area" class="front-page-featured-area front-page-area">
+	<footer class="entry-footer clear">
+		<div class="entry-terms-wrapper entry-categories-wrapper clear"><span class="screen-reader-text">Categories: </span><span class="icon-wrapper"><svg class="icon icon-folder-open" aria-hidden="true" role="img"> <use xlink:href="#icon-folder-open"></use> </svg></span><span class="entry-terms category"><a href="https://midilab.github.io/category/acid/" rel="tag">acid</a><span class="screen-reader-text">, </span><a href="https://midilab.github.io/category/linux/" rel="tag">linux</a><span class="screen-reader-text">, </span><a href="https://midilab.github.io/category/opendsp/" rel="tag">opendsp</a><span class="screen-reader-text">, </span><a href="https://midilab.github.io/category/realtime/" rel="tag">realtime</a><span class="screen-reader-text">, </span><a href="https://midilab.github.io/category/sampler/" rel="tag">sampler</a></span></div><div class="entry-terms-wrapper entry-tags-wrapper clear"><span class="screen-reader-text">Tags: </span><span class="icon-wrapper"><svg class="icon icon-tag" aria-hidden="true" role="img"> <use xlink:href="#icon-tag"></use> </svg></span><span class="entry-terms post_tag"><a href="https://midilab.github.io/tag/dj-mixing/" rel="tag">DJ mixing</a><span class="screen-reader-text">, </span><a href="https://midilab.github.io/tag/plugin-host/" rel="tag">plugin host</a><span class="screen-reader-text">, </span><a href="https://midilab.github.io/tag/samplers/" rel="tag">samplers</a><span class="screen-reader-text">, </span><a href="https://midilab.github.io/tag/synthesizers/" rel="tag">synthesizers</a><span class="screen-reader-text">, </span><a href="https://midilab.github.io/tag/video-art/" rel="tag">video art</a></span></div>	</footer>
 
-	<h2 class="front-page-featured-title front-page-title widget-title">DIY Projects</h2>
-		<div class="grid-wrapper grid-wrapper-2">
 
-			
-<article id="post-662" class="post-662 page type-page status-publish has-post-thumbnail hentry">
+				</div>
 
-	
-		<div class="entry-inner-wrapper">
-
-			<div class="entry-header-bg" style="background-image:url(https://midilab.github.io/wp-content/uploads/2018/04/preview.jpg);"><a class="entry-header-bg-link" href="https://midilab.github.io/aciduino/" rel="bookmark"><span class="screen-reader-text">Continue reading Aciduino</span></a></div>
-		<div class="entry-inner">
-
-			<header class="entry-header">
-				<h2 class="entry-title"><a href="https://midilab.github.io/aciduino/" rel="bookmark">Aciduino</a></h2>
-			</header>
-
-			<div class="entry-summary">
-				<p>Cheap and DIY make in 1 hour, 2 tracks, 14 patterns, Roland TB-303 step sequencer clone +plus features aimed for musicians and djs to use it on live performance or for the studio create process.</p>
+				
 			</div>
-
-		</div>
-
-		<div class="entry-product-info">
-			<div class="entry-product-info-wrapper grid-same-line align-items-end">
-				<span class="product-purchase-link">
-					<a class="button" href="https://midilab.github.io/aciduino/" rel="bookmark">Make</a>		
-				</span>
-			</div>
-		</div>
-
-	</div>
-
-	
-</article>
-
-<article id="post-463" class="post-463 page type-page status-publish has-post-thumbnail hentry">
-
-	
-		<div class="entry-inner-wrapper">
-
-			<div class="entry-header-bg" style="background-image:url(https://midilab.github.io/wp-content/uploads/2019/01/plugmod-opendsp.jpg);"><a class="entry-header-bg-link" href="https://midilab.github.io/opendsp/" rel="bookmark"><span class="screen-reader-text">Continue reading OpenDSP</span></a></div>
-		<div class="entry-inner">
-
-			<header class="entry-header">
-				<h2 class="entry-title"><a href="https://midilab.github.io/opendsp/" rel="bookmark">OpenDSP</a></h2>
-			</header>
-
-			<div class="entry-summary">
-				<p>Realtime Operational System aimed for audio and video Digital Signal Processing on embeded devices like raspberry or headless personal computers.<br>
-Achieve professional realtime low-latency audio and video processing on low budget computers!</p>
-			</div>
-
-		</div>
-
-		<div class="entry-product-info">
-			<div class="entry-product-info-wrapper grid-same-line align-items-end">
-				<span class="product-purchase-link">
-					<a class="button" href="https://midilab.github.io/opendsp/" rel="bookmark">Make</a>		
-				</span>
-			</div>
-		</div>
-
-	</div>
-
-	
-</article>
-
-<article id="post-461" class="post-461 page type-page status-publish has-post-thumbnail hentry">
-
-	
-		<div class="entry-inner-wrapper">
-
-			<div class="entry-header-bg" style="background-image:url(https://midilab.github.io/wp-content/uploads/2018/06/umodular-v02.jpeg);"><a class="entry-header-bg-link" href="https://midilab.github.io/umodular/" rel="bookmark"><span class="screen-reader-text">Continue reading uModular</span></a></div>
-		<div class="entry-inner">
-
-			<header class="entry-header">
-				<h2 class="entry-title"><a href="https://midilab.github.io/umodular/" rel="bookmark">uModular</a></h2>
-			</header>
-
-			<div class="entry-summary">
-				<p>Modular hardware framework to create multi protocol exchange controllers, musical sequencers, routers, automators within MIDI, OSC, DMX and other audio, video and open industry protocols universe.</p>
-			</div>
-
-		</div>
-
-		<div class="entry-product-info">
-			<div class="entry-product-info-wrapper grid-same-line align-items-end">
-				<span class="product-purchase-link">
-					<a class="button" href="https://midilab.github.io/umodular/" rel="bookmark">Make</a>		
-				</span>
-			</div>
-		</div>
-
-	</div>
-
-	
-</article>
-
-		</div>
-	</div>
-
-
-	<div id="front-page-blog-area" class="front-page-blog-area front-page-area">
-
-	<h2 class="front-page-blog-title front-page-title widget-title">Recent news</h2>
-		<div class="blog-wrapper">
-
-			
-<article id="post-904" class="post-904 post type-post status-publish format-standard has-post-thumbnail hentry category-acid category-pcb-design category-step-sequencer tag-midi tag-midi-controller tag-midi-sequencer tag-tb303">
-
-	<div class="entry-header-bg" style="background-image:url(https://midilab.github.io/wp-content/uploads/2022/05/aciduino_mk2-768x474.jpg);"><a class="entry-header-bg-link" href="https://midilab.github.io/aciduino-pcb/" rel="bookmark"><span class="screen-reader-text">Continue reading Aciduino PCB</span></a></div>
-		<div class="entry-inner">
-
-			<header class="entry-header">
-					<div class="entry-meta soft-color medium-font-weight smaller-font-size">
-		<span class="posted-on"><span class="screen-reader-text">Posted on</span> <a class="soft-color" href="https://midilab.github.io/aciduino-pcb/" rel="bookmark"><time class="entry-date published" datetime="2022-05-21T13:06:34-03:00">May 21, 2022</time><time class="updated" datetime="2022-05-25T08:05:04-03:00">May 25, 2022</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n soft-color" href="https://midilab.github.io/author/midilab/">midilab</a></span></span>	</div>
-<h2 class="entry-title"><a href="https://midilab.github.io/aciduino-pcb/" rel="bookmark">Aciduino PCB</a></h2>			</header>
-
-			<div class="entry-summary">
-				<p>Shiny new aciduino pcb opensourced to you, bring by community member ijnekenamay.</p>
-			</div>
-
-			
-<div class="entry-comment grid-same-line">
-	<a href="https://midilab.github.io/aciduino-pcb/" class="more-link underline-link medium-font-weight">Read more <span class="screen-reader-text">Aciduino PCB</span> <svg class="icon icon-next" aria-hidden="true" role="img"> <use xlink:href="#icon-next"></use> </svg></a></div>
 
 		</div>
 
 	
 </article>
 
-<article id="post-878" class="post-878 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
-
-	<div class="entry-header-bg" style="background-image:url(https://midilab.github.io/wp-content/uploads/2020/05/lebiniou-768x439.png);"><a class="entry-header-bg-link" href="https://midilab.github.io/opendsp-0-10-0/" rel="bookmark"><span class="screen-reader-text">Continue reading OpenDSP 0.10.0</span></a></div>
-		<div class="entry-inner">
-
-			<header class="entry-header">
-					<div class="entry-meta soft-color medium-font-weight smaller-font-size">
-		<span class="posted-on"><span class="screen-reader-text">Posted on</span> <a class="soft-color" href="https://midilab.github.io/opendsp-0-10-0/" rel="bookmark"><time class="entry-date published" datetime="2020-05-03T16:08:33-03:00">May 3, 2020</time><time class="updated" datetime="2020-05-04T06:44:37-03:00">May 4, 2020</time></a></span><span class="byline"> by <span class="author vcard"><a class="url fn n soft-color" href="https://midilab.github.io/author/midilab/">midilab</a></span></span>	</div>
-<h2 class="entry-title"><a href="https://midilab.github.io/opendsp-0-10-0/" rel="bookmark">OpenDSP 0.10.0</a></h2>			</header>
-
-			<div class="entry-summary">
-				<p>Release focus on video processing tunning, system stability for the app ecosystem and basic MIDI/OSC interface for generic remote control.</p>
-			</div>
-
-			
-<div class="entry-comment grid-same-line">
-	<a href="https://midilab.github.io/opendsp-0-10-0/" class="more-link underline-link medium-font-weight">Read more <span class="screen-reader-text">OpenDSP 0.10.0</span> <svg class="icon icon-next" aria-hidden="true" role="img"> <use xlink:href="#icon-next"></use> </svg></a></div>
-
-		</div>
-
-	
-</article>
-
-		</div>
-	</div>
-
-
+	<nav class="navigation post-navigation" aria-label="Posts">
+		<h2 class="screen-reader-text">Post navigation</h2>
+		<div class="nav-links"><div class="nav-previous"><a href="https://midilab.github.io/aciduino-is-alive/" rel="prev"><span class="meta-nav" aria-hidden="true"><svg class="icon icon-arrow-circle-left" aria-hidden="true" role="img"> <use xlink:href="#icon-arrow-circle-left"></use> </svg>Previous</span> <span class="screen-reader-text">Previous post:</span> <span class="post-title">Aciduino is alive!</span></a></div><div class="nav-next"><a href="https://midilab.github.io/opendsp-0-10-0/" rel="next"><span class="meta-nav" aria-hidden="true">Next<svg class="icon icon-arrow-circle-right" aria-hidden="true" role="img"> <use xlink:href="#icon-arrow-circle-right"></use> </svg></span> <span class="screen-reader-text">Next post:</span> <span class="post-title">OpenDSP 0.10.0</span></a></div></div>
+	</nav>
 		</main>
 	</div>
 
