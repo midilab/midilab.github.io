@@ -28,7 +28,11 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 
 
-<style type="text/css" id="custom-header-css">@media screen and (min-width: 1em) { .custom-header-image .site-header-wrap { background-image: url() } }.site-title a, .site-title a:visited { color: #1f1f1f }</style>
+<style type="text/css" id="custom-header-css">@media screen and (min-width: 1em) { .custom-header-image .site-header-wrap { background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://midilab.co/data/uploads/2022/12/cropped-modular4-e1672164914791.jpg) } }.site-title a, .site-title a:visited { color: #1f1f1f }</style>
+<link rel="icon" href="https://midilab.co/data/uploads/2019/06/cropped-midilab_logo-32x32.png" sizes="32x32">
+<link rel="icon" href="https://midilab.co/data/uploads/2019/06/cropped-midilab_logo-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://midilab.co/data/uploads/2019/06/cropped-midilab_logo-180x180.png">
+<meta name="msapplication-TileImage" content="https://midilab.co/data/uploads/2019/06/cropped-midilab_logo-270x270.png">
 		<style type="text/css" id="wp-custom-css">
 			.site-header {
 	padding-top: 0.9375rem;
@@ -115,6 +119,30 @@ a, a:visited {
 	color: #00928f;
 }
 
+/* only on desktop */
+@media screen and (min-width: 62.875em) {
+	#content {
+		position: relative;
+		top: -380px;
+	}
+
+	.site-content {
+		padding-top: 0px;
+	}
+
+	.page-header {
+		height: 450px;
+	}
+	
+	.entry-front-page-content, .archive-description, .soft-color {
+		color: #FFFFFF;
+	}
+	
+	.page-title, .title-font {
+		color: #FFFFFF!important;
+	}
+}
+/*
 /* typing effect */
 /*
 .page-header h1 {
@@ -137,7 +165,7 @@ a, a:visited {
 */		</style>
 		</head>
 
-<body class="post-template-default single single-post postid-370 single-format-standard no-social-menu before-footer-widgets-0 footer-widgets-0">
+<body class="post-template-default single single-post postid-370 single-format-standard custom-header-image no-social-menu before-footer-widgets-0 footer-widgets-0">
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 

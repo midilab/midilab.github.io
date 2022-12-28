@@ -27,7 +27,11 @@ body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: 
 
 
 
-<style type="text/css" id="custom-header-css">@media screen and (min-width: 1em) { .custom-header-image .site-header-wrap { background-image: url() } }.site-title a, .site-title a:visited { color: #1f1f1f }</style>
+<style type="text/css" id="custom-header-css">@media screen and (min-width: 1em) { .custom-header-image .site-header-wrap { background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://midilab.co/data/uploads/2022/12/cropped-modular4-e1672164914791.jpg) } }.site-title a, .site-title a:visited { color: #1f1f1f }</style>
+<link rel="icon" href="https://midilab.co/data/uploads/2019/06/cropped-midilab_logo-32x32.png" sizes="32x32">
+<link rel="icon" href="https://midilab.co/data/uploads/2019/06/cropped-midilab_logo-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://midilab.co/data/uploads/2019/06/cropped-midilab_logo-180x180.png">
+<meta name="msapplication-TileImage" content="https://midilab.co/data/uploads/2019/06/cropped-midilab_logo-270x270.png">
 		<style type="text/css" id="wp-custom-css">
 			.site-header {
 	padding-top: 0.9375rem;
@@ -114,6 +118,30 @@ a, a:visited {
 	color: #00928f;
 }
 
+/* only on desktop */
+@media screen and (min-width: 62.875em) {
+	#content {
+		position: relative;
+		top: -380px;
+	}
+
+	.site-content {
+		padding-top: 0px;
+	}
+
+	.page-header {
+		height: 450px;
+	}
+	
+	.entry-front-page-content, .archive-description, .soft-color {
+		color: #FFFFFF;
+	}
+	
+	.page-title, .title-font {
+		color: #FFFFFF!important;
+	}
+}
+/*
 /* typing effect */
 /*
 .page-header h1 {
@@ -136,7 +164,7 @@ a, a:visited {
 */		</style>
 		</head>
 
-<body class="page-template-default page page-id-461 no-social-menu before-footer-widgets-0 footer-widgets-0">
+<body class="page-template-default page page-id-461 custom-header-image no-social-menu before-footer-widgets-0 footer-widgets-0">
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 
@@ -202,8 +230,7 @@ a, a:visited {
 				<div class="entry-inner-content">
 					<div class="entry-content">
 					<header class="page-header">
-<h1 class="page-title title-font no-margin-bottom text-center text-italic">
-  Modular <span class="highlight-color">Human & Machine</span> Interface Devices</h1>
+<h1 class="page-title title-font no-margin-bottom text-center text-italic">Modular <span class="highlight-color">DIY control</span> devices</h1>
 <div class="entry-front-page-content archive-description text-center soft-color">
 <p>Modular hardware framework to create multi protocol exchange controllers, musical sequencers, routers, automators within MIDI, OSC, DMX and other audio, video and open industry protocols universe.</p>
 <p><a class="button" href="https://github.com/midilab/uMODULAR/archive/master.zip">Download DIY Pack</a></p>
@@ -212,7 +239,7 @@ a, a:visited {
 <p></p>
 <div class="entry-content">
 <h1>uModular</h1>
-<p><a href="https://midilab.co/data/uploads/2018/06/umodular-v02.jpeg"><img src="https://midilab.co/data/uploads/2018/06/umodular-v02.jpeg" alt="" class="alignnone size-full wp-image-687" width="4160" height="3120"></a></p>
+<p><a href="https://midilab.co/data/uploads/2018/06/umodular-v02.jpeg"><img class="alignnone size-full wp-image-687" src="https://midilab.co/data/uploads/2018/06/umodular-v02.jpeg" alt="" width="4160" height="3120"></a></p>
 <p>The modular architecture make it easier to <strong>create and build</strong> your own <strong>controller</strong> and/or <strong>signal processing box</strong> for the control and/or integration of <strong>different audio and video protocols</strong> setups.</p>
 <p>All the hardware and software modules are designed with <strong>interoperability</strong> in mind, so you can possibly write your self a sequencer that controls events for <strong>MIDI</strong>, <strong>OSC</strong>, <strong>CV</strong>, <strong>DMX</strong> and a mechanical device – like a robot – all together in the painless possible way.</p>
 <p>On the roadmap, only the bold modules are avaliable for now. Keep in touch for the release of new modules and hardware schematics.</p>
@@ -231,18 +258,14 @@ a, a:visited {
 <p>The collection of libraries make it possible to construct sequencers, effect boxes, message routers or integrate and sync your performance music setup with video, ligths, motors, sensors or whatever you feel good about using the protocolar layer of uMODULAR:</p>
 <h3><a href="https://github.com/midilab/uclock/">uClock</a></h3>
 <p>BPM based Clock Generator Library to implement BPM clock tick calls using <strong>hardware interruption</strong> for Arduinos based on 168, 328, 16u4 and 32u4 microcontrollers.</p>
-<h3><a href="https://github.com/midilab/">uStepSequencer</a></h3>
-<p>N-tracks multi-track step sequencer.</p>
-<h3><a href="https://github.com/midilab/">uControl</a></h3>
+<h3><a href="https://github.com/midilab/uctrl/">uCtrl</a></h3>
 <p>Framework for device and user interface. Drivers for the most common CIs and periphals used for user interaction and feedback.</p>
-<h3><a href="https://github.com/midilab/">uGenerativeMusic</a></h3>
-<p>Generative Music engine with a harmonic progression sequencer, euclidian generator mixed with advanced harmonic programming rules.</p>
-<h3><a href="https://github.com/midilab/">uMidikeypad</a></h3>
-<p>Midi keypad with support for musical scales.</p>
 <h2>Applications</h2>
 <p>Real world applications using the uMODULAR framework:</p>
-<p>Atari 2600 Midi Station:</p>
-<p><a href="https://midilab.co/data/uploads/2018/06/atari_midi_station.jpeg"><img loading="lazy" src="https://midilab.co/data/uploads/2018/06/atari_midi_station.jpeg" alt="" class="alignnone size-full wp-image-695" width="4160" height="3120"></a></p>
+<h3><a href="https://github.com/midilab/aciduino/v2/">Aciduino V2</a></h3>
+<p>Generative Music engine with a harmonic progression sequencer, euclidian generator mixed with advanced harmonic programming rules.</p>
+<h3>Atari 2600 Midi Station</h3>
+<p><a href="https://midilab.co/data/uploads/2018/06/atari_midi_station.jpeg"><img loading="lazy" class="alignnone size-full wp-image-695" src="https://midilab.co/data/uploads/2018/06/atari_midi_station.jpeg" alt="" width="4160" height="3120"></a></p>
 <div id="gallery-1" class="gallery galleryid-461 gallery-columns-3 gallery-size-thumbnail"><figure class="gallery-item">
 			<div class="gallery-icon landscape">
 				<a href="https://midilab.co/umodular/small_setup_on/"><img width="150" height="150" src="https://midilab.co/data/uploads/2015/10/small_setup_on-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" loading="lazy" aria-describedby="gallery-1-622"></a>
