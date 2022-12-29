@@ -239,7 +239,7 @@ a, a:visited {
 				<div class="entry-inner-content">
 					<div class="entry-content">
 					<header class="page-header">
-<h1 class="page-title title-font no-margin-bottom text-center text-italic">Modular <span class="highlight-color">DIY control</span> devices</h1>
+<h1 class="page-title title-font no-margin-bottom text-center text-italic">Modular <span class="highlight-color">multiarch audio/video</span> interfaces</h1>
 <div class="entry-front-page-content archive-description text-center soft-color">
 <p>Modular hardware framework to create multi protocol exchange controllers, musical sequencers, routers, automators within MIDI, OSC, DMX and other audio, video and open industry protocols universe.</p>
 <p><a class="button" href="https://github.com/midilab/uMODULAR/archive/master.zip">Download DIY Pack</a></p>
@@ -248,12 +248,12 @@ a, a:visited {
 <p></p>
 <div class="entry-content">
 <h1>uModular</h1>
-<p><a href="https://midilab.co/data/uploads/2018/06/umodular-v02.jpeg"><img class="alignnone size-full wp-image-687" src="https://midilab.co/data/uploads/2018/06/umodular-v02.jpeg" alt="" width="4160" height="3120"></a></p>
 <p>The modular architecture make it easier to <strong>create and build</strong> your own <strong>controller</strong> and/or <strong>signal processing box</strong> for the control and/or integration of <strong>different audio and video protocols</strong> setups.</p>
 <p>All the hardware and software modules are designed with <strong>interoperability</strong> in mind, so you can possibly write your self a sequencer that controls events for <strong>MIDI</strong>, <strong>OSC</strong>, <strong>CV</strong>, <strong>DMX</strong> and a mechanical device – like a robot – all together in the painless possible way.</p>
-<p>On the roadmap, only the bold modules are avaliable for now. Keep in touch for the release of new modules and hardware schematics.</p>
+<p>All source code for firmware is based on Arduino platform and can be runned on different micro controller architectures, from classic AVRs to modern ARMs(check compatibility list).</p>
 <h2>Hardware</h2>
-<p>Physical modules released under CC-BY-SA 4.0 avaliable as Single Sided PCB to be etched at home to make your own audio/video/sensorial device controller or signal processing box.</p>
+<p><a href="https://midilab.co/data/uploads/2018/06/umodular-v02.jpeg"><img class="alignnone size-full wp-image-687" src="https://midilab.co/data/uploads/2018/06/umodular-v02.jpeg" alt="" width="4160" height="3120"></a><br>
+Physical modules released under CC-BY-SA 4.0 avaliable as Kicad format for electronic schematics and PCB to make your own audio/video/sensorial device controller or signal processing box.</p>
 <p>You can download all source from <a href="https://github.com/midilab/uMODULAR">midilab’s github</a>.</p>
 <h2>Protocol Interfaces</h2>
 <p>uMODULAR modules are made to interface with all major common protocols for audio and video on the market:</p>
@@ -264,16 +264,18 @@ a, a:visited {
 <li>DMX</li>
 </ol>
 <h2>Libraries</h2>
-<p>The collection of libraries make it possible to construct sequencers, effect boxes, message routers or integrate and sync your performance music setup with video, ligths, motors, sensors or whatever you feel good about using the protocolar layer of uMODULAR:</p>
+<p>The collection of libraries make it possible to construct sequencers, effect boxes, message routers or integrate and sync your performance music setup with video, ligths, motors, sensors or whatever you feel good about using the protocolar layer of uMODULAR.</p>
+<p>All libraries were writed for Arduino platform and supports AVRs based on 168, 328, 16u4, 32u4, mega2560, Teensy ARM boards and Seeedstudio Xiao M0 microcontrollers.</p>
 <h3><a href="https://github.com/midilab/uclock/">uClock</a></h3>
-<p>BPM based Clock Generator Library to implement BPM clock tick calls using <strong>hardware interruption</strong> for Arduinos based on 168, 328, 16u4 and 32u4 microcontrollers.</p>
+<p>BPM based Clock Generator Library to implement BPM clock tick calls using <strong>hardware interruption</strong> for tightest clock signal as possible.</p>
 <h3><a href="https://github.com/midilab/uctrl/">uCtrl</a></h3>
 <p>Framework for device and user interface. Drivers for the most common CIs and periphals used for user interaction and feedback.</p>
 <h2>Applications</h2>
 <p>Real world applications using the uMODULAR framework:</p>
 <h3><a href="https://github.com/midilab/aciduino/v2/">Aciduino V2</a></h3>
-<p>Generative Music engine with a harmonic progression sequencer, euclidian generator mixed with advanced harmonic programming rules.</p>
+<p>A roland tb-303 and tr-808 step sequencer clone.</p>
 <h3>Atari 2600 Midi Station</h3>
+<p>Midilab’s personal all-in-one live/production gear. Its a step sequencer with 16 tracks and 512 steps, a advanced midi controller with realtime in box programming and display with string name support per control.</p>
 <p><a href="https://midilab.co/data/uploads/2018/06/atari_midi_station.jpeg"><img loading="lazy" class="alignnone size-full wp-image-695" src="https://midilab.co/data/uploads/2018/06/atari_midi_station.jpeg" alt="" width="4160" height="3120"></a></p>
 <div id="gallery-1" class="gallery galleryid-461 gallery-columns-3 gallery-size-thumbnail"><figure class="gallery-item">
 			<div class="gallery-icon landscape">
