@@ -256,71 +256,35 @@ a, a:visited {
 <p><a href="https://github.com/midilab/opendspd" target="_blank" rel="noopener">OpenDSP Daemon Service</a> serves as a comprehensive framework for creating DSP devices that can seamlessly interface with any MIDI or OSC compliant device.</p>
 <p>By combining the OpenDSP OS and Service, you gain the capability to emulate numerous expensive proprietary DSP machines or even develop your own customized DSP solution to cater to your specific requirements.</p>
 <p>Please check our <a href="https://github.com/midilab/opendsp/wiki" target="_blank" rel="noopener">wiki</a> for the latest documentation and tutorials.</p>
-<h1 class="page-title title-font no-margin-bottom text-center text-italic"><a href="https://midilab.co/data/uploads/2019/01/plugmod-opendsp.jpg"><img class="alignnone size-full wp-image-704" src="https://midilab.co/data/uploads/2019/01/plugmod-opendsp.jpg" alt="" width="1024" height="768"></a></h1>
-<p>OpenDSP is Good for:<br>
-+ Musicians<br>
-+ DJs<br>
-+ Audio and Video Producers<br>
-+ Video Art Producers and Performers<br>
-+ Multimedia Interactive Instalations<br>
-+ Theatre Sound Technicians<br>
-+ DSP Students and Researches</p>
+<h2>OpenDSP is ideal for</h2>
+<p>Musicians • DJs • Audio and Video Producers • Video Art Producers and Performers • Multimedia Interactive Instalations • Theatre Sound Technicians • DSP Students and Researches</p>
 <p>A real-time kernel and a sub-set of opensource applications, plugins and tools makes OpenDSP vastly hackable for different kinda of DSP tasks.</p>
 <h2>OpenDSP in action</h2>
 <p>Emulating a classic Dub Sound System setup for DJing: a mixer, 2 decks, spring reverb and tape delay. Just <a href="https://github.com/midilab/opendsp-mods/blob/master/midilab/mixxx-dub/README.md" target="_blank" rel="noopener">map you midi controller</a> and plug it to your OpenDSP.</p>
-<p><iframe loading="lazy" title="Emulate expensive Dub Soundsystem Equipament with your Raspberry and Midi Controller" width="740" height="416" src="https://www.youtube.com/embed/2uJZTJCUkSI?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+<p><iframe title="Emulate expensive Dub Soundsystem Equipament with your Raspberry and Midi Controller" width="740" height="416" src="https://www.youtube.com/embed/2uJZTJCUkSI?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
 <h2>OpenDSP Interface</h2>
-<p>OpenDSP comes with a main system interface that can be accessed via MIDI or OSC.</p>
-<p>Also, connecting your OpenDSP to your network makes you able to access other interfaces like:</p>
-<p><strong>A Network Share</strong>: All you user data like samplers, dj set music files and system config can be accessed from Linux, Mac or Windows without any previous configuration. Just search for the network share named “opendsp”.</p>
-<p><strong>A Virtual Screen</strong>: Depends on the ecosystem for the opendsp app some of his programs may need X11 support, in that case you have a Web Browser interface to interact with. It can be accessed thru this address: http://opendsp/ or for a more stable connection a direct VNC accesss on “opendsp:5900”.</p>
-<p><strong>Plug-and-Pray Wifi dongle</strong> It has a built-in plug-and-pray support for wifi dongles that automaticly creates a access point called “OpenDSP” so you can interface with your opendsp via wifi using you mobile celphone or a tablet. default pass: opendspd</p>
-<p>The main video output normaly accessed via HDMI or DVI port are always dedicated to video projection. In that case you should not be using this display to do management on your app needs, for that matter you have the Virtual Display to be use.</p>
+<p>OpenDSP provides a primary system interface that can be accessed through MIDI or OSC protocols.</p>
+<p>Moreover, when you connect OpenDSP to your network, you gain access to additional interfaces such as:</p>
+<p><strong>Network Share:</strong> All user data including samplers, DJ set music files, and system configurations can be accessed from Linux, Mac, or Windows without requiring any prior configuration. Simply search for the network share named “opendsp.”</p>
+<p><strong>Virtual Screen:</strong> Depending on the opendsp app ecosystem, certain programs may require X11 support. In such cases, you have the option to interact with a web browser interface. Access it through this address: <a href="http://opendsp/" target="_new" rel="noopener">http://opendsp/</a>. Alternatively, for a more stable connection, you can use direct VNC access at “opendsp:5900.”</p>
+<h1 class="page-title title-font no-margin-bottom text-center text-italic"><a href="https://midilab.co/data/uploads/2019/01/plugmod-opendsp.jpg"><img loading="lazy" class="alignnone size-full wp-image-704" src="https://midilab.co/data/uploads/2019/01/plugmod-opendsp.jpg" alt="" width="1024" height="768"></a></h1>
+<p><strong>Plug-and-Play WiFi Dongle:</strong> OpenDSP features built-in plug-and-play support for WiFi dongles. It automatically creates an access point named “OpenDSP,” allowing you to interface with your opendsp via WiFi using your mobile phone or tablet. The default password is “opendspd.”</p>
+<p>Please note that the main video output, typically accessed through HDMI or DVI ports, is dedicated to video projection. Therefore, it is recommended not to use this display for app management purposes. Instead, utilize the Virtual Display.</p>
 <h2>OpenDSP Applications</h2>
-<p>OpenDSP application is a sub-set of N applications with a predefined state relation between then called Mod.</p>
-<p>A Mod can have any number of applications and audio/video connections between then as far as you processor can handle it all.</p>
-<p>By merging different applications you can achieve different kinda of DSP tasks to use as a standalone dedicated audio/video gear in an automated way via MIDI and OSC protocols or via common mouse/keyboard and monitor desktop station.</p>
-<p>You can write your own Mod with a very few lines of configuration, just check some examples at mod/ directory of user data partition.</p>
-<p>All the application ecosystem is controlled via OpenDSP Service and is avaliable at <a href="https://github.com/midilab/opendspd" target="_blank" rel="noopener noreferrer">opendspd github repository</a>.</p>
-<h3>System Applications</h3>
-<p>You can create Mods ussing the following opensource apps:</p>
-<ul>
-<li>loopers<br>
-– giada<br>
-– luppp</li>
-<li>djing<br>
-– mixxx<br>
-– wxax</li>
-<li>daw/sequencer<br>
-– lmms<br>
-– hydrogen<br>
-– qtractor<br>
-– non-daw<br>
-– non-mixer<br>
-– non-sequencer</li>
-<li>trackers<br>
-– sunvox<br>
-– milkytrack<br>
-– klystrac</li>
-<li>modular synthesis<br>
-– carla<br>
-– carla-rack<br>
-– ingen</li>
-<li>video<br>
-– lebiniou<br>
-– omxplayer<br>
-– vlc</li>
-<li>DSP programming<br>
-– puredata<br>
-– processing</li>
-<li>plugins<br>
-410+ audio plugins, from effects to classic synthesizer emulations</li>
-</ul>
-<h3>User manual</h3>
+<p>OpenDSP application is a subset of numerous applications, collectively referred to as “Mod”, which have predefined state relations between them.</p>
+<p>A Mod can consist of any number of applications and establish audio/video connections between them, limited only by the processing capacity of your system.</p>
+<p>By combining different applications, you can accomplish various types of DSP tasks, creating standalone dedicated audio/video devices that can be controlled using MIDI and OSC protocols or managed through a conventional mouse, keyboard, and monitor desktop station.</p>
+<p>Creating your own Mod requires only a few lines of configuration. You can find helpful examples in the mod/ directory of the user data partition.</p>
+<h2>System Applications</h2>
+<p>You can create Mods using the following open-source apps: <br><strong>loopers:</strong> giada, luppp<br><strong>djing:</strong> mixxx, wxax<br><strong>daw/sequencer:</strong> lmms, hydrogen, qtractor, non-daw, non-mixer, non-sequencer<br><strong>trackers:</strong> sunvox, milkytrack, klystrac<br><strong>modular synthesis:</strong> carla, carla-rack, ingen<br><strong>video:</strong> lebiniou, omxplayer, vlc<br><strong>DSP programming:</strong> puredata, processing<br><strong>plugins:</strong> 410+ audio plugins, from effects to classic synthesizer emulations</p>
+<h2>User manual</h2>
 <p>You can get the latest documentation on our <a href="https://github.com/midilab/opendsp/wiki">wiki</a></p>
-<h3>Source code</h3>
+<h2>Source code</h2>
 <p>You can fork and participate on the dev team using <a href="https://github.com/midilab/opendsp/" target="_blank" rel="noopener noreferrer">opendsp github repository</a>.</p>
 </div>
+<p></p>
+
+
 <p></p>
 					</div>
 				</div>
