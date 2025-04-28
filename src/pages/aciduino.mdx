@@ -1,0 +1,233 @@
+---
+title: Aciduino
+description: TB-303 and TR-808 sequencer
+blocks:
+  - background: ''
+    title: Aciduino
+    subtitle: >-
+      DIY Roland TB-303 & TR-808 Sequencer Clone with added features. A
+      performance sequencer, composition tool, and MIDI controller all in one
+      compact package.
+    actions:
+      - title: Download DIY Pack
+        href: >-
+          https://github.com/midilab/aciduino/releases/download/v2.0.0/aciduino-v2.0.0.zip
+        _template: link
+    _template: hero
+---
+
+A **DIY multitrack sequencer**, **compose tool**, and **MIDI controller**, designed using readily available, inexpensive parts. It supports different microcontrollers and can be easily assembled on a protoboard or ordered as a PCB.
+
+From barebone to full hands-on control! You can hook up to 16 pots, 24 buttons/LEDs, MIDI interfaces, and CV/Gate to extend your barebone Aciduino.
+
+<CardSection
+  cards={[
+    {
+      title: "Barebone",
+      _template: "Card",
+      photo: "/img/aciduino/aciduino_v2_teensy_bb.jpg",
+      to: "",
+      actionButton: "",
+      content:
+        "Easy assembly, maximum fun! Get your sequencer up and running in under an hour with this minimalist barebone build of a fully functional step sequencer and MIDI controller."
+    },
+    {
+      title: "Button/LED Extension",
+      _template: "Card",
+      photo: "/img/aciduino/uone_umodular-prototype.jpg",
+      to: "",
+      actionButton: "",
+      content:
+        "Expand the control capabilities of your sequencer by adding up to 24 buttons/LEDs, enabling a full set of real-time editing functions, similar to those found on a TR-808."
+    },
+    {
+      _template: "Card",
+      photo: "/img/aciduino/aciduinov2-bat-extension.png",
+      title: "Pot Extension",
+      content:
+        "Expand your MIDI controller interface with up to 16 potentiometers!"
+    },
+    {
+      _template: "Card",
+      photo: "/img/aciduino/aciduinov2-3dcase-hugos.png",
+      title: "3D Printed Case",
+      content:
+        "Keep your Aciduino safe on the road! All the 3D print files and schematics are available!"
+    },
+    {
+      _template: "Card",
+      title: "Aciduino V1",
+      content:
+        "The first version of Aciduino, which introduces two tracks of the TB-303 sequencer, a melodic lines generative engine, and a MIDI controller.",
+      photo: "/img/aciduino/aciduinov1.jpg"
+    },
+    {
+      _template: "Card",
+      title: "Aciduino V1 on PCB",
+      content:
+        "A PCB mount of the first Aciduino release, available for order directly from the Pusherman website.",
+      photo: "/img/aciduino/aciduino_mk2.jpg"
+    }
+  ]}
+/>
+
+## Features
+
+Beyond the classic and well-known features of the TB-303 and TR-808 sequencers, several additional features are included for both studio and live performance use.
+
+<CardSection
+  cards={[
+    {
+      _template: "Card",
+      title: "Tight and Solid Clock",
+      content:
+        "Using a hardware timer to achieve real-time, professional-grade timing for both internal and external synchronization. Send or receive clock signals, keeping all your gear tightly synced."
+    },
+    {
+      title: "Compose Tool",
+      _template: "Card",
+      content:
+        "Generate acid pattern sequences at the push of a button and by twisting some parameters. Harmonizer for melodic tracks and Euclidean algorithm for drum tracks."
+    },
+    {
+      title: "Pattern Grid Scene",
+      _template: "Card",
+      content:
+        "Inspired by Ableton Live's Scene mode, the sequencer allows you to freely recall any track pattern or entire pattern scene using a navigable grid system, just like Ableton Live's Scene mode."
+    },
+    {
+      _template: "Card",
+      title: "Mute Grid Scene",
+      content:
+        "Create up to 4 mute states within a pattern scene. The first sequencer in history to include such a feature. Craft intros, build-ups, and drops to maximize the use of a single pattern scene."
+    },
+    {
+      _template: "Card",
+      title: "Midi Controller",
+      content:
+        "The most affordable MIDI controller you can build, controlling up to 16 parameters per track on your external synthesizers (bass/drums)."
+    },
+    {
+      type: "title",
+      title: "TR-909 Swing",
+      _template: "Card",
+      content:
+        "Add TR-909 swing to your drums and basses for shaking tracks. Aciduino uses the same algorithm that gives the TR-909 its groove signature!",
+      to: ""
+    },
+    {
+      _template: "Card",
+      title: "Highly Configurable",
+      content:
+        "You can choose how many TB-303 and TR-808 tracks to use, up to 16 tracks and 512 steps. Go way beyond what the original Roland machines have to offer."
+    },
+    {
+      _template: "Card",
+      title: "Easily Hackable",
+      content:
+        "Don't be stuck with the original barebone layout. Easily create your own hardware layout and user interface. Adding and removing features is a breeze with Aciduino's modular architecture."
+    },
+    {
+      title: "Live Record",
+      _template: "Card",
+      content: "Real-time and step recording modes for MIDI keyboard input. "
+    },
+    {
+      title: "Embedded Pattern Memory",
+      _template: "Card",
+      content: "Store your work using the microcontroller's EEPROM memory."
+    }
+  ]}
+/>
+
+## Assembly
+
+The assembly process is designed to be straightforward, taking approximately one hour when using a protoboard. It uses readily available and inexpensive parts.
+
+<CardSection
+  cards={[
+    {
+      title: "Version 2.0",
+      _template: "Card",
+      photo: "/img/aciduino/aciduino_v2_teensy_bb.jpg",
+      to: "https://github.com/midilab/aciduino/tree/master/v2#assembly",
+      actionButton: "Assembly V2",
+      content:
+        "The second version of Aciduino includes all features. You can choose between the ESP32, Arduino Mega, or Teensy >= 3.2 as the microcontroller main board."
+    },
+    {
+      title: "Version 1.0",
+      _template: "Card",
+      photo: "",
+      to: "https://github.com/midilab/aciduino/tree/master/v1/",
+      actionButton: "Assembly V1",
+      content:
+        "The first version of Aciduino supports two tracks of a TB-303 sequencer and a MIDI controller. Only Arduino Nano is supported as the microcontroller main board.",
+      youtubeVid: "PR0pkCa_ahI"
+    }
+  ]}
+/>
+
+## Order
+
+Want a more durable and ergonomic Aciduino? Order a PCB for a long-lasting Aciduino.
+
+<CardSection
+  cards={[
+    {
+      title: "Version 2.0 uOne PCB",
+      _template: "Card",
+      photo: "/img/aciduino/uone_umodular-prototype.jpg",
+      to: "",
+      actionButton: "Buy (Coming Soon)",
+      content:
+        "uOne is the first official dev board for uMODULAR that can run Aciduino and other apps. It features back connectors for all available extensions. Available for order soon!"
+    },
+    {
+      title: "Version 1.0 PCB",
+      _template: "Card",
+      photo: "/img/aciduino/aciduino_mk2.jpg",
+      to: "https://pushermanproductions.com/product/midilab-aciduino-303-style-midi-sequencer-pcb-only/",
+      actionButton: "Buy",
+      content:
+        "The first Aciduino PCB, created by community member ijnekenamay. Order it directly from the Pusherman website!"
+    }
+  ]}
+/>
+
+## Aciduino in action
+
+<CardSection
+  cards={[
+    {
+      title: "Aciduino Live Performance",
+      _template: "Card",
+      youtubeVid: "7D5RpPdX0to",
+      content:
+        'Performing Puhture\'s "Acid Track" with 2x TB-303 and 1x TR-808 tracks, using the same TB-303 programming notation as the original track. This performance relies solely on the Mute Grid system, moving back and forth between the intro, 2x build-ups, and a drop mute state.'
+    },
+    {
+      title: "Aciduino Live Composing",
+      _template: "Card",
+      youtubeVid: "CIfeWffOZNE",
+      content:
+        "Live composing and performing a track from scratch using Aciduino's composition tools, utilizing the harmonizer for melodic lines with the Ionian mode and a Euclidean rhythm generator for drum and percussive tracks."
+    },
+    {
+      title: "Aciduino V1",
+      _template: "Card",
+      youtubeVid: "6aK7QXh4mrA",
+      content:
+        "Aciduino V1 live performance with 2x Roland Cloud TB-303 and 2x Dave Smith Tetra tracks, while sending a sync clock signal to a Roland Cloud TR-808."
+    },
+    {
+      title: "Aciduino V1 Mod",
+      _template: "Card",
+      youtubeVid: "t_Qg5P1fOiA",
+      content:
+        "SEQ32: A fantastic mod of Aciduino V1, featuring 3 tracks, 4 extension pots per track, and a button/LED array extension for step note control, built and performed by Conrad Vassallo."
+    }
+  ]}
+/>
+
+*Disclaimer: Roland and TB-303, TR-808 and TR-909 are registered trademarks of Roland Corporation. This product is not affiliated with or endorsed by Roland Corporation.*

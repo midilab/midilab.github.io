@@ -1,0 +1,162 @@
+---
+title: uMODULAR
+description: Modular...
+blocks:
+  - background: ''
+    title: µMODULAR
+    subtitle: >-
+      A collection of hardware schematics and PCBs for DIY controllers and
+      instruments.
+    actions:
+      - title: Download
+        href: 'https://github.com/midilab/uMODULAR/archive/master.zip'
+        _template: link
+    _template: hero
+---
+
+![](/img/umodular/umodular-v02.jpeg)
+
+<CardSection
+  cards={[
+    {
+      _template: "Card",
+      title: "Hardware",
+      content:
+        "Modules effortlessly combine to enhance and extend the capabilities of your device."
+    },
+    {
+      _template: "Card",
+      title: "Firmware",
+      content:
+        "All the challenging and intricate aspects of real-time and concurrency in music or video applications are encapsulated within a safe and intuitive API via libraries."
+    }
+  ]}
+/>
+
+You can access and download all the source files from the [Midilab GitHub repository](https://github.com/midilab/uMODULAR).
+
+## Hardware
+
+The physical modules are released under the CC-BY-SA 4.0 license and are available in Kicad format, providing electronic schematics and PCB designs for creating your own audio/video device controller or signal processing box.
+
+### Schematics
+
+Kicad format modular schematics for you to glue it togheter and create your own customized new device PCB.
+
+### PCBs
+
+Ready to go modular common use pcbs
+
+<CardSection
+  cards={[
+    {
+      _template: "Card",
+      title: "AVR Mega Shield",
+      content: "Different shields to use with different microcontrollers",
+      photo: "/img/umodular/mega_and_mini_shields.jpg"
+    },
+    {
+      _template: "Card",
+      title: "Analog Input Matrix",
+      content:
+        "PCBs with support to up to 48 potentiometers or other analog in for controlling",
+      photo: "/img/umodular/pot8.jpg"
+    },
+    {
+      _template: "Card",
+      title: "Midi Input/Output",
+      content: "Midi support for multiple ports for simple to complex setups",
+      photo: "/img/umodular/midi4.jpg"
+    },
+    {
+      _template: "Card",
+      title: "Digital Input/Output Maxtrix",
+      content: "Support for button/led matrices for panel controllers",
+      photo: "/img/umodular/push8.jpg"
+    }
+  ]}
+/>
+
+## Firmware
+
+The firmware libraries are built for the Arduino platform, with support for PlatformIO, and are compatible with various microcontroller architectures and boards, including classic AVRs and modern ARMs.
+
+## Applications
+
+Real world applications examples using the uMODULAR framework:
+
+<CardSection
+  cards={[
+    {
+      type: "title",
+      title: "Aciduino V2",
+      _template: "Card",
+      content:
+        "The project features a versatile step sequencer clone of Roland's TB303/TR808, offering up to 16 tracks. It includes a comprehensive automation grid system for step, pattern, and mute control. The sequencer functions as a MIDI controller and incorporates an OLED display for visual feedback. Furthermore, the design is modular and allows for easy expansion with additional potentiometers, buttons, MIDI, or CV/Gate interfaces.",
+      to: "",
+      youtubeVid: "7D5RpPdX0to"
+    },
+    {
+      type: "title",
+      title: "XR-1 Groovebox",
+      _template: "Card",
+      content:
+        "A full featured groovebox using uClock library, created by James Gray",
+      to: "",
+      youtubeVid: "s68AS_JNLJU"
+    },
+    {
+      type: "title",
+      title: "MIDI Looper/Sequencer",
+      _template: "Card",
+      content:
+        "A Realtime MIDI Looper/sequencer using uClock library, created by ymnkmusic.",
+      to: "",
+      youtubeVid: "7VqLjlL3LzU"
+    },
+    {
+      type: "title",
+      title: "MIDI/DIN Clockbox ",
+      _template: "Card",
+      content:
+        "A MIDI and DIN clockbox using uClock library, created by ymnkmusic.",
+      to: "",
+      youtubeVid: "OYtPbgozCbE"
+    },
+    {
+      type: "title",
+      title: "Atari 2600 Midi Station",
+      _template: "Card",
+      content:
+        " Midilab's personal all-in-one live/production gear that combines a powerful step sequencer with 16 tracks and 512 steps. It also functions as an advanced MIDI controller, providing real-time in-box programming capabilities. The gear includes a display with string name support per control, allowing for easy navigation and customization.",
+      to: "",
+      youtubeVid: "2uJZTJCUkSI"
+    }
+  ]}
+/>
+
+## V0 PCBs release
+
+### Shileds
+
+The initial shield released is compatible with the Arduino Mega, Micro and Mini series boards. However, the project has plans to expand support for other board models in the future.
+
+**+ Arduino Micro and Mini 5v Compatible** **+ Arduino Mega Compatible**\
+![mega\_and\_mini\_shields](http://midilab.co/wp-content/uploads/2015/10/mega_and_mini_shields.jpg)
+
+### IO Interfaces
+
+The project provides various input and output interfaces, allowing users to interact with the external world effectively.
+
+**+ FADER8**: 8 x 60mm faders module - designed for Bourns PTA6043-2015DPB103 part. ![fader8](http://midilab.co/wp-content/uploads/2015/10/fader8.jpg)
+
+**+ POT8**: 8 x potentiometers module - designed for Bourns PTV09A-4015F-B103 part. But it fits for almost all 10KB throughhole potentiometer models.\
+![pot8](http://midilab.co/wp-content/uploads/2015/10/pot8.jpg)
+
+**+ PUSH8**: 8 x button/led module ![push8](http://midilab.co/wp-content/uploads/2015/10/push8.jpg)
+
+### Midi Interface
+
+**+ MIDI4**: Common MIDI interface with support for 2 MIDI Inputs and 2 MIDI Outputs. ![midi4](http://midilab.co/wp-content/uploads/2015/10/midi4.jpg)
+
+### uMODULAR devices galery

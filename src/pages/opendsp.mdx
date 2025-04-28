@@ -1,0 +1,145 @@
+---
+title: OpenDSP
+description: >-
+  A headless, DSP OS platform for professional, low-latency audio and video
+  processing on a budget.
+blocks:
+  - background: ''
+    title: OpenDSP
+    subtitle: >-
+      A headless, DSP OS platform for professional, low-latency audio and video
+      processing on a budget.
+    actions:
+      - title: Generic Intel
+        href: >-
+          https://github.com/midilab/opendsp/releases/download/v0.11.0/opendsp_0.11.0-raspberry_pi2_3.zip
+        _template: link
+      - title: Live Generic Intel
+        href: >-
+          https://github.com/midilab/opendsp/releases/download/v0.11.0/opendsp_0.11.0-raspberry_pi2_3.zip
+        _template: link
+      - title: Raspberry PI 2/3
+        href: >-
+          https://github.com/midilab/opendsp/releases/download/v0.11.0/opendsp_0.11.0-raspberry_pi2_3.zip
+        _template: link
+    _template: hero
+---
+
+Emulate classic synthesizers, effect boxes, dynamics processors, video processors, and more. No mouse, no keyboard, no monitor!
+
+![](/img/opendsp/opendsp-ingen_mod.jpg)
+
+Inspired on [Muse Receptor](https://www.museresearch.com/products/receptor-classic.php), but completely free and affordable to build! OpenDSP allows you to turn your your old PC or Raspberry Pi or into a standalone machine for audio, video, and general digital signal processing, offering low latencies and excellent performance on a budget.
+
+No need for a monitor, keyboard, or mouse. By utilizing MIDI and OSC protocols, you can control your OpenDSP with a variety of products on the market, from MIDI controllers to OSC programs running on a tablet or smartphone.
+
+OpenDSP enables you to emulate classic music machines such as the Yamaha DX7, Moog, Nord Lead 2x, Access Virus A/B/C/TI, Waldorf microQ/microWAVE, Fender Cabinets, Roland Space Echo 201, Spring Reverbs, and more.
+
+Program real-time interactive images, video, and audio using Processing and Puredata in a fully customizable and automated environment, designed for performers, art installations, or studio sessions.
+
+## Features
+
+<CardSection
+  cards={[
+    {
+      _template: "Card",
+      title: "Read only filesystem",
+      content:
+        "Wich means you can just turn it off without risking data inconsistences"
+    },
+    {
+      _template: "Card",
+      title: "LIgthwiegh OS",
+      content:
+        "No bloat software or fancy GUIs, the OS is shipped only with ligthweith apps and barebone to DSP and video only, letting the cpu works for you setup instead of background and bloated non used software.",
+      to: ""
+    },
+    {
+      _template: "Card",
+      title: "MIDI and OSC Controllable",
+      content:
+        "Controls apps and project loading, save using only MIDI or OSC protocols."
+    },
+    {
+      _template: "Card",
+      title: "Network Share",
+      content:
+        "All user data including samplers, DJ set music files, and system configurations can be accessed from Linux, Mac, or Windows without requiring any prior configuration. Simply search for the network share named “opendsp.”"
+    },
+    {
+      _template: "Card",
+      title: "Virtual Screen",
+      content:
+        "Depending on the opendsp app ecosystem, certain programs may require X11 support. In such cases, you have the option to interact with a web browser interface. Access it through this address: http://opendsp/. Alternatively, for a more stable connection, you can use direct VNC access at “opendsp:5900.”",
+      to: ""
+    },
+    {
+      _template: "Card",
+      title: "DSP Suite",
+      content:
+        "loopers: giada, luppp djing: mixxx, wxax daw/sequencer: lmms, hydrogen, qtractor, non-daw, non-mixer, non-sequencer trackers: sunvox, milkytrack, klystrac modular synthesis: carla, carla-rack, ingen Processing plugins: 410+ audio plugins, from effects to classic synthesizer emulations"
+    },
+    {
+      _template: "Card",
+      title: "Video Suite",
+      content: "video: lebiniou, omxplayer, vlc"
+    },
+    {
+      _template: "Card",
+      title: "Access Point ready for remote access",
+      content:
+        "OpenDSP features built-in plug-and-play support for WiFi dongles. It automatically creates an access point named “OpenDSP,” allowing you to interface with your opendsp via WiFi using your mobile phone or tablet. The default password is “opendspd.”"
+    },
+    {
+      _template: "Card",
+      title: "Dedicated Video Output",
+      content:
+        "Please note that the main video output, typically accessed through HDMI or DVI ports, is dedicated to video projection. Therefore, it is recommended not to use this display for app management purposes. Instead, utilize the Virtual Display."
+    },
+    {
+      _template: "Card",
+      title: "Highly Hackable",
+      content:
+        "Easily create your own embbeded headless DSP engine with a few lines of configuration, combine any app in opendsp ecosystem for a final product. A real-time kernel and a sub-set of opensource applications, plugins and tools makes OpenDSP vastly hackable for different kinda of DSP tasks."
+    }
+  ]}
+/>
+
+## Applications
+
+OpenDSP applications are called "mods" wich are configuration setups that automatically launch and connect multiple applications to function as a single cohesive system. These powerful configurations offer several key benefits:
+
+## Core Features
+
+* Headless Operation: Control your audio/video processing entirely via MIDI or OSC protocols without requiring a mouse or monitor.
+* Project Management: Load different mods or projects within mods, and save your work for later use.
+* Flexible Display Options: Run with no display for maximum CPU efficiency or use a virtual display accessible from mobile devices, tablets, or laptops when GUI control is needed, offloading you main video output wich is ideal for VJs who need to dedicate their main video output for projections.
+
+## Simple Configuration
+
+Creating your own mods requires just a few lines of configuration to establish interconnected applications that can be fully automated and controlled via MIDI or OSC protocols.
+
+## User manual
+
+You can get the latest documentation on our [wiki](https://github.com/midilab/opendsp/wiki)
+
+## OpenDSP in action
+
+Emulating a classic Dub Sound System setup for DJing: a mixer, 2 decks, spring reverb and tape delay. Just [map you midi controller](https://github.com/midilab/opendsp-mods/blob/master/midilab/mixxx-dub/README.md) and plug it to your OpenDSP.
+
+<CardSection
+  cards={[
+    {
+      _template: "Card",
+      youtubeVid: "2uJZTJCUkSI",
+      title: "Emulating Entire DUB System on  rasbperry",
+      content:
+        "Emulating a classic Dub Sound System setup for DJing: a mixer, 2 decks, spring reverb and tape delay. Just map you midi controller and plug it to your OpenDSP."
+    },
+    { _template: "Card", title: "2 Synths and effects", content: "..." }
+  ]}
+/>
+
+## Source code
+
+You can fork and participate on the dev team using [opendsp github repository](https://github.com/midilab/opendsp/).

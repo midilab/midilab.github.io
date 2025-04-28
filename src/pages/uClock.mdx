@@ -1,0 +1,132 @@
+---
+title: uClock
+description: Clock arduino
+blocks:
+  - title: µClock
+    subtitle: >-
+      A tight BPM clock generator for Arduino and PlatformIO using hardware
+      timer interruption. AVR, Teensy, STM32xx, ESP32 and RP2040 support
+    actions:
+      - title: Download Source Code
+        href: 'https://github.com/midilab/uClock/releases'
+        _template: link
+    _template: hero
+---
+
+The uClock BPM Generator library enables precise and reliable BPM clock tick calls using microcontroller timer hardware interruptions. Designed for multi-architecture use, it provides a robust solution for real-time processing in music, audio/video productions, performances, and tech art installations.
+
+## Features
+
+...
+
+<CardSection
+  cards={[
+    {
+      _template: "Card",
+      title: "Multi-Architecture Support",
+      content:
+        "Supports ARM boards (Teensy, STM32XX, ESP32, Raspberry Pico, Seedstudio XIAO M0, RP2040) and AVR boards (ATmega168/328, ATmega16u4/32u4, ATmega2560). For non-supported boards there is a software emulation mode."
+    },
+    {
+      type: "title",
+      title: "Real-Time Processing",
+      _template: "Card",
+      content:
+        "Leverages hardware interrupts to schedule and manage timing with safe shared resource access through its API. Enables professional-grade sequencers, sync boxes, and precise BPM clocks for external devices."
+    },
+    {
+      _template: "Card",
+      title: "Cross-platform",
+      content:
+        "Arduino and PlatformIO support to achieve maximun cross-platform score."
+    },
+    {
+      type: "title",
+      title: "External Sync Mode",
+      _template: "Card",
+      content:
+        "Generates internal clock based on an external clock source, facilitating MIDI synchronization and protocol adherence."
+    }
+  ]}
+/>
+
+## Applications
+
+Real world devices using the uClock library:
+
+<CardSection
+  cards={[
+    {
+      type: "title",
+      title: "Aciduino V2",
+      _template: "Card",
+      content:
+        "The project features a versatile step sequencer clone of Roland's TB303/TR808, offering up to 16 tracks. It includes a comprehensive automation grid system for step, pattern, and mute control. The sequencer functions as a MIDI controller and incorporates an OLED display for visual feedback. Furthermore, the design is modular and allows for easy expansion with additional potentiometers, buttons, MIDI, or CV/Gate interfaces.",
+      to: "",
+      youtubeVid: "7D5RpPdX0to"
+    },
+    {
+      type: "title",
+      title: "XR-1 Groovebox",
+      _template: "Card",
+      content:
+        "A full featured groovebox using uClock library, created by James Gray",
+      to: "",
+      youtubeVid: "s68AS_JNLJU"
+    },
+    {
+      type: "title",
+      title: "MIDI Looper/Sequencer",
+      _template: "Card",
+      content:
+        "A Realtime MIDI Looper/sequencer using uClock library, created by ymnkmusic.",
+      to: "",
+      youtubeVid: "7VqLjlL3LzU"
+    },
+    {
+      type: "title",
+      title: "MIDI/DIN Clockbox ",
+      _template: "Card",
+      content:
+        "A MIDI and DIN clockbox using uClock library, created by ymnkmusic.",
+      to: "",
+      youtubeVid: "OYtPbgozCbE"
+    }
+  ]}
+/>
+
+## How to use
+
+### Installation
+
+1. **PlatformIO**
+   * Clone the repository into your project directory.
+   * Add `#include "uClock.h"` and include the library in your PlatformIO build system.
+2. **Arduino Compatibility**
+   * Ensure your board is supported (see README for list).
+
+### Initialization
+
+```cpp
+// Default initialization
+uClock.init();
+
+// Custom configuration
+uClock.setPPQN(uClock.PPQN_384);
+uClock.setOnSync24(onSync24Callback);
+uClock.start();
+```
+
+### Usage
+
+* **Timing Events**: Use callbacks (`onPPQN`, `onStep`) for precise BPM control.
+* **External Sync**: Enable via `setMode(EXTERNAL_CLOCK)` and process external signals in `loop()`.
+* **Stop/Start**: Control with `stop()` and `start()` methods.
+
+### Examples
+
+* Visit the **examples** directory for detailed implementations, including MIDI sync boxes and step sequencers.
+
+## Support
+
+For technical questions or contributions use our official repository.

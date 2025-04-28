@@ -1,0 +1,55 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroDefaultBg {
+  background-image: url(/img/heroBackground.svg);
+  color: var(--ifm-navbar-link-color);
+}
+
+[data-theme='dark'] .heroDefaultBg {
+  background-image: url(/img/heroBackgroundDark.svg);
+}
+
+.title {
+  color: var(--ifm-heading-color);
+}
+
+/* [data-theme='dark'] .title {
+  color: var(--ifm-navbar-link-color);
+}
+
+[data-theme='dark'] .heroSubtitle {
+  color: var(--ifm-navbar-link-color);
+} */
+
+.heroImage {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.heroImageGradient {
+  background-color: transparent;
+  background-image: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9) );
+}
+
+[data-theme='dark'] .heroImageGradient {
+  /* background-image: linear-gradient( rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2) ); */
+  /* background-image: linear-gradient(rgb(27 27 29 / 62%), rgba(255, 255, 255, 0.2)); */
+  background-image: linear-gradient(rgb(27 27 29 / 62%), rgb(255 255 255 / 54%));
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 2rem;
+  }
+}

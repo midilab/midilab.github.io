@@ -1,0 +1,37 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
+  width: 100%;
+}
+
+.features p {
+  margin: 0;  
+}
+
+/* https://codepen.io/sosuke/pen/Pjoqqp */
+.featureSvg {
+  height: 120px;
+  width: 120px;
+/*   filter: invert(39%) sepia(54%) saturate(510%) hue-rotate(94deg) brightness(97%) contrast(85%); */
+}
+
+[data-theme='dark'] .featureSvg {
+  /* filter: invert(60%) sepia(78%) saturate(399%) hue-rotate(117deg) brightness(90%) contrast(91%); */
+  filter: invert(100%) sepia(0%) saturate(2452%) hue-rotate(179deg) brightness(113%) contrast(107%);
+}
+
+/* var(--ifm-color-primary); */
+/*
+.featureSvg:hover,
+.featureSvg:focus {
+  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+*/
+
+/*
+svg {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+*/
