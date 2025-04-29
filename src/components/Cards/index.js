@@ -1,0 +1,108 @@
+import React, { useState } from 'react';
+import { paramCase } from 'param-case';
+import Markdown from 'react-markdown';
+import Link from '@docusaurus/Link';
+import clsx from 'clsx';
+import styles from "./index.module.css";
+import YouTubeEmbed from "../YouTube"
+
+export function Card({
+  id,
+  photo,
+  youtubeVid,
+  icon,
+  title,
+  content,
+  to,
+  actionButton,
+  tag,
+}) {
+  const [isOverlayVisible, setOverlayVisible] = useState(false);
+
+  const background = photo ? {
+    backgroundImage: `url(${photo})`,
+  } : undefined
+
+  const toggleOverlay = () => {
+    setOverlayVisible(!isOverlayVisible)
+  }
+
+  return (
+    <Link to={actionButton ? '' : to} className={clsx(styles.card, to && !actionButton ? styles.cardLink : undefined)} data-has-action-button={actionButton ? 'true' : undefined}>
+      {icon && <div className={clsx(styles.icon)}>{icon}</div>}
+      {photo && (
+        <div
+          className={clsx(background ? styles.cardPhoto : "")}
+          style={background}
+          onClick={toggleOverlay}
+        ></div>
+      )}
+      {youtubeVid && <YouTubeEmbed videoId={youtubeVid} />}
+      <div className={clsx(styles.cardContent)}>
+        {title &&
+          <h4 className={clsx(styles.title)} id={id && paramCase(title)}>
+            {title}
+          </h4>
+        }
+        {content && 
+          <Markdown className={clsx(styles.content)}>{content}</Markdown>
+        }
+        {actionButton && 
+          <Link
+            /* style={{ marginTop: '15px' }} */
+            className={clsx("button button--outline button--block button--primary")}
+            to={to}
+          >
+            {actionButton}
+          </Link>
+        }
+      </div>
+      {tag && (
+        <div className={clsx(styles.tag, "absolute right-0 top-0 h-16 w-16")}>
+          <span
+            className="absolute right-[-28px] top-[-2px] w-[80px] rotate-45 transform bg-gray-600 py-1 text-center font-semibold text-white"
+            style={{ backgroundColor: tag.color }}
+            title={tag.description}
+          >
+            {tag.label}
+          </span>
+        </div>
+      )}
+      {isOverlayVisible && (
+        <div className={clsx(styles.overlay)} onClick={toggleOverlay}>
+          <div className={clsx(styles.overlayContent)}>
+            <img src={photo} alt="Full-size view" />
+          </div>
+        </div>
+      )}
+    </Link>
+  );
+}
+
+export function CardSection({
+  id,
+  title,
+  description,
+  className,
+  HeadingTag = 'h3',
+  cards,
+}) {
+  return (
+    <div
+      className={clsx(
+        styles.section,
+        className
+      )}
+    >
+      {title && <HeadingTag id={id ?? paramCase(title)}>{title}</HeadingTag>}
+      {description && <p className={clsx(styles.sectionDescription)}>{description}</p>}
+      <div className={clsx(styles.cardsSection)}>
+        {cards && 
+          cards.map(function (card, i) {
+            return <Card {...card} key={i} />;
+          })
+        }
+      </div>
+    </div>
+  );
+}

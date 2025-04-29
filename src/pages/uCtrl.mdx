@@ -1,0 +1,150 @@
+---
+title: µCtrl Firmware Framework
+description: Core firmware framework for building custom music hardware with µMODULAR.
+blocks:
+  - title: µCtrl Firmware Framework
+    subtitle: >-
+      The Software Foundation for Building Your Custom Music Hardware on
+      Arduino/PlatformIO.
+    actions:
+      - title: View Releases on GitHub
+        href: 'https://github.com/midilab/uCtrl/releases'
+        _template: link
+      - title: Browse µCtrl Repository
+        href: 'https://github.com/midilab/uCtrl'
+        _template: link
+    _template: hero
+---
+
+**µCtrl** is a firmware framework specifically designed for the [µMODULAR](/umodular "Open-Source Toolkit for Building Custom MIDI Controllers & Instruments") hardware ecosystem. It dramatically simplifies the process of developing robust, high-performance musical instruments, sequencers, controllers, and other interactive devices using Arduino/PlatformIO compatible boards.
+
+Think of µCtrl as the software brain connecting your hardware ideas. It provides tested drivers for common electronic components and a structured framework for building your application's logic and user interface, letting you focus on creativity rather than low-level complexities.
+
+## Core Benefits of Using µCtrl
+
+<CardSection
+  cards={[
+    {
+      _template: "Card",
+      title: "Precise Real-time Control",
+      content:
+        "Achieve musically tight timing. µCtrl leverages hardware timer interrupts for accurate task scheduling, crucial for sequencers and responsive instruments."
+    },
+    {
+      _template: "Card",
+      title: "Reliable & Safe Operation",
+      content:
+        "Built for stability during performance. Features resource-safe APIs to prevent common pitfalls in real-time embedded programming."
+    },
+    {
+      _template: "Card",
+      title: "Accelerated Development",
+      content:
+        "Get building faster. Provides pre-built drivers and UI components, letting you focus on unique application features, not reinventing basic hardware interfacing."
+    },
+    {
+      _template: "Card",
+      title: "Broad Hardware Support",
+      content:
+        "Easily integrate common parts. Includes tested drivers for shift registers (165/595), multiplexers (4051/4067), displays, MIDI, touch sensors, and more."
+    },
+    {
+      _template: "Card",
+      title: "Multi-Architecture Portability",
+      content:
+        "Write code once, run on many platforms. Compile your projects seamlessly across various microcontrollers (AVR, ARM) without extensive modifications."
+    }
+  ]}
+/>
+
+## Included µCtrl Modules (Hardware Abstraction)
+
+µCtrl provides dedicated modules to interface with specific types of hardware:
+
+<CardSection
+  cards={[
+    {
+      _template: "Card",
+      title: "AIN (Analog Input)",
+      content:
+        "Read pots, faders, sensors (up to 64). Supports direct ADC pins & multiplexers (4051/4067). Provides cleaned, real-time value updates."
+    },
+    {
+      _template: "Card",
+      title: "DIN (Digital Input)",
+      content:
+        "Handle buttons & encoders. Supports direct pins & shift registers (165). Includes debouncing and triggers callbacks on state changes."
+    },
+    {
+      _template: "Card",
+      title: "DOUT (Digital Output)",
+      content:
+        "Control LEDs & other digital outputs. Supports direct pins & shift registers (595). Allows direct, real-time control of output states."
+    },
+    {
+      _template: "Card",
+      title: "TOUCH (Capacitive)",
+      content:
+        "Implement touch interfaces using common analog inputs of your microcontroller. Provides reliable detection of touch events for modern UIs."
+    },
+    {
+      _template: "Card",
+      title: "MIDI Interface",
+      content:
+        "Send & receive MIDI messages reliably. Wraps standard MIDI libraries with a resource-safe interface suitable for real-time tasks."
+    },
+    {
+      _template: "Card",
+      title: "OLED Display",
+      content:
+        "Drive monochrome OLED screens (I2C/SPI) using the powerful U8g2 library. Simplified API for drawing text and graphics."
+    },
+    {
+      _template: "Card",
+      title: "STORAGE Interface",
+      content:
+        "Abstracts non-volatile storage. Read/write data easily using internal EEPROM or external SD cards for presets and settings."
+    },
+    {
+      _template: "Card",
+      title: "External SRAM",
+      content:
+        "Expand available memory by interfacing with external SRAM chips (e.g., 23LC1024), crucial for complex applications with large data needs."
+    },
+    {
+      _template: "Card",
+      title: "PAGE UI System",
+      content:
+        "Build complex, interactive user interfaces. Provides a structured environment using components and pages for modular application design."
+    }
+  ]}
+/>
+
+## Applications Powered by µCtrl
+
+These examples (also featured on the main µMODULAR page) showcase projects built using the µCtrl firmware:
+
+<CardSection
+  cards={[
+    {
+      _template: "Card",
+      title: "Aciduino V2 Sequencer",
+      youtubeVid: "7D5RpPdX0to",
+      content:
+        "This Roland-inspired step sequencer utilizes µCtrl for handling inputs (pots/buttons), outputs (LEDs), MIDI communication, and display management."
+    },
+    {
+      _template: "Card",
+      title: "Atari 2600 MIDI Station",
+      youtubeVid: "2uJZTJCUkSI",
+      content:
+        "Midilab's custom unit relies heavily on µCtrl for its sequencing engine, controller logic, MIDI processing, and real-time display updates via the Page system."
+    }
+  ]}
+/>
+
+## Getting Started with µCtrl
+
+Ready to start coding your custom hardware?
+
+Explore the **[µCtrl GitHub Repository](https://github.com/midilab/uCtrl)** for detailed documentation, setup instructions, examples, and the complete framework source code.

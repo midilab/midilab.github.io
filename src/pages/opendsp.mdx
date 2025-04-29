@@ -1,0 +1,127 @@
+---
+title: OpenDSP
+description: >-
+  A free, open-source OS turning PCs and Raspberry Pis into dedicated,
+  low-latency audio/video DSP machines.
+blocks:
+  - background: ''
+    title: OpenDSP
+    subtitle: A Headless Operational System for Low-Latency Audio & Video Processing on a Budget.
+    actions:
+      - title: Download LiveOS (Intel/x86-64)
+        href: 'https://github.com/midilab/opendsp/releases'
+        _template: link
+      - title: Download Raspberry Pi 2/3
+        href: >-
+          https://github.com/midilab/opendsp/releases/download/v0.11.0/opendsp_0.11.0-raspberry_pi2_3.zip
+        _template: link
+    _template: hero
+---
+
+**Imagine:** A dedicated hardware box running your favorite synths, effects, DJ setup, or custom video processing rig. No mouse, no keyboard, no monitor needed. Low-latency DSP power controlled entirely via MIDI or OSC.
+
+**Build:** Give new life to old computers or utilize budget-friendly Raspberry Pi boards to build you own DSP box. Free and open-source, making powerful DSP accessible to everyone.
+
+![](/img/opendsp/opendsp-ingen_mod.jpg)
+
+Inspired by dedicated hardware like the [Muse Receptor](https://www.museresearch.com/products/receptor-classic.php), but completely **free, open-source, and affordable to build**, OpenDSP transforms your old PC or Raspberry Pi into a standalone DSP powerhouse. It's designed from the ground up for performance, stripping away unnecessary overhead to deliver minimal latency for demanding audio and video tasks.
+
+Control everything using the gear you already own – MIDI controllers, tablets, or smartphones running OSC apps.
+
+* **Emulate Legends:** Run software emulations of classic synths (Yamaha DX7, Moog, Nord Lead, Access Virus, Waldorf), guitar amps (Fender Cabinets), iconic effects (Roland Space Echo, Spring Reverbs), and much more.
+* **Build Interactive Systems:** Program real-time audio-visual experiences using tools like Processing and Puredata in a stable, automated environment perfect for live performance, art installations, or studio work.
+
+## Key Features
+
+<CardSection
+  cards={[
+    {
+      _template: "Card",
+      title: "True Headless Operation",
+      content:
+        "Manage presets, trigger actions, and tweak parameters entirely via MIDI and OSC protocols. No screen, keyboard, or mouse required during performance.",
+      to: ""
+    },
+    {
+      _template: "Card",
+      title: "Optimized Low Latency",
+      content:
+        "Built on a lightweight OS with a low-latency kernel. Your CPU power is dedicated to audio and video processing, not background bloat.",
+      to: ""
+    },
+    {
+      _template: "Card",
+      title: "Deeply Customizable",
+      content:
+        "Built on Linux and open-source tools. Create custom processing environments ('mods') with simple text configurations. Combine apps freely.",
+      to: ""
+    },
+    {
+      _template: "Card",
+      title: "Robust Read-Only OS",
+      content:
+        "Power off safely by simply unplugging – ideal for live gigs and installations. The core OS is protected, preventing data corruption from shutdowns.",
+      to: ""
+    },
+    {
+      _template: "Card",
+      title: "Simple Network File Access",
+      content:
+        "Manage samples, presets, and configs easily. OpenDSP automatically shares user data over the network (share name 'opendsp') from Linux, Mac, or Windows.",
+      to: ""
+    },
+    {
+      _template: "Card",
+      title: "Optional GUI Access",
+      content:
+        "Need a graphical interface for setup? Access a virtual desktop via any web browser (http://opendsp/) or standard VNC client (opendsp:5900).",
+      to: ""
+    },
+    {
+      _template: "Card",
+      title: "Built-in WiFi Hotspot",
+      content:
+        "Plug in a compatible USB WiFi dongle to create a wireless network ('OpenDSP', Pass: opendspd). Connect devices for wireless OSC control.",
+      to: ""
+    },
+    {
+      _template: "Card",
+      title: "Dedicated Video Output",
+      content:
+        "Perfect for VJs and visuals. The main display output (HDMI/DVI) is kept free for projection. Manage the system without disrupting the visuals.",
+      to: ""
+    }
+  ]}
+/>
+
+## Understanding "Mods": Your Custom Setups
+
+OpenDSP uses **"mods"** – pre-defined configurations that launch and interconnect multiple applications to act as a single, cohesive system (like a virtual effects rack or a complete DJ setup).
+
+* **Powerful Automation:** Mods define how applications start, connect (audio, MIDI, OSC), and respond to external control signals.
+* **Headless Control:** Load different mods, manage projects within mods, and save your sessions – all via MIDI or OSC commands.
+* **Simple Configuration:** Creating your own mods is straightforward, requiring just text file edits to wire up complex interactions.
+
+## OpenDSP in Action: Example Setups
+
+See how OpenDSP can be used to build powerful, dedicated processing rigs:
+
+<CardSection
+  cards={[
+    {
+      _template: "Card",
+      youtubeVid: "2uJZTJCUkSI",
+      title: "Emulated Dub System (RPi)",
+      content:
+        "This mod runs Mixxx (2 decks) routed to ecasound as a digital mixer that connects to ingen to serve reverb/delay plugins, emulating a Dub DJ setup. Fully controllable via MIDI per the [mod docs](https://github.com/midilab/opendsp-mods/blob/master/midilab/mixxx-dub/README.md)."
+    }
+  ]}
+/>
+
+## User Manual
+
+Dive deeper into configuration, available mods, and usage details on our **[Official Wiki](https://github.com/midilab/opendsp/wiki)**.
+
+## Get Involved: Source Code
+
+OpenDSP is an open-source project. Fork the code, contribute your own mods, report issues, and join the development community on **[GitHub](https://github.com/midilab/opendsp/)**.

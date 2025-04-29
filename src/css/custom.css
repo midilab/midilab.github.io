@@ -1,0 +1,191 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-code-font-size: 90%; /*95%;*/
+  --ifm-font-family-base: 'Open Sans';
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 996px) {
+  :root {
+    --ifm-font-size-base: 18px;
+  }
+  article header h1 {
+    font-size: 1.5rem !important;
+  }
+  .hero .hero__title {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 997px) {
+  :root {
+    --ifm-font-size-base: 17px;
+  }
+  article header h1 {
+    font-size: 2rem !important;
+  }
+}
+
+.anchor {
+  padding-top: 20px;
+}
+
+.menu {
+  padding-top: 20px!important;
+}
+
+/* .navbar__brand {
+  font-family: Lora, serif;
+  color: var(--ifm-color-primary)!important;
+} */
+
+/* 
+imfima reference
+
+--ifm-background-color
+--ifm-background-surface-color
+--ifm-button-background-color
+--ifm-code-font-size
+--ifm-color-black
+--ifm-color-content
+--ifm-color-content-inverse
+--ifm-color-content-secondary
+--ifm-color-emphasis-100
+--ifm-color-emphasis-200
+--ifm-color-emphasis-400
+--ifm-color-emphasis-600
+--ifm-color-emphasis-900
+--ifm-color-feedback-background
+--ifm-color-primary
+--ifm-color-primary-dark
+--ifm-color-primary-darker
+--ifm-color-primary-darkest
+--ifm-color-primary-light
+--ifm-color-primary-lighter
+--ifm-color-primary-lightest
+--ifm-color-secondary
+--ifm-color-secondary-darkest
+--ifm-color-secondary-lighter
+--ifm-color-white
+--ifm-container-width
+--ifm-font-base-color
+--ifm-font-base-color-inverse
+--ifm-font-color-base
+--ifm-font-color-base-inverse
+--ifm-font-color-secondary
+--ifm-font-family-base
+--ifm-font-family-monospace
+--ifm-font-size-base
+--ifm-font-weight-bold
+--ifm-footer-background-color
+--ifm-global-border-width
+--ifm-global-radius
+--ifm-global-spacing
+--ifm-h2-font-size
+--ifm-h3-font-size
+--ifm-leading
+--ifm-leading-desktop
+--ifm-navbar-height
+--ifm-navbar-padding-horizontal
+--ifm-pre-line-height
+--ifm-pre-padding
+--ifm-spacing-horizontal
+--ifm-tabs-color-active
+--ifm-toc-border-color
+--ifm-toc-link-color
+--ifm-transition-fast
+--ifm-transition-timing-default
+--ifm-z-index-fixed
+*/
+
+/* .navbar__brand {
+  color: var(--ifm-color-primary);
+} */
+
+/*
+.navbar__logo img {
+  filter: invert(11%) sepia(9%) saturate(495%) hue-rotate(176deg) brightness(96%) contrast(97%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ifm-color-primary);
+}
+*/
+
+/* 
+[data-theme='dark'] .navbar__logo img {
+  filter: invert(99%) sepia(7%) saturate(160%) hue-rotate(219deg) brightness(115%) contrast(78%);
+} */
+
+.navbar {
+  padding-top: 0.9375rem;
+  padding-bottom: 0.9375rem;
+  align-items: center;
+  background-color: #f6f3ef;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px 0px;
+  font-family: "Helvetica", "Arial", sans;
+  height: 50px;
+  /* justify-content: space-around; */
+}
+
+[data-theme='dark'] .navbar {
+  background-color: var(--ifm-dropdown-background-color); /* #1b1b1a; *.
+  /* box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px 0px; */
+}
+
+.navbar__logo {
+  padding: 4px;
+  margin-right: 0.235rem;
+ }
+
+.navbar__title {
+  font-size: 1.3rem;
+}
+
+/* .navbar__link {
+  font-size: 1rem;
+} */
+
+.navbar-sidebar__brand {
+  height: 50px;
+}
+
+.container > .row {
+  row-gap: 60px;
+}
+
+.container > .row.footer__links {
+  row-gap: 0px;
+};
+
+/* .button {
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+} */

@@ -1,0 +1,120 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.cardPhoto {
+  margin: auto auto;
+  max-width: 100%;
+  max-height: 170px;
+  /* box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50); */
+}
+
+.cardsSection {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: stretch;
+  margin-bottom: 40px;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.section h3 {
+  font-weight: 600;
+}
+
+.sectionDescription {
+  /* color: var(--docs-color-text-100); */
+  margin: 0rem 0 1.25rem 0;
+  margin-top: -0.5rem;
+}
+
+.card {
+  margin: 20px;
+  margin-bottom: 80px;
+  display: flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-basis: calc(20% - 10px);
+  text-decoration: none;
+
+  /*align-items: flex-start;
+  gap: 10px;
+*/
+  text-decoration: none;
+  color: var(--docs-color-text);
+  --ifm-link-hover-decoration: none;
+  --ifm-link-hover-color: inherit;
+  cursor: pointer;
+  /*border-width: 1px;
+  border-style: solid;*/
+  /* transition-property: background-color, color; */
+  /* background-color:  #f6f3ef;
+ */
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+
+  border-color: var(--ifm-color-primary-lightest);
+}
+
+/* [data-theme='dark'] .card { */
+  /* background-color: var(--ifm-dropdown-background-color); */
+  /* box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px 0px; */
+/* } */
+
+.card.row {
+  flex-direction: row;
+}
+
+.card .icon svg {
+  width: auto;
+  height: 100%;
+}
+
+.card .icon {
+  width: 48px;
+  height: 48px;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0.75rem;
+}
+
+.title {
+  font-size: 16px;
+  letter-spacing: -0.5px;
+  font-weight: 600;
+  margin-bottom: 3px;
+  color: var(--docs-color-text-100);
+  /* border-bottom: solid #5f7766 1px; */
+}
+
+.content {
+  font-size: 14px;
+  color: var(--docs-color-text-100);
+  line-height: 1.5;
+  margin-bottom: 3px;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  position: absolute;
+}
+
+@media screen and (max-width: 768px) {
+  .cardsSection {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}

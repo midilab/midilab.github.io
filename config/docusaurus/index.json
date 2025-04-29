@@ -1,0 +1,154 @@
+{
+  "label": "Settings",
+  "logo": {
+    "alt": "",
+    "src": "/img/midilab_logo.svg"
+  },
+  "title": "midilab",
+  "tagline": "DIY Electronic Music Instruments",
+  "url": "https://midilab.co/",
+  "navbar": [
+    {
+      "label": "Sequencer",
+      "link": "none",
+      "position": "right",
+      "items": [
+        {
+          "label": "Aciduino",
+          "link": "page",
+          "pageLink": "src/pages/aciduino.mdx"
+        },
+        {
+          "label": "Pattern Remix",
+          "link": "page",
+          "pageLink": "src/pages/midibox-seqv4-pattern-remix.mdx"
+        }
+      ]
+    },
+    {
+      "label": "DSP",
+      "link": "none",
+      "position": "right",
+      "items": [
+        {
+          "label": "OpenDSP",
+          "link": "page",
+          "pageLink": "src/pages/opendsp.mdx"
+        },
+        {
+          "label": "JC-303",
+          "link": "page",
+          "pageLink": "src/pages/jc303.mdx"
+        }
+      ]
+    },
+    {
+      "label": "Libraries",
+      "link": "none",
+      "position": "right",
+      "items": [
+        {
+          "label": "µClock",
+          "link": "page",
+          "docLink": "docs/libraries/uclock/intro.mdx",
+          "pageLink": "src/pages/uClock.mdx"
+        },
+        {
+          "label": "µCtrl",
+          "link": "page",
+          "docLink": "docs/libraries/uctrl/intro.mdx",
+          "pageLink": "src/pages/uCtrl.mdx"
+        },
+        {
+          "label": "µMODULAR",
+          "link": "page",
+          "docLink": "docs/libraries/umodular/umodular.mdx",
+          "pageLink": "src/pages/umodular.mdx"
+        }
+      ]
+    },
+    {
+      "label": "Github",
+      "link": "external",
+      "externalLink": "https://github.com/midilab/",
+      "position": "right"
+    },
+    {
+      "label": "About",
+      "link": "page",
+      "pageLink": "src/pages/about.mdx",
+      "position": "right"
+    }
+  ],
+  "footer": {
+    "style": "light",
+    "links": [
+      {
+        "title": "Sequencer",
+        "items": [
+          {
+            "label": "Aciduino",
+            "to": "/aciduino.mdx",
+            "_template": "internal"
+          },
+          {
+            "label": "Pattern Remix",
+            "to": "/midibox-seqv4-pattern-remix.mdx",
+            "_template": "internal"
+          }
+        ]
+      },
+      {
+        "title": "DSP",
+        "items": [
+          {
+            "label": "OpenDSP",
+            "to": "/opendsp.mdx",
+            "_template": "internal"
+          },
+          {
+            "label": "JC-303",
+            "to": "/jc303.mdx",
+            "_template": "internal"
+          }
+        ]
+      },
+      {
+        "title": "Libraries",
+        "items": [
+          {
+            "label": "µClock",
+            "to": "/uClock.mdx",
+            "_template": "internal"
+          },
+          {
+            "label": "µCtrl",
+            "to": "/uCtrl.mdx",
+            "_template": "internal"
+          },
+          {
+            "label": "µMODULAR",
+            "to": "/umodular.mdx",
+            "_template": "internal"
+          }
+        ]
+      },
+      {
+        "title": "Community",
+        "items": [
+          {
+            "label": "Github",
+            "href": "https://github.com/midilab",
+            "_template": "external"
+          },
+          {
+            "label": "Discord",
+            "href": "https://discord.gg/DCb3dy5A",
+            "_template": "external"
+          }
+        ]
+      }
+    ],
+    "copyright": "midilab.co"
+  }
+}

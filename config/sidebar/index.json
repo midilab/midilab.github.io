@@ -1,0 +1,112 @@
+{
+  "label": "Docs Sidebar",
+  "items": [
+    {
+      "document": "docs/intro.mdx",
+      "label": "DIY Devices",
+      "_template": "doc"
+    },
+    {
+      "title": "Sequencer",
+      "link": "none",
+      "items": [
+        {
+          "document": "docs/sequencer/aciduino/intro.mdx",
+          "label": "Aciduino V1",
+          "_template": "doc"
+        },
+        {
+          "document": "docs/sequencer/aciduino-v2/V2-Manual.mdx",
+          "label": "Aciduino V2",
+          "_template": "doc"
+        }
+      ],
+      "_template": "category"
+    },
+    {
+      "title": "Libraries",
+      "link": "none",
+      "items": [
+        {
+          "document": "docs/libraries/uclock/intro.mdx",
+          "label": "µClock",
+          "_template": "doc"
+        },
+        {
+          "document": "docs/libraries/uctrl/intro.mdx",
+          "label": "µCtrl",
+          "_template": "doc"
+        },
+        {
+          "title": "µMODULAR",
+          "link": "none",
+          "items": [
+            {
+              "document": "docs/libraries/umodular/hardware/intro.mdx",
+              "label": "Introduction",
+              "_template": "doc"
+            },
+            {
+              "title": "Modules",
+              "link": "none",
+              "items": [
+                {
+                  "document": "docs/libraries/umodular/pcb_kit/pot16.mdx",
+                  "label": "POT16",
+                  "_template": "doc"
+                }
+              ],
+              "_template": "category"
+            },
+            {
+              "title": "PCBs and Kits",
+              "link": "none",
+              "items": [
+                {
+                  "document": "docs/libraries/umodular/pcb_kit/shields/mega2560.mdx",
+                  "label": "Mega Shield",
+                  "_template": "doc"
+                },
+                {
+                  "document": "docs/libraries/umodular/pcb_kit/shields/mini.mdx",
+                  "label": "Mini Shield",
+                  "_template": "doc"
+                }
+              ],
+              "_template": "category"
+            }
+          ],
+          "_template": "category"
+        }
+      ],
+      "_template": "category"
+    },
+    {
+      "title": "DSP",
+      "link": "none",
+      "items": [
+        {
+          "document": "docs/dsp/opendsp/intro.mdx",
+          "label": "OpenDSP",
+          "_template": "doc"
+        },
+        {
+          "document": "docs/dsp/jc303/intro.mdx",
+          "label": "JC-303",
+          "_template": "doc"
+        }
+      ],
+      "_template": "category"
+    },
+    {
+      "title": "Github",
+      "href": "https://github.com/midilab/",
+      "_template": "link"
+    },
+    {
+      "title": "Discord",
+      "href": "https://discord.gg/qkFJPfyR",
+      "_template": "link"
+    }
+  ]
+}
