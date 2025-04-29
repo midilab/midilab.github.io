@@ -1,7 +1,7 @@
 # Dependencies
 /node_modules
 
-# Production
+# Local deployment 
 #/build
 
 # Generated files
