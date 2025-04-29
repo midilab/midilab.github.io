@@ -2,7 +2,7 @@ name: GitHub Pages
 
 on:
   push:
-    branches: ["main"] 
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
@@ -24,11 +24,11 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '23'
-          cache: 'yarn'
+          node-version: "20"
+          cache: "yarn"
 
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --frozen-lockfile
 
       - name: Build
         run: ./deploy
@@ -39,7 +39,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './build'
+          path: "./build"
 
   deploy:
     environment:
