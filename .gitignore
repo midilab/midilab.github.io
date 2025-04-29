@@ -2,7 +2,7 @@
 /node_modules
 
 # Local deployment 
-#/build
+/build
 
 # Generated files
 .docusaurus
