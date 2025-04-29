@@ -1,138 +1,153 @@
 ---
-title: Midibox SeqV4 Pattern Remix
+title: Midibox SEQ V4 Pattern Remix Mode
 blocks:
   - background: ''
-    title: Midibox SeqV4 Pattern Remix
-    subtitle: Bringing the DJing workflow to MIDI pattern music.
+    title: Pattern Remix
+    subtitle: Bringing a DJ-Style Workflow to Hardware MIDI Sequencing.
     actions:
-      - title: Midibox Community
+      - title: Build Your Own SEQ V4
+        href: 'http://wiki.midibox.org/doku.php?id=mididocs:midibox_seq_v4'
+        _template: link
+      - title: Midibox Community Forums
         href: 'http://midibox.org/forums/'
         _template: link
-      - title: Source Code
+      - title: SEQ V4 Source Code (MIOS32)
         href: >-
           https://github.com/midibox/mios32/tree/master/apps/sequencers/midibox_seq_v4
-        _template: link
-      - title: Build one!
-        href: 'http://wiki.midibox.org/doku.php?id=mididocs:midibox_seq_v4'
         _template: link
     _template: hero
 ---
 
-**Pattern Remix** is a **Midibox SEQ V4** application designed and created by MidiLab to bring the DJing workflow into the pattern music universe of a hardware sequencer.
+**Pattern Remix** is a unique performance mode for the **[MIDIbox SEQ V4](http://ucapps.de/index.html?page=midibox_seq.html)** hardware sequencer, developed by MidiLab. It reimagines MIDI pattern sequencing by incorporating a workflow inspired by live DJ mixing.
 
-[MIDIbox SEQ V4](http://ucapps.de/index.html?page=midibox_seq.html) is a Open Source/Hardware 16 Track Live Step and Morph Sequencer + advanced Arpeggiator created by Thorsten Klose, the main developer of [ucapps.de](http://ucapps.de/ "ucapps.de").
+The MIDIbox SEQ V4, created by Thorsten Klose ([ucapps.de](http://ucapps.de/)), is a powerful open-source/hardware 16-track sequencer. Pattern Remix extends its capabilities, offering a dynamic way to perform and transition between musical ideas.
 
 ![](/img/midibox/midibox_seqv4-by-eptheca.png)
 ![](/img/midibox/midibox_seqv4-back-by-eptheca.png)
 
-## Pattern Remix
+## Remix Your Patterns Like a DJ
 
-As musicians who produce their own tracks, we often find ourselves inspired by the workflow of DJs performing live sets. The seamless transitions and crowd engagement are just as important as the music itself. Midibox SeqV4's Pattern Remix feature brings this same energy to your MIDI pattern music.
+Inspired by the energy of live DJ sets, Pattern Remix lets you transition between MIDI patterns smoothly and creatively. Instead of abruptly switching the entire pattern, you can selectively swap individual tracks (elements) between the current and next pattern, much like blending tracks on decks.
 
-Midibox seqv4 Pattern remix is page mode created by midilab to support Ableton's Session mode like functionality, wich allows users to remix midi content freely between different patterns.
-
-Pattern Remix is a unique feature designed for live performance and improvisation. It allows users to trigger midi track channels individually in any order, making it ideal for creating spontaneous music on the stage or studio.
+This mode, similar in concept to Ableton Live's Session View, allows for freeform remixing of MIDI content across different patterns, making it ideal for live improvisation and building dynamic arrangements on the fly.
 
 ## Features
 
 <CardSection
   cards={[
     {
-      type: "title",
-      title: "Remix your Track Pattern Elements individually",
       _template: "Card",
+      title: "Smooth Element Transitions",
       content:
-        "It means smooth transitions! Instead of change the hole Track Pattern Elements doing abruptly pattern change you can gradually choose only specific elements of the current track pattern playing to be remixed without your audience feels the change - like remix only the Bass line and Lead line elements of current track pattern playing by the Bass line and Lead line elements of the next chosen track pattern to be remixed. "
+        "Gradually change your arrangement. Swap just the bassline or lead from the next pattern while keeping other elements playing, ensuring seamless musical flow.",
+      to: ""
     },
     {
-      type: "title",
-      title: "Mixer mapping dumped at Remixing time per Track Pattern Element",
       _template: "Card",
+      title: "Per-Element Mixer Recall",
       content:
-        "A Mixer Map also helps you to get back all Track Pattern Element configuration at the moment of mixing providing individually per element the parameters: +MIDI Port +MIDI Channel +Program Change +Volume +Panorama +Reverb +Chorus +ModWheel +4 Free Assignable CCs"
+        "Each track element retains its mixer settings (MIDI Port/Channel, PC, Vol, Pan, CCs) during remixing, ensuring consistent sound when swapping parts.",
+      to: ""
     },
     {
-      type: "title",
-      title: "Reference chronometers",
       _template: "Card",
+      title: "Helpful Performance Timers",
       content:
-        "Live PA is about freedom, to go and get back whenever you feel its good for the floor. But even if a only 1 pattern loop could looks good for you for about 30 minutes long, its good to remember that you are probrably more entrenteined by lots of colored leds, buttons, lcd screens and knobs than your audience, so its always a good ideia to apply timming metrics - be then whatever you feel good about - to not boring them at the floor. Pattern Remix provides the following chronometers to help you achieve your metrics: +Per Pattern Total elapsed time +Per Remix Total elapsed time +Live PA Total elapsed time "
+        "Stay aware of your set's timing. Track elapsed time per pattern, per remix section, and for the total performance to help pace your live set effectively.",
+      to: ""
     },
     {
-      type: "title",
-      title: "Visual Search pattern library",
       _template: "Card",
+      title: "Non-Destructive Preview",
       content:
-        "You can search visually over all your MIDI Tracks library without affect the track pattern playing at the moment to decide the best track pattern init point option you have to be remixed over the currently one. "
+        "Visually browse and select your next pattern from the library without interrupting the currently playing sequence. Decide your next move ahead of time.",
+      to: ""
     }
   ]}
 />
 
-## Configure Patterm Remix
+## Workflow: Step-by-Step
 
-...
+Let's walk through a transition, thinking like a DJ mixing two tracks (patterns). We'll call our currently playing pattern "Track A" and the one we want to mix in "Track B".
 
-## Djing Workflow vs. Pattern Remix Workflow Comparison
+**1. Play Your First "Track" (Pattern)**
 
-**1. Load your initial DJ Set LP Track into one of your Decks:** In live pattern midi music workflow a Track can be composed of 1 or more patterns. The most common workflows of a Live PA use generally 4, 8 or 16 patterns for total Track composition, but this is totatly up to you. Midibox SeqV4 organize patterns in 8 groups of 8 patterns each one. From group A to G, each one with patterns numbered from 1 to 8. Lets take as example a Track composed with 4 patterns, each one labeled as above:  
+Start playback with your initial pattern. In this example, "Track A" consists of patterns A1-A4 ("Acid Mountain"). We'll start with A1. The SEQ V4 organizes patterns into Banks (A-H) and Patterns (1-8).
 
-**Acid Mountain Track** *A1: Acid Mountain Intro (Gm7)* *A2: Acid Mountain Part I (Am7)* *A3: Acid Mountain Part II (Am7)* *A4: Acid Mountain Drop (C7)*
+[![manual1-screen](/img/midibox/midibox-pattern-remix-manual1.jpg)](/img/midibox/midibox-pattern-remix-manual1.jpg)
+**Pressing Play shows the initial pattern screen*
 
-*Pressing play thats the first screen you get* [![manual1-screen](/img/midibox/midibox-pattern-remix-manual1.jpg)](/img/midibox/midibox-pattern-remix-manual1.jpg)
+[![manual12-screen](/img/midibox/midibox-pattern-remix-manual12.jpg)](/img/midibox/midibox-pattern-remix-manual12.jpg)
+**Pressing a right GP button once previews the pattern label without changing playback*
 
-*Pressing one time one of the most rigth 8 GP buttons you can search/check the pattern label info behind that pattern inside the current pattern bank - But this still doesnt change the pattern* [![manual12-screen](/img/midibox/midibox-pattern-remix-manual12.jpg)](/img/midibox/midibox-pattern-remix-manual12.jpg)
+[![manual13-screen](/img/midibox/midibox-pattern-remix-manual13.jpg)](/img/midibox/midibox-pattern-remix-manual13.jpg)
+**Pressing the same right GP button again actually changes to that pattern (e.g., moving from A1 to A2 within your "Track A")*
 
-*Pressing again the same most rigth GP button you change the pattern* [![manual13-screen](/img/midibox/midibox-pattern-remix-manual13.jpg)](/img/midibox/midibox-pattern-remix-manual13.jpg)
+**2. Cue Up the Next "Track" (Pattern)**
 
-**2. Feel the audience feedback and search into LP library for the next Track to be mix:** After you feel that your 4 pattern tracks were enough played, you can search over all your pattern midi library to load exactly that Track init point like intro, drop, part x,y,z or whatever you think it will fit better to start your remix. Lets take as example another Track composed with 4 patterns, each one labeled as above:  
+While "Track A" (e.g., pattern A4) is playing, decide which pattern ("Track B") you want to mix in next. Let's choose pattern E1 ("Jupter Jazz Intro") from Bank E as our "Track B". Use the left GP buttons to select the Bank (E) and enter preview mode – playback continues unchanged.
 
-**Jupter Jazz Track** *E1: Jupter Jazz Intro (Am)* *E2: Jupter Jazz Part I (Am)* *E3: Jupter Jazz Part II (Am)* *E4: Jupter Jazz Drop (Am)*
+[![manual21-screen](/img/midibox/midibox-pattern-remix-manual21.jpg)](/img/midibox/midibox-pattern-remix-manual21.jpg)
+**Pressing the 5th left GP button selects Bank E for preview*
 
-Lets also considering that we are now playing the pattern A4, "droping" the Track.
+Now, use the right GP buttons to browse patterns within Bank E *without* changing the currently playing pattern A4. Find the desired starting point, E1.
 
-*Pressing one of the most left 8 GP buttons you change pattern bank and also entering into pattern search mode - so it doesn't change the current pattern it self. In our example we push the fifth most left GP button - Pattern Bank E - to get this screen* [![manual21-screen](/img/midibox/midibox-pattern-remix-manual21.jpg)](/img/midibox/midibox-pattern-remix-manual21.jpg) Now we can search for the better init point to start a remix using one of our most right 8 GP Buttons. In our example we are going to start the remix by the Jupter Jazz Intro.
+[![manual22-screen](/img/midibox/midibox-pattern-remix-manual22.jpg)](/img/midibox/midibox-pattern-remix-manual22.jpg)
+**Pressing the first right GP button once previews pattern E1*
 
-*Pressing one time the first most rigth 8 GP buttons we will find the Jupter Jazz Track Intro part at the second screen* [![manual22-screen](/img/midibox/midibox-pattern-remix-manual22.jpg)](/img/midibox/midibox-pattern-remix-manual22.jpg)
+**3. Start the "Mix": Select Elements to Keep & Trigger Transition**
 
-**3. Load on a free Deck the chosen LP Track and start the mix:** Now that you have your track pattern init point you can start your remix process. To do that, you simply choose 1 or more track pattern elements to be remixed with the current track pattern by pressing and hold the Pattern Remix Page Button and enter into the Remix Page.
+You've cued up "Track B" (E1) while "Track A" (A4) plays. Now, choose which elements (tracks) from the currently playing A4 you want to *keep* playing during the transition. Press and hold the **Pattern Remix Page Button** to enter the Pre-Remix state.
 
-*Pressing and Hold the Pattern Remix Page Button we are going into the Pre-Remix State Screen* [![manual31-screen](/img/midibox/midibox-pattern-remix-manual31.jpg)](/img/midibox/midibox-pattern-remix-manual31.jpg) In our example we are playing the "Drop" part of track pattern A4: Acid Mountain Drop (C7), lets start choosing the track pattern elements "T01: 303 Bass Line" and "T05: Moog Lead Line" to be Remixed. When we talk about Remixing T01 and T05, we are saying that we want the sequencer to keep the T01 and T05 track pattern elements untouched and change all the rest of track pattern elements on a pattern change request.
+[![manual31-screen](/img/midibox/midibox-pattern-remix-manual31.jpg)](/img/midibox/midibox-pattern-remix-manual31.jpg)
+**Holding the Remix button shows the selection screen*
 
-*Still Holding the Pattern Remix Page Button we press once the GP Button related to the track chosen to be remixed, in our case, press once GP Button 1 and 5 and you will see the Track Pattern elements marked with a "M" showing us that we are ready to start remixing booth track pattern elements 1 and 5* [![manual32-screen](/img/midibox/midibox-pattern-remix-manual32.jpg)](/img/midibox/midibox-pattern-remix-manual32.jpg)
+While still holding the Remix button, press the GP buttons corresponding to the tracks you want to *keep* from A4 (e.g., T01: Bass Line, T05: Lead Line). These will be marked with "M" (Mix/Keep).
 
-*Release the Pattern Remix Page Button and we are going to see this screen* [![manual33-screen](/img/midibox/midibox-pattern-remix-manual33.jpg)](/img/midibox/midibox-pattern-remix-manual33.jpg) At this point we have "X" marked for elements T01 and T05 of Track Pattern Part "E1: Jupter Jazz Intro (Am)" saying that if we change the Pattern now, we are going to change all the Pattern elements but not the T01 and T05 that belongs to Track Pattern Part "A4: Acid Mountain Drop (C7)"
+[![manual32-screen](/img/midibox/midibox-pattern-remix-manual32.jpg)](/img/midibox/midibox-pattern-remix-manual32.jpg)
+**Pressing GP1 and GP5 marks T01 and T05 to be kept from pattern A4*
 
-*Pressing again the first most right 8 GP Buttons we are going to start the Remixing Process.* [![manual34-screen](/img/midibox/midibox-pattern-remix-manual34.jpg)](/img/midibox/midibox-pattern-remix-manual34.jpg) Now You got a Remixed Track Pattern composed with Pattern elements 1 and 5 from Track Pattern "A4: Acid Mountain Drop (C7)" and all the rest of the Track pattern elements from Track Pattern "E1: Jupter Jazz Intro (Am)". Also a clear mark "MIX" on the right side of first screen indicating that you are into Remix process.
+Release the Remix button. The screen now shows "X" marks for the elements that will be mixed from A4 within the new pattern (E1) when you trigger the change. T01 and T05 (marked "X") from E1 will not be playging their content for now.
 
-**4. Drive and Finish the mix:** At this point, just like a DJ doing a Mixing, you need to drive and finish your remix to turn the Track.
+[![manual33-screen](/img/midibox/midibox-pattern-remix-manual33.jpg)](/img/midibox/midibox-pattern-remix-manual33.jpg)
+**Releasing the Remix button confirms the pre-remix setup*
 
-*Press and hold the Pattern Remix Page Button and we are into the Remix State Screen* [![manual41-screen](/img/midibox/midibox-pattern-remix-manual41.jpg)](/img/midibox/midibox-pattern-remix-manual41.jpg) Here your only option is to "Demix" a Pattern element, what it means, get the original pattern element of the track pattern being remixed into the remix.
+Now, trigger the actual pattern change by pressing the right GP button corresponding to your cued pattern (E1). The remix begins!
 
-*Still Holding the Pattern Remix Page Button we press once the GP Button related to pattern element we want to demix and then the indication "M" will turn into "D" indicating that the pattern element will be Demixed as soon as we release the pattern remix page button. In our example we are going to demix pattern element T05 firstly* [![manual42-screen](/img/midibox/midibox-pattern-remix-manual42.jpg)](/img/midibox/midibox-pattern-remix-manual42.jpg)
+[![manual34-screen](/img/midibox/midibox-pattern-remix-manual34.jpg)](/img/midibox/midibox-pattern-remix-manual34.jpg)
+**Pressing the first right GP button initiates the remix*
 
-*Releasing the Pattern Remix Page Button we got this screen* [![manual43-screen](/img/midibox/midibox-pattern-remix-manual43.jpg)](/img/midibox/midibox-pattern-remix-manual43.jpg) Now only last one pattern element to be demixed, the "T01: 303 Bass Line".
+You are now playing a hybrid pattern: T01 and T05 from A4, and all other tracks from E1. The "MIX" indicator confirms you're in Remix mode.
 
-*Press and hold the Pattern Remix Page Button to get back into the Remix State Screen and then press GP Button 1 to select pattern track element "T01: 303 Bass Line" to be demixed and end the Remix process* [![manual44-screen](/img/midibox/midibox-pattern-remix-manual44.jpg)](/img/midibox/midibox-pattern-remix-manual44.jpg)
+**4. Drive and Finish the "Mix" (Demixing)**
 
-*Releasing the Pattern Remix Page Button we get done our Remix process* [![manual45-screen](/img/midibox/midibox-pattern-remix-manual45.jpg)](/img/midibox/midibox-pattern-remix-manual45.jpg) Now we got the full Track pattern "E1: Jupter Jazz Intro (Am)" running with all its original elements.  
+Like fading out Track A on a DJ mixer, you now need to bring in the original elements from "Track B" (E1) to replace the ones you kept from "Track A" (A4). Press and hold the **Pattern Remix Page Button** again.
 
-**5. Search into LP library for the next Track to be mixed… and the story goes on :** The same process described will going to cylce until the end of your Live PA show.
+[![manual41-screen](/img/midibox/midibox-pattern-remix-manual41.jpg)](/img/midibox/midibox-pattern-remix-manual41.jpg)
+**Holding the Remix button enters the Demix state*
 
-<CardSection
-  cards={[
-    {
-      type: "title",
-      title: "Live PA using Pattern Remix",
-      _template: "Card",
-      youtubeVid: "xjLsN61yHDw?t=3685",
-      content: "Cosmosuave doing live pa using the pattern remix feature"
-    },
-    {
-      type: "title",
-      title: "Seqv4 with matrix blm",
-      _template: "Card",
-      youtubeVid: "i-ClNqM_2eE",
-      content: "Torkoisen doing live demo of new pcb"
-    }
-  ]}
-/>
+While holding, press the GP button for an element you want to "demix" (e.g., T05). The "M" changes to "D" (Demix), indicating it will switch to the E1 content when you release the button.
+
+[![manual42-screen](/img/midibox/midibox-pattern-remix-manual42.jpg)](/img/midibox/midibox-pattern-remix-manual42.jpg)
+**Pressing GP5 marks T05 for demixing*
+
+Release the Remix button. T05 now plays its content from pattern E1. Only T01 remains from A4.
+
+[![manual43-screen](/img/midibox/midibox-pattern-remix-manual43.jpg)](/img/midibox/midibox-pattern-remix-manual43.jpg)
+**Releasing the Remix button demixes T05*
+
+Repeat the process for the remaining element (T01). Press and hold Remix, press GP1 to mark T01 with "D".
+
+[![manual44-screen](/img/midibox/midibox-pattern-remix-manual44.jpg)](/img/midibox/midibox-pattern-remix-manual44.jpg)
+**Holding Remix and pressing GP1 marks T01 for demixing*
+
+Release the Remix button. The "MIX" indicator disappears. The transition is complete!
+
+[![manual45-screen](/img/midibox/midibox-pattern-remix-manual45.jpg)](/img/midibox/midibox-pattern-remix-manual45.jpg)
+**Releasing the Remix button finishes the demix process*
+
+You are now fully playing "Track B" (pattern E1) with all its original elements.
+
+**5. Find the Next "Track"... and Repeat!**
+
+From here, the cycle continues. You can start browsing your pattern library again to cue up the next pattern transition for your live performance.

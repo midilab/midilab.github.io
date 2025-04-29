@@ -1,132 +1,125 @@
 ---
-title: uClock
-description: Clock arduino
+title: µClock Timing Library
+description: Hardware-timer based BPM clock generation for Arduino/PlatformIO.
 blocks:
-  - title: µClock
+  - title: µClock Library
     subtitle: >-
-      A tight BPM clock generator for Arduino and PlatformIO using hardware
-      timer interruption. AVR, Teensy, STM32xx, ESP32 and RP2040 support
+      Precision BPM Clock Generation for Arduino/PlatformIO using Hardware
+      Timers.
     actions:
-      - title: Download Source Code
+      - title: View Releases on GitHub
         href: 'https://github.com/midilab/uClock/releases'
+        _template: link
+      - title: Browse µClock Repository
+        href: 'https://github.com/midilab/uClock'
         _template: link
     _template: hero
 ---
 
-The uClock BPM Generator library enables precise and reliable BPM clock tick calls using microcontroller timer hardware interruptions. Designed for multi-architecture use, it provides a robust solution for real-time processing in music, audio/video productions, performances, and tech art installations.
+**µClock** is a dedicated library for generating highly accurate, stable BPM (Beats Per Minute) clock signals on microcontroller platforms like Arduino and PlatformIO. It leverages hardware timer interrupts, avoiding the inconsistencies of software-based timing, making it ideal for demanding real-time music applications.
+
+Developed to address the need for robust real-time features in the open-source embedded ecosystem, µClock allows professional-grade timing by managing hardware interrupts and providing safe shared resource access. It supports a wide range of boards including **AVR (ATmega168/328, ATmega16u4/32u4, ATmega2560)** and various **ARM platforms (Teensy, STM32XX, ESP32, Raspberry Pi Pico, Seeed Studio XIAO M0, RP2040)**.
+
+Whether you're building a sequencer, drum machine, MIDI clock master/slave, or any device needing precise musical timing, µClock provides the reliable foundation.
 
 ## Features
 
-...
-
 <CardSection
   cards={[
     {
       _template: "Card",
-      title: "Multi-Architecture Support",
+      title: "Hardware Timer Accuracy",
       content:
-        "Supports ARM boards (Teensy, STM32XX, ESP32, Raspberry Pico, Seedstudio XIAO M0, RP2040) and AVR boards (ATmega168/328, ATmega16u4/32u4, ATmega2560). For non-supported boards there is a software emulation mode."
-    },
-    {
-      type: "title",
-      title: "Real-Time Processing",
-      _template: "Card",
-      content:
-        "Leverages hardware interrupts to schedule and manage timing with safe shared resource access through its API. Enables professional-grade sequencers, sync boxes, and precise BPM clocks for external devices."
+        "Delivers exceptionally stable and precise timing by using dedicated microcontroller hardware timer, eliminating software loop variations."
     },
     {
       _template: "Card",
-      title: "Cross-platform",
+      title: "Reliable Real-time Ops",
       content:
-        "Arduino and PlatformIO support to achieve maximun cross-platform score."
+        "Designed for demanding tasks like sequencing and synchronization. Provides resource-safe APIs for stable operation during live performance."
     },
     {
-      type: "title",
-      title: "External Sync Mode",
       _template: "Card",
+      title: "Flexible External Sync",
       content:
-        "Generates internal clock based on an external clock source, facilitating MIDI synchronization and protocol adherence."
+        "Easily synchronize your project to external MIDI clock or other pulse signals. µClock can derive its internal timing from an incoming source."
+    },
+    {
+      _template: "Card",
+      title: "Shuffle/Swing Templates",
+      content:
+        "Built-in support for swing template build-up, emulate various classic groove machines swings using uClock."
+    },
+    {
+      _template: "Card",
+      title: "Multi-Platform",
+      content:
+        "Integrates seamlessly with both the Arduino IDE and PlatformIO build systems, fitting into your preferred development workflow."
+    },
+    {
+      _template: "Card",
+      title: "Broad MCU Support",
+      content:
+        "Works across popular architectures: AVR (Uno, Mega, Leonardo), ARM (Teensy, STM32, ESP32, RP2040, XIAO M0), with software fallback for others."
     }
   ]}
 />
 
-## Applications
+## Concepts & Key points
 
-Real world devices using the uClock library:
+* **Callback-Driven API:** Interact with the clock through simple callback functions triggered at specific timing events.
+* **Hardware Timer Interrupts:** Ensures maximum timing precision (on supported boards).
+* **Multiple PPQN Resolutions:** Supports various Pulses Per Quarter Note standards for broad compatibility.
+* **Internal/External Clock Modes:** Operate as a master clock source or sync reliably to an external input.
+* **Software Timer Fallback:** Provides basic timing functionality even on boards where hardware timer access is limited or unavailable.
+
+## Supported PPQN Resolutions
+
+You can set the main output or input PPQN resolution using `setOutputPPQN(value)` or `setInputPPQN(value)` respectively. Available values (constants):
+
+* `PPQN_1`, `PPQN_2`, `PPQN_4` (Common for Eurorack Modular Devices)
+* `PPQN_8`, `PPQN_12` (Some unusual devices out there)
+* `PPQN_24` (Standard MIDI Clock)
+* `PPQN_48`, `PPQN_96` (Common for old-school Sequencers)
+* `PPQN_384`, `PPQN_480`, `PPQN_960` (High Resolution modern Sequencers)
+
+## Applications Powered by µClock
+
+µClock serves as the timing core for many DIY music projects:
 
 <CardSection
   cards={[
     {
-      type: "title",
-      title: "Aciduino V2",
       _template: "Card",
+      title: "Aciduino V2 Sequencer",
+      youtubeVid: "7D5RpPdX0to",
       content:
-        "The project features a versatile step sequencer clone of Roland's TB303/TR808, offering up to 16 tracks. It includes a comprehensive automation grid system for step, pattern, and mute control. The sequencer functions as a MIDI controller and incorporates an OLED display for visual feedback. Furthermore, the design is modular and allows for easy expansion with additional potentiometers, buttons, MIDI, or CV/Gate interfaces.",
-      to: "",
-      youtubeVid: "7D5RpPdX0to"
+        "The precise step sequencing and timing rely heavily on µClock's hardware-based clock generation for its Roland-inspired workflow - **by Midilab**."
     },
     {
-      type: "title",
+      _template: "Card",
       title: "XR-1 Groovebox",
-      _template: "Card",
+      youtubeVid: "s68AS_JNLJU",
       content:
-        "A full featured groovebox using uClock library, created by James Gray",
-      to: "",
-      youtubeVid: "s68AS_JNLJU"
+        "This full-featured groovebox showcases µClock's ability to provide a stable master clock for complex pattern playback - **by James Gray**."
     },
     {
-      type: "title",
+      _template: "Card",
       title: "MIDI Looper/Sequencer",
-      _template: "Card",
+      youtubeVid: "7VqLjlL3LzU",
       content:
-        "A Realtime MIDI Looper/sequencer using uClock library, created by ymnkmusic.",
-      to: "",
-      youtubeVid: "7VqLjlL3LzU"
+        "µClock provides the essential real-time clock source needed for accurate MIDI event recording, looping, and playback in this custom sequencer - **by ymnkmusic**."
     },
     {
-      type: "title",
-      title: "MIDI/DIN Clockbox ",
       _template: "Card",
+      title: "MIDI/DIN Sync Box",
+      youtubeVid: "OYtPbgozCbE",
       content:
-        "A MIDI and DIN clockbox using uClock library, created by ymnkmusic.",
-      to: "",
-      youtubeVid: "OYtPbgozCbE"
+        "A perfect example of µClock used for synchronization tasks, generating or locking to MIDI and DIN Sync timing signals reliably - **by ymnkmusic**."
     }
   ]}
 />
-
-## How to use
-
-### Installation
-
-1. **PlatformIO**
-   * Clone the repository into your project directory.
-   * Add `#include "uClock.h"` and include the library in your PlatformIO build system.
-2. **Arduino Compatibility**
-   * Ensure your board is supported (see README for list).
-
-### Initialization
-
-```cpp
-// Default initialization
-uClock.init();
-
-// Custom configuration
-uClock.setPPQN(uClock.PPQN_384);
-uClock.setOnSync24(onSync24Callback);
-uClock.start();
-```
-
-### Usage
-
-* **Timing Events**: Use callbacks (`onPPQN`, `onStep`) for precise BPM control.
-* **External Sync**: Enable via `setMode(EXTERNAL_CLOCK)` and process external signals in `loop()`.
-* **Stop/Start**: Control with `stop()` and `start()` methods.
-
-### Examples
-
-* Visit the **examples** directory for detailed implementations, including MIDI sync boxes and step sequencers.
 
 ## Support
 
-For technical questions or contributions use our official repository.
+For technical questions, bug reports, or contributions, please visit the **[Official µClock GitHub Repository](https://github.com/midilab/uClock)**.
