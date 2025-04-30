@@ -152,6 +152,16 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+
+  plugins: [
+    [
+      "@docusaurus/plugin-google-gtag",
+      {
+        trackingID: "G-30TXP5JF0Q",
+        anonymizeIP: true,
+      },
+    ],
+  ],
 };
 
 module.exports = config;
