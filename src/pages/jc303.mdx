@@ -98,62 +98,70 @@ On the roadmap, one of the main features is to add a cloned step sequencer of th
 
 Installing JC-303 is straightforward. Follow these steps for your operating system:
 
-1.  **Download:** Grab the correct zip package for your system (Windows, macOS, or Linux) from the download links at the top of this page.
-2.  **Extract:** Unzip the downloaded file. You will find folders inside corresponding to different plugin formats (e.g., `VST3`, `AU` for MacOS, `LV2`, `CLAP`, `VST`).
-3.  **Copy:** Identify the plugin format(s) you want to use and copy the actual plugin file (e.g., `JC303.vst3`, `JC303.component`, `JC303.dll`, `JC303.lv2` folder, `JC303.clap`) from the extracted folder into your system's standard plugin directory for that format.
+1. **Download:** Grab the correct zip package for your system (Windows, macOS, or Linux) from the download links at the top of this page.
+2. **Extract:** Unzip the downloaded file. You will find folders inside corresponding to different plugin formats (e.g., `VST3`, `AU` for MacOS, `LV2`, `CLAP`, `VST`).
+3. **Copy:** Identify the plugin format(s) you want to use and copy the actual plugin file (e.g., `JC303.vst3`, `JC303.component`, `JC303.dll`, `JC303.lv2` folder, `JC303.clap`) from the extracted folder into your system's standard plugin directory for that format.
 
 **Default Plugin Locations:**
 
-*   **Windows:**
-    *   **VST2 (.dll):** Often `C:\Program Files\VSTPlugins`, `C:\Program Files\Steinberg\VSTPlugins`, or a custom location set in your DAW.
-    *   **VST3 (.vst3):** `C:\Program Files\Common Files\VST3`
-    *   **CLAP (.clap):** `C:\Program Files\Common Files\CLAP`
-    *   **LV2 (.lv2):** Often `%APPDATA%\LV2` or `C:\Program Files\Common Files\LV2`
-
-*   **macOS:**
-    *   **VST2 (.vst):** `/Library/Audio/Plug-Ins/VST` (system-wide) or `~/Library/Audio/Plug-Ins/VST` (user-specific)
-    *   **VST3 (.vst3):** `/Library/Audio/Plug-Ins/VST3` (system-wide) or `~/Library/Audio/Plug-Ins/VST3` (user-specific)
-    *   **Audio Unit (.component):** `/Library/Audio/Plug-Ins/Components` (system-wide) or `~/Library/Audio/Plug-Ins/Components` (user-specific)
-    *   **CLAP (.clap):** `/Library/Audio/Plug-Ins/CLAP` (system-wide) or `~/Library/Audio/Plug-Ins/CLAP` (user-specific)
-    *   **LV2 (.lv2):** `/Library/Audio/Plug-Ins/LV2` (system-wide) or `~/Library/Audio/Plug-Ins/LV2` (user-specific)
+* **Windows:**
+  * **VST2 (.dll):** Often `C:\Program Files\VSTPlugins`, `C:\Program Files\Steinberg\VSTPlugins`, or a custom location set in your DAW.
+  * **VST3 (.vst3):** `C:\Program Files\Common Files\VST3`
+  * **CLAP (.clap):** `C:\Program Files\Common Files\CLAP`
+  * **LV2 (.lv2):** Often `%APPDATA%\LV2` or `C:\Program Files\Common Files\LV2`
+* **macOS:**
+  * **VST2 (.vst):** `/Library/Audio/Plug-Ins/VST` (system-wide) or `~/Library/Audio/Plug-Ins/VST` (user-specific)
+  * **VST3 (.vst3):** `/Library/Audio/Plug-Ins/VST3` (system-wide) or `~/Library/Audio/Plug-Ins/VST3` (user-specific)
+  * **Audio Unit (.component):** `/Library/Audio/Plug-Ins/Components` (system-wide) or `~/Library/Audio/Plug-Ins/Components` (user-specific)
+  * **CLAP (.clap):** `/Library/Audio/Plug-Ins/CLAP` (system-wide) or `~/Library/Audio/Plug-Ins/CLAP` (user-specific)
+  * **LV2 (.lv2):** `/Library/Audio/Plug-Ins/LV2` (system-wide) or `~/Library/Audio/Plug-Ins/LV2` (user-specific)
     *(Note: `~` refers to your user home directory. System-wide installs are generally recommended unless you have specific reasons otherwise.)*
-
-*   **Linux:**
-    *   **VST2 (.so):** `~/.vst`, `/usr/lib/vst`, `/usr/local/lib/vst`
-    *   **VST3 (.vst3):** `~/.vst3`, `/usr/lib/vst3`, `/usr/local/lib/vst3`
-    *   **LV2 (.lv2):** `~/.lv2`, `/usr/lib/lv2`, `/usr/local/lib/lv2` (The `.lv2` item is usually a folder)
-    *   **CLAP (.clap):** `~/.clap`, `/usr/lib/clap`, `/usr/local/lib/clap`
+* **Linux:**
+  * **VST2 (.so):** `~/.vst`, `/usr/lib/vst`, `/usr/local/lib/vst`
+  * **VST3 (.vst3):** `~/.vst3`, `/usr/lib/vst3`, `/usr/local/lib/vst3`
+  * **LV2 (.lv2):** `~/.lv2`, `/usr/lib/lv2`, `/usr/local/lib/lv2` (The `.lv2` item is usually a folder)
+  * **CLAP (.clap):** `~/.clap`, `/usr/lib/clap`, `/usr/local/lib/clap`
     *(Note: Locations can vary depending on distribution and user configuration. Check your DAW's plugin path settings.)*
 
 **macOS De-Quarantine (Important!)**
 
 Due to macOS security features (Gatekeeper), you **must** de-quarantine the plugin files after copying them, otherwise your DAW may not load them.
 
-1.  Open the `Terminal` application (you can find it in Applications > Utilities).
-2.  Run the following command for **each** plugin format you installed. You will need to enter your administrator password (it won't show characters as you type). Replace the path if you installed to your user library (`~/Library/...`).
+1. Open the `Terminal` application (you can find it in Applications > Utilities).
+2. Run the following command for **each** plugin format you installed. You will need to enter your administrator password (it won't show characters as you type). Replace the path if you installed to your user library (`~/Library/...`).
 
-    *   **For Audio Unit (AU):**
-        ```bash
-        sudo xattr -rd com.apple.quarantine /Library/Audio/Plug-Ins/Components/JC303.component
-        ```
-    *   **For VST3:**
-        ```bash
-        sudo xattr -rd com.apple.quarantine /Library/Audio/Plug-Ins/VST3/JC303.vst3
-        ```
-    *   **For VST2:**
-        ```bash
-        sudo xattr -rd com.apple.quarantine /Library/Audio/Plug-Ins/VST/JC303.vst
-        ```
-    *   **For CLAP:**
-        ```bash
-        sudo xattr -rd com.apple.quarantine /Library/Audio/Plug-Ins/CLAP/JC303.clap
-        ```
-    *   **For LV2:**
-        ```bash
-        sudo xattr -rd com.apple.quarantine /Library/Audio/Plug-Ins/LV2/JC303.lv2
-        ```
-    *(Note: Ensure the plugin filename (`JC303.component`, `JC303.vst3` etc.) matches the actual file you copied.)*
+**For Audio Unit (AU):**
 
-4.  **Rescan:** After copying the files (and de-quarantining on macOS), open your Digital Audio Workstation (DAW) and perform a plugin rescan if it doesn't automatically detect the new JC-303 plugin.
+```bash
+sudo xattr -rd com.apple.quarantine /Library/Audio/Plug-Ins/Components/JC303.component
+```
+
+**For VST3:**
+
+```bash
+sudo xattr -rd com.apple.quarantine /Library/Audio/Plug-Ins/VST3/JC303.vst3
+```
+
+**For VST2:**
+
+```bash
+sudo xattr -rd com.apple.quarantine /Library/Audio/Plug-Ins/VST/JC303.vst
+```
+
+**For CLAP:**
+
+```bash
+sudo xattr -rd com.apple.quarantine /Library/Audio/Plug-Ins/CLAP/JC303.clap
+```
+
+**For LV2:**
+
+```bash
+sudo xattr -rd com.apple.quarantine /Library/Audio/Plug-Ins/LV2/JC303.lv2
+```
+
+*(Note: Ensure the plugin filename (`JC303.component`, `JC303.vst3` etc.) matches the actual file you copied.)*
+
+1. **Rescan:** After copying the files (and de-quarantining on macOS), open your Digital Audio Workstation (DAW) and perform a plugin rescan if it doesn't automatically detect the new JC-303 plugin.
 
 *Disclaimer: Roland and TB-303 are registered trademarks of Roland Corporation. This product is not affiliated with or endorsed by Roland Corporation.*
