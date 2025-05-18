@@ -5,7 +5,7 @@
   "blocks": [
     {
       "background": "/img/header_test2.jpg",
-      "title": "DIY Electronic Music Instruments ",
+      "title": "DIY Electronic Music Instruments",
       "subtitle": "Open Source projects and resources for anyone interested in creating their own cheap and hackable music and noise instruments.",
       "_template": "hero"
     },
