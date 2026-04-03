@@ -150,8 +150,8 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   background-color: #f6f3ef;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px 0px;
-  font-family: "Helvetica", "Arial", sans;
-  height: 50px;
+  /* font-family: "Helvetica", "Arial", sans; */
+  /* height: 50px; */
   /* justify-content: space-around; */
 }
 
@@ -173,9 +173,11 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1rem;
 } */
 
+/*
 .navbar-sidebar__brand {
   height: 50px;
 }
+*/
 
 .container > .row {
   row-gap: 60px;

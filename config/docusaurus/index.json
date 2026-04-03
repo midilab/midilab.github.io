@@ -9,6 +9,23 @@
   "url": "https://midilab.co/",
   "navbar": [
     {
+      "label": "DSP",
+      "link": "none",
+      "position": "right",
+      "items": [
+        {
+          "label": "JC-303",
+          "link": "page",
+          "pageLink": "src/pages/jc303.mdx"
+        },
+        {
+          "label": "OpenDSP",
+          "link": "page",
+          "pageLink": "src/pages/opendsp.mdx"
+        }
+      ]
+    },
+    {
       "label": "Sequencer",
       "link": "none",
       "position": "right",
@@ -22,23 +39,6 @@
           "label": "Pattern Remix",
           "link": "page",
           "pageLink": "src/pages/midibox-seqv4-pattern-remix.mdx"
-        }
-      ]
-    },
-    {
-      "label": "DSP",
-      "link": "none",
-      "position": "right",
-      "items": [
-        {
-          "label": "OpenDSP",
-          "link": "page",
-          "pageLink": "src/pages/opendsp.mdx"
-        },
-        {
-          "label": "JC-303",
-          "link": "page",
-          "pageLink": "src/pages/jc303.mdx"
         }
       ]
     },
@@ -84,21 +84,6 @@
     "style": "light",
     "links": [
       {
-        "title": "Sequencer",
-        "items": [
-          {
-            "label": "Aciduino",
-            "to": "/aciduino.mdx",
-            "_template": "internal"
-          },
-          {
-            "label": "Pattern Remix",
-            "to": "/midibox-seqv4-pattern-remix.mdx",
-            "_template": "internal"
-          }
-        ]
-      },
-      {
         "title": "DSP",
         "items": [
           {
@@ -109,6 +94,21 @@
           {
             "label": "JC-303",
             "to": "/jc303.mdx",
+            "_template": "internal"
+          }
+        ]
+      },
+      {
+        "title": "Sequencer",
+        "items": [
+          {
+            "label": "Aciduino",
+            "to": "/aciduino.mdx",
+            "_template": "internal"
+          },
+          {
+            "label": "Pattern Remix",
+            "to": "/midibox-seqv4-pattern-remix.mdx",
             "_template": "internal"
           }
         ]
