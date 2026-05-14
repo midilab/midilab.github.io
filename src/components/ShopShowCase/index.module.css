@@ -1,173 +1,174 @@
 .cardPhoto {
-  margin: auto auto;
-  max-width: 100%;
-  max-height: 170px;
-  object-fit: contain;
+    margin: auto auto;
+    max-width: 100%;
+    max-height: 170px;
+    object-fit: contain;
 }
 
 .cardsSection {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: var(--spacing-xl);
-  margin-bottom: var(--spacing-huge);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-huge);
 }
 
 .section {
-  margin-bottom: var(--spacing-xxl);
-  background: var(--colors-canvas-night);
-  padding: var(--spacing-huge) var(--spacing-xl);
+    margin-bottom: var(--spacing-xxl);
+    padding: var(--spacing-huge) var(--spacing-xl);
 }
 
 .section h3 {
-  font-family: var(--font-display);
-  font-weight: 330;
-  font-size: var(--typography-display-md);
-  line-height: 1.14;
-  color: var(--colors-on-primary);
-  margin: 0 0 var(--spacing-lg);
-  text-align: center;
+    font-family: var(--font-display);
+    font-weight: 330;
+    font-size: var(--typography-display-md);
+    line-height: 1.14;
+    color: var(--colors-on-primary);
+    margin: 0 0 var(--spacing-lg);
+    text-align: center;
 }
 
 .sectionDescription {
-  font-family: var(--font-ui);
-  font-size: var(--typography-body-md);
-  font-weight: 420;
-  color: var(--colors-link-cool-3);
-  line-height: 1.5;
-  margin: 0 0 var(--spacing-xl);
-  text-align: center;
+    font-family: var(--font-ui);
+    font-size: var(--typography-body-md);
+    font-weight: 420;
+    color: var(--colors-link-cool-3);
+    line-height: 1.5;
+    margin: 0 0 var(--spacing-xl);
+    text-align: center;
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  color: var(--colors-ink);
-  background: var(--colors-canvas-light);
-  border-radius: var(--rounded-lg);
-  overflow: hidden;
-  box-shadow: var(--elevation-3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  opacity: 0;
-  animation: fadeInUp 0.6s ease forwards;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--colors-ink);
+    background: var(--colors-canvas-light);
+    border-radius: var(--rounded-lg);
+    overflow: hidden;
+    box-shadow: var(--elevation-3);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    position: relative;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--elevation-4);
+    transform: translateY(-4px);
+    box-shadow: var(--elevation-4);
 }
 
 .card.row {
-  flex-direction: row;
+    flex-direction: row;
 }
 
 .card .icon {
-  width: 48px;
-  height: 48px;
-  margin-bottom: var(--spacing-md);
+    width: 48px;
+    height: 48px;
+    margin-bottom: var(--spacing-md);
 }
 
 .card .icon svg {
-  width: auto;
-  height: 100%;
-  stroke: var(--colors-aloe-10);
+    width: auto;
+    height: 100%;
+    stroke: var(--colors-aloe-10);
 }
 
 .cardContent {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-xs);
-  padding: var(--spacing-lg);
-  text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-lg);
+    text-align: center;
 }
 
 .cardContent .button {
-  margin-top: var(--spacing-md);
-  width: 100%;
+    margin-top: var(--spacing-md);
+    width: 100%;
 }
 
 .title {
-  font-family: var(--font-ui);
-  font-size: var(--typography-body-md);
-  font-weight: 550;
-  color: var(--colors-ink);
-  margin: 0;
-  text-align: center;
+    font-family: var(--font-ui);
+    font-size: var(--typography-body-md);
+    font-weight: 550;
+    color: var(--colors-ink);
+    margin: 0;
+    text-align: center;
 }
 
 .content {
-  font-family: var(--font-ui);
-  font-size: var(--typography-caption);
-  font-weight: 420;
-  color: var(--colors-shade-60);
-  line-height: 1.4;
-  text-align: center;
+    font-family: var(--font-ui);
+    font-size: var(--typography-caption);
+    font-weight: 420;
+    color: var(--colors-shade-60);
+    line-height: 1.4;
+    text-align: center;
 }
 
 .tag {
-  font-size: var(--typography-micro);
-  font-weight: 500;
-  position: absolute;
-  right: 0;
-  top: 0;
+    font-size: var(--typography-micro);
+    font-weight: 500;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 
 .tag span {
-  display: block;
-  width: 80px;
-  text-align: center;
-  padding: var(--spacing-xs) 0;
-  color: var(--colors-on-primary);
-  font-family: var(--font-ui);
-  font-size: var(--typography-micro);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.28px;
-  transform: rotate(45deg) translateX(16px) translateY(-4px);
+    display: block;
+    width: 80px;
+    text-align: center;
+    padding: var(--spacing-xs) 0;
+    color: var(--colors-on-primary);
+    font-family: var(--font-ui);
+    font-size: var(--typography-micro);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.28px;
+    transform: rotate(45deg) translateX(16px) translateY(-4px);
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @media screen and (max-width: 1200px) {
-  .cardsSection {
-    grid-template-columns: repeat(4, 1fr);
-  }
+    .cardsSection {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 @media screen and (max-width: 996px) {
-  .cardsSection {
-    grid-template-columns: repeat(3, 1fr);
-  }
+    .cardsSection {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media screen and (max-width: 768px) {
-  .cardsSection {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-md);
-  }
+    .cardsSection {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
 
-  .section {
-    padding: var(--spacing-xxl) var(--spacing-lg);
-  }
+    .section {
+        padding: var(--spacing-xxl) var(--spacing-lg);
+    }
 
-  .card {
-    opacity: 1;
-    animation: none;
-  }
+    .card {
+        opacity: 1;
+        animation: none;
+    }
 }
 
 @media screen and (max-width: 480px) {
-  .cardsSection {
-    grid-template-columns: 1fr;
-  }
+    .cardsSection {
+        grid-template-columns: 1fr;
+    }
 }
