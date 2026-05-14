@@ -1,35 +1,38 @@
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
+import clsx from "clsx";
+import Link from "@docusaurus/Link";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Layout from "@theme/Layout";
 
-import styles from './index.module.css';
+import styles from "./index.module.css";
 
 const projects = [
   {
-    category: 'Sequencer',
-    title: 'Aciduino',
-    description: 'Analog modeling synthesizer with sequencer for authentic acid basslines.',
-    image: '/img/aciduino_hero.jpg',
-    href: '/aciduino',
+    category: "Sequencer",
+    title: "Aciduino",
+    description:
+      "Analog modeling synthesizer with sequencer for authentic acid basslines.",
+    image: "/img/aciduino/aciduino_v1-3.jpeg",
+    href: "/aciduino",
   },
   {
-    category: 'DSP',
-    title: 'JC-303',
-    description: 'Open source罗兰 TB-303 emulator for embedded systems and microcontrollers.',
-    image: '/img/jc303_hero.jpg',
-    href: '/jc303',
+    category: "DSP",
+    title: "JC-303",
+    description:
+      "Open source罗兰 TB-303 emulator for embedded systems and microcontrollers.",
+    image: "/img/roland303-header1.jpg",
+    href: "/jc303",
   },
   {
-    category: 'Libraries',
-    title: 'µClock',
-    description: 'Lightweight MIDI clock library for Arduino and compatible platforms.',
-    image: '/img/uclock_hero.jpg',
-    href: '/uClock',
+    category: "Libraries",
+    title: "µClock",
+    description:
+      "Lightweight MIDI clock library for Arduino and compatible platforms.",
+    image: "/img/master_clocks_syncflash.jpg",
+    href: "/uClock",
   },
 ];
 
-function FeatureCard({icon, title, description}) {
+function FeatureCard({ icon, title, description }) {
   return (
     <div className={styles.featureCard}>
       <div className={styles.featureIcon}>{icon}</div>
@@ -39,7 +42,7 @@ function FeatureCard({icon, title, description}) {
   );
 }
 
-function ProjectCard({category, title, description, image, href}) {
+function ProjectCard({ category, title, description, image, href }) {
   return (
     <Link href={href} className={styles.projectCard}>
       <img src={image} alt={title} className={styles.projectImage} />
@@ -54,7 +57,13 @@ function ProjectCard({category, title, description, image, href}) {
 
 function OpenSourceIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
     </svg>
   );
@@ -62,7 +71,13 @@ function OpenSourceIcon() {
 
 function HardwareIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <rect x="4" y="4" width="16" height="16" rx="2" ry="2" />
       <rect x="9" y="9" width="6" height="6" />
       <line x1="9" y1="1" x2="9" y2="4" />
@@ -79,7 +94,13 @@ function HardwareIcon() {
 
 function LibraryIcon() {
   return (
-    <svg viewBox="0 0 24 24" fill="none" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
       <polyline points="14,2 14,8 20,8" />
       <line x1="16" y1="13" x2="8" y2="13" />
@@ -90,24 +111,32 @@ function LibraryIcon() {
 }
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
 
   return (
-    <Layout title="DIY Electronic Music Instruments" description={siteConfig.tagline}>
+    <Layout
+      title="DIY Electronic Music Instruments"
+      description={siteConfig.tagline}
+    >
       <header className={styles.heroBanner}>
         <div
           className={styles.heroBackground}
-          style={{backgroundImage: 'url(/img/header_test2.jpg)'}}
+          style={{ backgroundImage: "url(/img/header_test2.jpg)" }}
         />
         <div className={styles.heroContent}>
-          <span className={styles.eyebrow}>Open Source Electronic Instruments</span>
+          <span className={styles.eyebrow}>
+            Open Source Electronic Instruments
+          </span>
           <h1 className={styles.heroTitle}>{siteConfig.title}</h1>
           <p className={styles.heroSubtitle}>{siteConfig.tagline}</p>
           <div className={styles.heroCta}>
             <Link className="button button--primary" to="/docs/intro">
               Explore Docs
             </Link>
-            <Link className="button button--outline" href="https://github.com/midilab">
+            <Link
+              className="button button--outline"
+              href="https://github.com/midilab"
+            >
               View on GitHub
             </Link>
           </div>
@@ -137,7 +166,9 @@ export default function Home() {
       <section className={styles.projectsSection}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>Featured Projects</h2>
-          <p className={styles.sectionSubtitle}>Explore our open source electronic music instruments and libraries</p>
+          <p className={styles.sectionSubtitle}>
+            Explore our open source electronic music instruments and libraries
+          </p>
         </div>
         <div className={styles.projectsGrid}>
           {projects.map((project) => (
@@ -148,15 +179,21 @@ export default function Home() {
 
       <section className={styles.ctaSection}>
         <div className={styles.ctaContent}>
-          <h2 className={styles.ctaTitle}>Ready to build your own instruments?</h2>
+          <h2 className={styles.ctaTitle}>
+            Ready to build your own instruments?
+          </h2>
           <p className={styles.ctaDescription}>
-            Dive into our documentation and start creating. All projects are open source and community-driven.
+            Dive into our documentation and start creating. All projects are
+            open source and community-driven.
           </p>
           <div className={styles.ctaButtons}>
             <Link className="button button--primary" to="/docs/intro">
               Get Started
             </Link>
-            <Link className="button button--outline" href="https://discord.gg/DCb3dy5A">
+            <Link
+              className="button button--outline"
+              href="https://discord.gg/DCb3dy5A"
+            >
               Join Community
             </Link>
           </div>

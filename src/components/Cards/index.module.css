@@ -160,6 +160,7 @@
     flex-grow: 1;
     padding-left: var(--spacing-xl);
     padding-right: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
 }
 
 .cardContent > .content {

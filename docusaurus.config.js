@@ -121,7 +121,7 @@ const config = {
               },
               {
                 label: 'Pattern Remix',
-                to: '/midibox-pattern-remix',
+                to: '/midibox-seqv4-pattern-remix',
               },
             ],
           },
@@ -181,7 +181,7 @@ type: 'dropdown',
               },
               {
                 label: 'Pattern Remix',
-                to: '/midibox-pattern-remix',
+                to: '/midibox-seqv4-pattern-remix',
               },
             ],
           },
