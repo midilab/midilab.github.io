@@ -8,16 +8,32 @@ import {
 import Layout from '@theme/Layout';
 import MDXContent from '@theme/MDXContent';
 import TOC from '@theme/TOC';
-import { Blocks } from "../../components/Blocks";
+import { Hero } from '../../components/Hero';
+import { Features } from '../../components/Features';
 
 import styles from './styles.module.css';
+
+function renderCustomBlock(block, index) {
+  switch (block._template) {
+    case 'hero':
+      return <Hero data={block} index={index} key={index} />;
+    case 'features':
+      return <Features data={block} index={index} key={index} />;
+    default:
+      return null;
+  }
+}
+
 export default function MDXPage(props) {
-  const {content: MDXPageContent} = props;
+  const { content: MDXPageContent } = props;
   const {
-    metadata: {title, description, frontMatter},
+    metadata: { title, description, frontMatter },
   } = MDXPageContent;
-  const {wrapperClassName, hide_table_of_contents: hideTableOfContents} =
+  const { wrapperClassName, hide_table_of_contents: hideTableOfContents } =
     frontMatter;
+
+  const blocks = frontMatter?.blocks;
+
   return (
     <HtmlClassNameProvider
       className={clsx(
@@ -26,7 +42,7 @@ export default function MDXPage(props) {
       )}>
       <PageMetadata title={title} description={description} />
       <Layout>
-        {frontMatter && frontMatter.blocks ? <Blocks blocks={frontMatter.blocks} /> : null}
+        {blocks ? blocks.map((block, i) => renderCustomBlock(block, i)) : null}
         <main className="container container--fluid margin-vert--lg">
           <div className={clsx('row', styles.mdxPageWrapper)}>
             <div className={clsx('col', !hideTableOfContents && 'col--8')}>

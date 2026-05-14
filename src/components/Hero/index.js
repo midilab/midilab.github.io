@@ -12,12 +12,16 @@ export const Hero = ({ data, index }) => {
   } : undefined
   
   return (
-      <div className={clsx(background ? styles.heroImage : styles.heroDefaultBg)} style={background}>
+      <div 
+        className={clsx(background ? styles.heroImage : styles.heroDefaultBg)} 
+        style={{...background, width: '100%', marginLeft: 0}}
+      >
         <header
           key={index}
           className={clsx(background && ["hero hero--primary", styles.heroImageGradient], styles.heroBanner)}
+          style={{width: '100%'}}
         >
-          <div className="container">
+          <div className="container" style={{maxWidth: '100%'}}>
             <h1 className={clsx("hero__title", styles.title)}>
               {data.title ? data.title : siteConfig.title}
             </h1>
