@@ -34,7 +34,7 @@ export function Product({
         {content && <div className={clsx(styles.content)}>{content}</div>}
         {actionButton && 
           <Link
-            className={clsx("button button--outline button--block button--primary")}
+            className={clsx("button button--primary")}
             to={to}
           >
             {actionButton}

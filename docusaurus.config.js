@@ -7,9 +7,30 @@ const config = {
   tagline: 'DIY Electronic Music Instruments',
   favicon: 'img/favicon.ico',
 
-  future: {
-    v4: false,
-  },
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.googleapis.com',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'preconnect',
+        href: 'https://fonts.gstatic.com',
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Inter:wght@420..550&display=swap',
+      },
+    },
+  ],
 
   url: 'https://midilab.co/',
   baseUrl: '/',
@@ -48,7 +69,7 @@ const config = {
       colorMode: {
         defaultMode: 'dark',
         disableSwitch: false,
-        respectPrefersColorScheme: true,
+        respectPrefersColorScheme: false,
       },
       navbar: {
         title: 'midilab',
@@ -119,7 +140,7 @@ type: 'dropdown',
         ],
       },
       footer: {
-        style: 'light',
+        style: 'dark',
         links: [
           {
             title: 'DSP',

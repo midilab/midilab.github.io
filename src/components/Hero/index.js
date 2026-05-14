@@ -7,30 +7,35 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 export const Hero = ({ data, index }) => {
   const { siteConfig } = useDocusaurusContext();
 
-  const background = data.background ? {
-    backgroundImage: `url(${data.background})`,
-  } : undefined
-  
+  const hasBackground = Boolean(data?.background);
+
   return (
-      <div 
-        className={clsx(background ? styles.heroImage : styles.heroDefaultBg)} 
-        style={{...background, width: '100%', marginLeft: 0}}
+    <div className={styles.heroWrapper}>
+      <div
+        className={styles.hero}
+        style={hasBackground ? {
+          backgroundImage: `url(${data.background})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        } : undefined}
       >
-        <header
-          key={index}
-          className={clsx(background && ["hero hero--primary", styles.heroImageGradient], styles.heroBanner)}
-          style={{width: '100%'}}
-        >
-          <div className="container" style={{maxWidth: '100%'}}>
-            <h1 className={clsx("hero__title", styles.title)}>
-              {data.title ? data.title : siteConfig.title}
-            </h1>
-            <p className={clsx(styles.heroSubtitle, "hero__subtitle")}>
-              {data.subtitle ? data.subtitle : siteConfig.tagline}
-            </p>
-            {data.actions && <ActionButtons actions={data.actions} />}
-          </div>
-        </header>
+        {hasBackground && <div className={styles.heroBackground} />}
+        <div className={styles.heroContent}>
+          <span className={styles.eyebrow}>Open Source Electronic Instruments</span>
+          <h1 className={clsx("hero__title", styles.title)}>
+            {data?.title ? data.title : siteConfig.title}
+          </h1>
+          <p className={clsx(styles.heroSubtitle, "hero__subtitle")}>
+            {data?.subtitle ? data.subtitle : siteConfig.tagline}
+          </p>
+          {data?.actions && (
+            <div className={styles.heroActions}>
+              <ActionButtons actions={data.actions} />
+            </div>
+          )}
+        </div>
       </div>
+    </div>
   );
 };

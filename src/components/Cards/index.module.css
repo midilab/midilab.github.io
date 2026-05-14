@@ -1,170 +1,129 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
 .cardPhoto {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50%;
-  width: auto;
+  width: 100%;
   height: 230px;
-}
-
-.cardPhoto:hover {
+  border-radius: var(--rounded-lg) var(--rounded-lg) 0 0;
   cursor: pointer;
 }
 
 .cardsSection {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
-  gap: 30px;
+  gap: var(--spacing-xl);
 }
 
 .section {
-  margin-bottom: 3rem;
+  margin-bottom: var(--spacing-huge);
 }
 
 .section h3 {
-  font-weight: 600;
+  font-family: var(--font-display);
+  font-weight: 330;
+  font-size: var(--typography-display-md);
+  line-height: 1.14;
+  color: var(--colors-on-primary);
+  margin: 0 0 var(--spacing-md);
 }
 
 .sectionDescription {
-  /* color: var(--docs-color-text-100); */
-  margin: 0rem 0 1.25rem 0;
-  margin-top: -0.5rem;
+  font-family: var(--font-ui);
+  font-size: var(--typography-body-md);
+  font-weight: 420;
+  color: var(--colors-link-cool-3);
+  line-height: 1.5;
+  margin: 0 0 var(--spacing-xl);
 }
 
 .card {
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  color: var(--docs-color-text);
-
-  --ifm-link-hover-decoration: none;
-  --ifm-link-hover-color: none;
-  /* cursor: pointer; */
-  /* border-width: 1px;
-  border-style: solid; */
-  /* transition-property: background-color, color; */
-  /* background-color:  #f6f3ef; */
-  /* background-color: var(--ifm-dropdown-hover-background-color);
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px 0px; */
-  /* box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px 0px; */
-
-  /* border-radius: 8px; */
-  position: relative;
+  color: var(--colors-ink);
+  background: var(--colors-canvas-light);
+  border-radius: var(--rounded-lg);
   overflow: hidden;
-
-  /* border-color: var(--ifm-color-primary-lightest); */
+  box-shadow: var(--elevation-3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
 }
 
-/* .cardLink {
-  --ifm-link-hover-color: var(--ifm-link-color);
-} */
-
-
-/* .card:hover .title {
-  color: var(--ifm-color-white);
-  background-color: var(--ifm-color-primary-darkest); 
-} */
-
-.card:not([data-has-action-button]):hover .title {
-  color: var(--ifm-color-white);
-  background-color: var(--ifm-color-primary-darkest); 
-}
-
-/* .card h4 {
-  color: var(--ifm-color-primary-darkest);
-}
- */
-
-.card p {
-  margin: 0;
-}
-
-.card span {
-  --ifm-link-hover-color: none;
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--elevation-4);
 }
 
 .card.row {
   flex-direction: row;
 }
 
-.card .icon svg {
-  width: auto;
-  height: 100%;
-}
-
 .card .icon {
   width: 48px;
   height: 48px;
+  margin-bottom: var(--spacing-md);
+}
+
+.card .icon svg {
+  width: auto;
+  height: 100%;
+  stroke: var(--colors-aloe-10);
 }
 
 .cardContent {
   display: flex;
   flex-direction: column;
-  gap: 1px;
   flex-grow: 1;
-  /* padding: 1rem; */
-  /* padding-top: 0.2rem; */
-  padding-bottom: 0.5rem;
+  padding: var(--spacing-xl);
 }
 
 .cardContent > .content {
-  margin-bottom: auto; 
+  margin-bottom: auto;
 }
 
 .title {
-  font-size: 20px;
-  letter-spacing: -0.5px;
-  font-weight: 600;
-  /* margin-top: 0.1rem; */
-  margin-bottom: 0.1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  /* padding: 0.5rem; */
-  /* applied when dark theme */
-  color: var(--ifm-color-black);
-  background-color: var(--ifm-color-secondary);
-  /* color: var(--ifm-color-white);
-  background-color: var(--ifm-color-primary-darkest); */
-  /* border-bottom: solid var(--ifm-color-secondary-darkest) 1px; */
-  /* position: relative; */
+  font-family: var(--font-ui);
+  font-size: var(--typography-heading-lg);
+  font-weight: 500;
+  line-height: 1.14;
+  letter-spacing: 0.36px;
+  color: var(--colors-ink);
+  margin: 0 0 var(--spacing-sm);
 }
 
-/* .title::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 1rem;
-  background-color: var(--ifm-color-secondary-darkest); 
-  z-index: -1;
-} */
-
 .content {
-  font-size: 14px;
-  color: var(--docs-color-text-100);
+  font-family: var(--font-ui);
+  font-size: var(--typography-body-md);
+  font-weight: 420;
+  color: var(--colors-shade-60);
   line-height: 1.5;
-  padding: 0.5rem;
+  margin: 0;
+}
+
+.content p {
+  margin: 0;
 }
 
 .tag {
-  font-size: 12px;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
+  font-size: var(--typography-micro);
   font-weight: 500;
   position: absolute;
+  right: 0;
+  top: 0;
 }
 
-@media screen and (max-width: 768px) {
-  .cardsSection {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
+.tag span {
+  display: block;
+  width: 80px;
+  text-align: center;
+  padding: var(--spacing-xs) 0;
+  color: var(--colors-on-primary);
+  font-family: var(--font-ui);
+  font-size: var(--typography-micro);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.28px;
+  transform: rotate(45deg) translateX(16px) translateY(-4px);
 }
 
 .overlay {
@@ -173,11 +132,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  backdrop-filter: blur(8px);
 }
 
 .overlayContent {
@@ -188,4 +148,15 @@
 .overlayContent img {
   max-width: 100%;
   max-height: 100%;
+  border-radius: var(--rounded-lg);
+}
+
+@media screen and (max-width: 768px) {
+  .cardsSection {
+    grid-template-columns: 1fr;
+  }
+
+  .section h3 {
+    font-size: var(--typography-display-md);
+  }
 }

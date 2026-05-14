@@ -49,8 +49,7 @@ export function Card({
         }
         {actionButton && 
           <Link
-            /* style={{ marginTop: '15px' }} */
-            className={clsx("button button--outline button--block button--primary")}
+            className={clsx("button button--primary", styles.cardButton)}
             to={to}
           >
             {actionButton}

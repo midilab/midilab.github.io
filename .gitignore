@@ -8,6 +8,11 @@
 .docusaurus
 .cache-loader
 
+# AI Agents
+.agents/
+DESIGN.md
+skills-lock.json
+
 # Misc
 .DS_Store
 .env.local

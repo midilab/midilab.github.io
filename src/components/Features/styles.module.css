@@ -1,37 +1,84 @@
 .features {
   display: flex;
   align-items: center;
-  padding: 4rem 0;
+  padding: var(--spacing-huge) 0;
   width: 100%;
+  background: var(--colors-canvas-night);
 }
 
 .features p {
-  margin: 0;  
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: var(--typography-body-md);
+  font-weight: 420;
+  line-height: 1.5;
+  color: var(--colors-link-cool-3);
 }
 
-/* https://codepen.io/sosuke/pen/Pjoqqp */
+.features h3 {
+  font-family: var(--font-ui);
+  font-size: var(--typography-heading-md);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--colors-on-primary);
+  margin: var(--spacing-md) 0 0;
+}
+
 .featureSvg {
-  height: 120px;
-  width: 120px;
-/*   filter: invert(39%) sepia(54%) saturate(510%) hue-rotate(94deg) brightness(97%) contrast(85%); */
-}
-
-[data-theme='dark'] .featureSvg {
-  /* filter: invert(60%) sepia(78%) saturate(399%) hue-rotate(117deg) brightness(90%) contrast(91%); */
+  height: 80px;
+  width: 80px;
   filter: invert(100%) sepia(0%) saturate(2452%) hue-rotate(179deg) brightness(113%) contrast(107%);
+  transition: filter 0.3s ease, transform 0.3s ease;
 }
 
-/* var(--ifm-color-primary); */
-/*
-.featureSvg:hover,
-.featureSvg:focus {
-  filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+.featureItem {
+  text-align: center;
+  padding: var(--spacing-xl);
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
 }
-*/
 
-/*
-svg {
-  -webkit-filter: invert(100%);
-  filter: invert(100%);
+.featureItem:nth-child(1) { animation-delay: 0.1s; }
+.featureItem:nth-child(2) { animation-delay: 0.2s; }
+.featureItem:nth-child(3) { animation-delay: 0.3s; }
+.featureItem:nth-child(4) { animation-delay: 0.4s; }
+.featureItem:nth-child(5) { animation-delay: 0.5s; }
+.featureItem:nth-child(6) { animation-delay: 0.6s; }
+
+.featureItem:hover .featureSvg {
+  filter: invert(76%) sepia(20%) saturate(953%) hue-rotate(69deg) brightness(101%) contrast(93%);
+  transform: scale(1.05);
 }
-*/
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .features {
+    padding: var(--spacing-xxl) 0;
+  }
+
+  .featureItem {
+    padding: var(--spacing-lg);
+  }
+
+  .featureSvg {
+    height: 64px;
+    width: 64px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .featureItem {
+    opacity: 1;
+    animation: none;
+  }
+}
