@@ -30,6 +30,23 @@ const config = {
         href: 'https://fonts.googleapis.com/css2?family=Inter:wght@420..550&display=swap',
       },
     },
+    {
+      tagName: 'script',
+      attributes: {
+        async: 'async',
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-30TXP5JF0Q',
+      },
+    },
+    {
+      tagName: 'script',
+      attributes: {},
+      innerHTML: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-30TXP5JF0Q', { 'anonymize_ip': true });
+      `,
+    },
   ],
 
   url: 'https://midilab.co/',

@@ -680,7 +680,6 @@ pre[class*="codeBlockContent"] code {
  * ============================================ */
 
 .theme-doc-markdown {
-  background: var(--colors-canvas-night);
 }
 
 article {
