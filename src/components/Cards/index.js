@@ -16,6 +16,9 @@ export function Card({
   to,
   actionButton,
   tag,
+  featured = false,
+  animated = false,
+  animationIndex = 0,
 }) {
   const [isOverlayVisible, setOverlayVisible] = useState(false);
 
@@ -27,8 +30,21 @@ export function Card({
     setOverlayVisible(!isOverlayVisible)
   }
 
+  const cardClasses = clsx(
+    featured ? styles.cardFeatured : styles.card,
+    animated && styles.cardAnimated,
+    animated && animationIndex === 1 && styles.cardStagger1,
+    animated && animationIndex === 2 && styles.cardStagger2,
+    animated && animationIndex === 3 && styles.cardStagger3,
+    animated && animationIndex === 4 && styles.cardStagger4,
+    animated && animationIndex === 5 && styles.cardStagger5,
+    animated && animationIndex === 6 && styles.cardStagger6,
+    animated && animationIndex === 7 && styles.cardStagger7,
+    animated && animationIndex === 8 && styles.cardStagger8,
+  )
+
   return (
-    <Link to={actionButton ? '' : to} className={clsx(styles.card, to && !actionButton ? styles.cardLink : undefined)} data-has-action-button={actionButton ? 'true' : undefined}>
+    <Link to={actionButton ? '' : to} className={cardClasses} data-has-action-button={actionButton ? 'true' : undefined}>
       {icon && <div className={clsx(styles.icon)}>{icon}</div>}
       {photo && (
         <div
@@ -85,6 +101,7 @@ export function CardSection({
   className,
   HeadingTag = 'h3',
   cards,
+  animated = false,
 }) {
   return (
     <div
@@ -98,7 +115,7 @@ export function CardSection({
       <div className={clsx(styles.cardsSection)}>
         {cards && 
           cards.map(function (card, i) {
-            return <Card {...card} key={i} />;
+            return <Card {...card} key={i} animationIndex={i + 1} animated={animated} />;
           })
         }
       </div>

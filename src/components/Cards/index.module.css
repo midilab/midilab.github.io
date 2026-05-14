@@ -36,27 +36,93 @@
   margin: 0 0 var(--spacing-xl);
 }
 
+/* ============================================
+ * BASE CARD - Theme-aware
+ * ============================================ */
+
 .card {
   display: flex;
   flex-direction: column;
   text-decoration: none;
-  color: var(--colors-ink);
-  background: var(--colors-canvas-light);
   border-radius: var(--rounded-lg);
   overflow: hidden;
-  box-shadow: var(--elevation-3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
 }
 
-.card:hover {
+/* DARK THEME - Cinematic Track */
+[data-theme="dark"] .card {
+  background: var(--colors-canvas-night-elevated);
+  box-shadow: var(--elevation-1);
+  color: var(--colors-on-primary);
+}
+
+[data-theme="dark"] .card:hover {
+  box-shadow: var(--elevation-2);
+  transform: translateY(-4px);
+}
+
+/* LIGHT THEME - Transactional Track */
+[data-theme="light"] .card {
+  background: var(--colors-canvas-light);
+  box-shadow: var(--elevation-3);
+  color: var(--colors-ink);
+}
+
+[data-theme="light"] .card:hover {
+  box-shadow: var(--elevation-4);
+  transform: translateY(-4px);
+}
+
+/* ============================================
+ * FEATURED CARD VARIANT
+ * ============================================ */
+
+.cardFeatured {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border-radius: var(--rounded-lg);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+/* DARK THEME - Featured cinematic (dark teal) */
+[data-theme="dark"] .cardFeatured {
+  background: var(--colors-surface-elevated-dark);
+  box-shadow: var(--elevation-2);
+  color: var(--colors-on-primary);
+}
+
+[data-theme="dark"] .cardFeatured:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.12), 0 4px 6px rgba(0,0,0,0.4), 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* LIGHT THEME - Featured (aloe mint) */
+[data-theme="light"] .cardFeatured {
+  background: var(--colors-aloe-10);
+  box-shadow: var(--elevation-3);
+  color: var(--colors-ink);
+}
+
+[data-theme="light"] .cardFeatured:hover {
   transform: translateY(-4px);
   box-shadow: var(--elevation-4);
 }
 
+/* ============================================
+ * CARD ROW VARIANT
+ * ============================================ */
+
 .card.row {
   flex-direction: row;
 }
+
+/* ============================================
+ * ICON SUPPORT
+ * ============================================ */
 
 .card .icon {
   width: 48px;
@@ -67,8 +133,19 @@
 .card .icon svg {
   width: auto;
   height: 100%;
+}
+
+[data-theme="dark"] .card .icon svg {
   stroke: var(--colors-aloe-10);
 }
+
+[data-theme="light"] .card .icon svg {
+  stroke: var(--colors-ink);
+}
+
+/* ============================================
+ * CARD CONTENT
+ * ============================================ */
 
 .cardContent {
   display: flex;
@@ -81,28 +158,59 @@
   margin-bottom: auto;
 }
 
+/* ============================================
+ * CARD TYPOGRAPHY - Theme-aware
+ * ============================================ */
+
 .title {
   font-family: var(--font-ui);
   font-size: var(--typography-heading-lg);
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.36px;
-  color: var(--colors-ink);
   margin: 0 0 var(--spacing-sm);
+}
+
+[data-theme="dark"] .title {
+  color: var(--colors-on-primary);
+}
+
+[data-theme="light"] .title {
+  color: var(--colors-ink);
 }
 
 .content {
   font-family: var(--font-ui);
   font-size: var(--typography-body-md);
   font-weight: 420;
-  color: var(--colors-shade-60);
   line-height: 1.5;
   margin: 0;
+}
+
+[data-theme="dark"] .content {
+  color: var(--colors-link-cool-3);
+}
+
+[data-theme="light"] .content {
+  color: var(--colors-shade-60);
 }
 
 .content p {
   margin: 0;
 }
+
+/* ============================================
+ * CARD BUTTON - Theme-aware
+ * ============================================ */
+
+.cardButton {
+  margin-top: var(--spacing-lg);
+  align-self: flex-start;
+}
+
+/* ============================================
+ * CARD TAG
+ * ============================================ */
 
 .tag {
   font-size: var(--typography-micro);
@@ -125,6 +233,10 @@
   letter-spacing: 0.28px;
   transform: rotate(45deg) translateX(16px) translateY(-4px);
 }
+
+/* ============================================
+ * IMAGE OVERLAY
+ * ============================================ */
 
 .overlay {
   position: fixed;
@@ -151,6 +263,45 @@
   border-radius: var(--rounded-lg);
 }
 
+/* ============================================
+ * ANIMATIONS - Staggered Fade In
+ * ============================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cardAnimated {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.cardStagger1 { animation-delay: 0.1s; }
+.cardStagger2 { animation-delay: 0.2s; }
+.cardStagger3 { animation-delay: 0.3s; }
+.cardStagger4 { animation-delay: 0.4s; }
+.cardStagger5 { animation-delay: 0.5s; }
+.cardStagger6 { animation-delay: 0.6s; }
+.cardStagger7 { animation-delay: 0.7s; }
+.cardStagger8 { animation-delay: 0.8s; }
+
+/* ============================================
+ * RESPONSIVE
+ * ============================================ */
+
+@media screen and (max-width: 1024px) {
+  .cardsSection {
+    gap: var(--spacing-lg);
+  }
+}
+
 @media screen and (max-width: 768px) {
   .cardsSection {
     grid-template-columns: 1fr;
@@ -158,5 +309,23 @@
 
   .section h3 {
     font-size: var(--typography-display-md);
+  }
+
+  .cardAnimated {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .cardAnimated {
+    animation: none;
+    opacity: 1;
+  }
+
+  .card,
+  .cardFeatured {
+    transition: none;
   }
 }
