@@ -1,183 +1,180 @@
 .heroWrapper {
-  width: 100%;
-  position: relative;
-  overflow: hidden;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 .hero {
-  padding: var(--spacing-huge) 0;
-  text-align: center;
-  position: relative;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 480px;
+    padding: var(--spacing-huge) 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 480px;
 }
 
 .heroBackground {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
 }
 
 .heroBackground::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 0, 0, 0.7) 100%
-  );
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
 }
 
 .heroContent {
-  position: relative;
-  z-index: 2;
-  max-width: 900px;
-  padding: 0 var(--spacing-xl);
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 0 var(--spacing-xl);
 }
 
 .eyebrow {
-  font-family: var(--font-ui);
-  font-size: var(--typography-eyebrow-cap);
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 2.4px;
-  margin-bottom: var(--spacing-lg);
-  opacity: 0;
-  animation: fadeInUp 0.8s ease forwards;
+    font-family: var(--font-ui);
+    font-size: var(--typography-eyebrow-cap);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2.4px;
+    margin-bottom: var(--spacing-lg);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
 }
 
 .title {
-  font-family: var(--font-display);
-  font-size: var(--typography-display-xxl);
-  font-weight: 330;
-  line-height: 1.0;
-  letter-spacing: 2.4px;
-  margin: 0 0 var(--spacing-lg);
-  opacity: 0;
-  animation: fadeInUp 0.8s ease 0.1s forwards;
+    font-family: var(--font-display);
+    font-size: var(--typography-display-xxl);
+    font-weight: 330;
+    line-height: 1;
+    letter-spacing: 2.4px;
+    margin: 0 0 var(--spacing-lg);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.1s forwards;
 }
 
 .heroSubtitle {
-  font-family: var(--font-ui);
-  font-size: var(--typography-body-lg);
-  font-weight: 420;
-  line-height: 1.56;
-  max-width: 640px;
-  margin: 0 auto var(--spacing-xxl);
-  opacity: 0;
-  animation: fadeInUp 0.8s ease 0.2s forwards;
+    font-family: var(--font-ui);
+    font-size: var(--typography-body-lg);
+    font-weight: 420;
+    line-height: 1.56;
+    max-width: 640px;
+    margin: 0 auto var(--spacing-xxl);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.2s forwards;
 }
 
 .heroActions {
-  opacity: 0;
-  animation: fadeInUp 0.8s ease 0.3s forwards;
+    opacity: 0;
+    animation: fadeInUp 0.8s ease 0.3s forwards;
 }
 
 @keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Dark mode - cinematic hero */
-[data-theme='dark'] .hero {
-  background: var(--colors-canvas-night);
-  min-height: 560px;
+[data-theme="dark"] .hero {
+    background-image: url(/img/heroBackgroundDark.svg);
 }
 
-[data-theme='dark'] .heroBackground {
-  background-image: url(/img/heroBackgroundDark.svg);
+[data-theme="dark"] .heroBackground {
 }
 
-[data-theme='dark'] .eyebrow {
-  color: var(--colors-link-cool-1);
+[data-theme="dark"] .eyebrow {
+    color: var(--colors-link-cool-1);
 }
 
-[data-theme='dark'] .title {
-  color: var(--colors-on-primary);
+[data-theme="dark"] .title {
+    color: var(--colors-on-primary);
 }
 
-[data-theme='dark'] .heroSubtitle {
-  color: var(--colors-link-cool-3);
+[data-theme="dark"] .heroSubtitle {
+    color: var(--colors-link-cool-3);
 }
 
 /* Light mode - clean editorial hero */
-[data-theme='light'] .hero {
-  background: var(--colors-canvas-cream);
-  min-height: 480px;
+[data-theme="light"] .hero {
+    background-image: url(/img/heroBackground.svg);
 }
 
-[data-theme='light'] .heroBackground {
-  background-image: none;
+[data-theme="light"] .heroBackground {
+    background-image: none;
 }
 
-[data-theme='light'] .heroBackground::after {
-  display: none;
+[data-theme="light"] .heroBackground::after {
+    display: none;
 }
 
-[data-theme='light'] .eyebrow {
-  color: var(--colors-shade-50);
+[data-theme="light"] .eyebrow {
+    color: var(--colors-shade-50);
 }
 
-[data-theme='light'] .title {
-  color: var(--colors-ink);
+[data-theme="light"] .title {
+    color: var(--colors-ink);
 }
 
-[data-theme='light'] .heroSubtitle {
-  color: var(--colors-shade-60);
+[data-theme="light"] .heroSubtitle {
+    color: var(--colors-shade-60);
 }
 
 @media screen and (max-width: 996px) {
-  .hero {
-    padding: var(--spacing-xxl) 0;
-    min-height: 400px;
-  }
+    .hero {
+        padding: var(--spacing-xxl) 0;
+        min-height: 400px;
+    }
 
-  .title {
-    font-size: var(--typography-display-xl);
-    letter-spacing: 1.2px;
-  }
+    .title {
+        font-size: var(--typography-display-xl);
+        letter-spacing: 1.2px;
+    }
 
-  .heroSubtitle {
-    font-size: var(--typography-body-md);
-  }
+    .heroSubtitle {
+        font-size: var(--typography-body-md);
+    }
 }
 
 @media screen and (max-width: 768px) {
-  .hero {
-    min-height: 360px;
-    padding: var(--spacing-xl) 0;
-  }
+    .hero {
+        min-height: 360px;
+        padding: var(--spacing-xl) 0;
+    }
 
-  .title {
-    font-size: var(--typography-display-lg);
-    letter-spacing: 0;
-  }
+    .title {
+        font-size: var(--typography-display-lg);
+        letter-spacing: 0;
+    }
 
-  .eyebrow,
-  .title,
-  .heroSubtitle,
-  .heroActions {
-    animation: none;
-    opacity: 1;
-  }
+    .eyebrow,
+    .title,
+    .heroSubtitle,
+    .heroActions {
+        animation: none;
+        opacity: 1;
+    }
 }
