@@ -172,12 +172,14 @@
  * ============================================ */
 
 .title {
-    font-family: var(--font-ui);
+    font-family: var(--font-display);
     font-size: var(--typography-heading-lg);
-    font-weight: 500;
+    font-weight: 330;
     line-height: 1.14;
     letter-spacing: 0.36px;
     margin: 0 0 var(--spacing-sm);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--colors-hairline-dark);
 }
 
 [data-theme="dark"] .title {
@@ -186,6 +188,7 @@
 
 [data-theme="light"] .title {
     color: var(--colors-ink);
+    border-bottom-color: var(--colors-hairline-light);
 }
 
 .content {

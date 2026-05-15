@@ -7,26 +7,26 @@ import styles from "./index.module.css";
 
 const projects = [
   {
-    category: "Sequencer",
-    title: "Aciduino",
-    description:
-      "Analog modeling synthesizer with sequencer for authentic acid basslines.",
-    image: "/img/aciduino/aciduino_v1-3.jpeg",
-    href: "/aciduino",
-  },
-  {
     category: "DSP",
     title: "JC-303",
     description:
-      "Open source罗兰 TB-303 emulator for embedded systems and microcontrollers.",
+      "A Free Roland TB-303 Plugin for Windows, MacOS and Linux: VST2, VST3, LV2, CLAP and AU.",
     image: "/img/roland303-header1.jpg",
     href: "/jc303",
+  },
+  {
+    category: "Sequencer",
+    title: "Aciduino",
+    description:
+      "Affordable and DIY, Roland TB-303 and TR-808 step sequencer clone and midi controller.",
+    image: "/img/aciduino/aciduino_v1-3.jpeg",
+    href: "/aciduino",
   },
   {
     category: "Libraries",
     title: "µClock",
     description:
-      "Lightweight MIDI clock library for Arduino and compatible platforms.",
+      "A tight music clock generator for Arduino and PlatformIO using hardware timer interruption.",
     image: "/img/master_clocks_syncflash.jpg",
     href: "/uClock",
   },
@@ -130,8 +130,8 @@ export default function Home() {
           <h1 className={styles.heroTitle}>{siteConfig.title}</h1>
           <p className={styles.heroSubtitle}>{siteConfig.tagline}</p>
           <div className={styles.heroCta}>
-            <Link className="button button--primary" to="/docs/intro">
-              Explore Docs
+            <Link className="button button--primary" to="#featured">
+              Featured
             </Link>
             <Link
               className="button button--outline"
@@ -163,7 +163,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.projectsSection}>
+      <section id="featured" className={styles.projectsSection}>
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>Featured Projects</h2>
           <p className={styles.sectionSubtitle}>
@@ -180,7 +180,7 @@ export default function Home() {
       <section className={styles.ctaSection}>
         <div className={styles.ctaContent}>
           <h2 className={styles.ctaTitle}>
-            Ready to build your own instruments?
+            Want to build your own instruments?
           </h2>
           <p className={styles.ctaDescription}>
             Dive into our documentation and start creating. All projects are

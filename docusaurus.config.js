@@ -1,44 +1,44 @@
 // @ts-check
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'midilab',
-  tagline: 'DIY Electronic Music Instruments',
-  favicon: 'img/favicon.ico',
+  title: "midilab",
+  tagline: "DIY Electronic Music Instruments",
+  favicon: "img/favicon.ico",
 
   headTags: [
     {
-      tagName: 'link',
+      tagName: "link",
       attributes: {
-        rel: 'preconnect',
-        href: 'https://fonts.googleapis.com',
+        rel: "preconnect",
+        href: "https://fonts.googleapis.com",
       },
     },
     {
-      tagName: 'link',
+      tagName: "link",
       attributes: {
-        rel: 'preconnect',
-        href: 'https://fonts.gstatic.com',
-        crossorigin: 'anonymous',
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossorigin: "anonymous",
       },
     },
     {
-      tagName: 'link',
+      tagName: "link",
       attributes: {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Inter:wght@420..550&display=swap',
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@420..550&display=swap",
       },
     },
     {
-      tagName: 'script',
+      tagName: "script",
       attributes: {
-        async: 'async',
-        src: 'https://www.googletagmanager.com/gtag/js?id=G-30TXP5JF0Q',
+        async: "async",
+        src: "https://www.googletagmanager.com/gtag/js?id=G-30TXP5JF0Q",
       },
     },
     {
-      tagName: 'script',
+      tagName: "script",
       attributes: {},
       innerHTML: `
         window.dataLayer = window.dataLayer || [];
@@ -49,31 +49,31 @@ const config = {
     },
   ],
 
-  url: 'https://midilab.co/',
-  baseUrl: '/',
+  url: "https://midilab.co/",
+  baseUrl: "/",
 
-  onBrokenLinks: 'warn',
+  onBrokenLinks: "warn",
 
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: './sidebars.js',
-          editUrl: 'https://github.com/midilab/midilab.github.io/tree/main/',
+          sidebarPath: "./sidebars.js",
+          editUrl: "https://github.com/midilab/midilab.github.io/tree/main/",
         },
         blog: {
           showReadingTime: true,
-          editUrl: 'https://github.com/midilab/midilab.github.io/tree/main/',
+          editUrl: "https://github.com/midilab/midilab.github.io/tree/main/",
         },
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
       }),
     ],
@@ -82,136 +82,136 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: 'img/midilab_logo.svg',
+      image: "img/midilab_logo.svg",
       colorMode: {
-        defaultMode: 'dark',
+        defaultMode: "dark",
         disableSwitch: false,
         respectPrefersColorScheme: false,
       },
       navbar: {
-        title: 'midilab',
+        title: "midilab",
         logo: {
-          alt: 'midilab logo',
-          src: 'img/midilab_logo.svg',
+          alt: "midilab logo",
+          src: "img/midilab_logo.svg",
         },
         items: [
           {
-            type: 'dropdown',
-            label: 'DSP',
-            position: 'right',
+            type: "dropdown",
+            label: "DSP",
+            position: "right",
             items: [
               {
-                label: 'JC-303',
-                to: '/jc303',
+                label: "JC-303",
+                to: "/jc303",
               },
               {
-                label: 'OpenDSP',
-                to: '/opendsp',
+                label: "OpenDSP",
+                to: "/opendsp",
               },
             ],
           },
           {
-            type: 'dropdown',
-            label: 'Sequencer',
-            position: 'right',
+            type: "dropdown",
+            label: "Sequencer",
+            position: "right",
             items: [
               {
-                label: 'Aciduino',
-                to: '/aciduino',
+                label: "Aciduino",
+                to: "/aciduino",
               },
               {
-                label: 'Pattern Remix',
-                to: '/midibox-seqv4-pattern-remix',
+                label: "Pattern Remix",
+                to: "/midibox-seqv4-pattern-remix",
               },
             ],
           },
           {
-type: 'dropdown',
-            label: 'Libraries',
-            position: 'right',
+            type: "dropdown",
+            label: "Libraries",
+            position: "right",
             items: [
               {
-                label: 'µClock',
-                to: '/uClock',
+                label: "µClock",
+                to: "/uClock",
               },
               {
-                label: 'µCtrl',
-                to: '/uCtrl',
+                label: "µCtrl",
+                to: "/uCtrl",
               },
               {
-                label: 'µMODULAR',
-                to: '/umodular',
+                label: "µMODULAR",
+                to: "/umodular",
               },
             ],
           },
           {
-            href: 'https://github.com/',
-            label: 'GitHub',
-            position: 'right',
+            href: "https://github.com/",
+            label: "GitHub",
+            position: "right",
           },
           {
-            to: '/about',
-            label: 'About',
-            position: 'right',
+            to: "/about",
+            label: "About",
+            position: "right",
           },
         ],
       },
       footer: {
-        style: 'dark',
+        style: "dark",
         links: [
           {
-            title: 'DSP',
+            title: "DSP",
             items: [
               {
-                label: 'OpenDSP',
-                to: '/opendsp',
+                label: "OpenDSP",
+                to: "/opendsp",
               },
               {
-                label: 'JC-303',
-                to: '/jc303',
+                label: "JC-303",
+                to: "/jc303",
               },
             ],
           },
           {
-            title: 'Sequencer',
+            title: "Sequencer",
             items: [
               {
-                label: 'Aciduino',
-                to: '/aciduino',
+                label: "Aciduino",
+                to: "/aciduino",
               },
               {
-                label: 'Pattern Remix',
-                to: '/midibox-seqv4-pattern-remix',
+                label: "Pattern Remix",
+                to: "/midibox-seqv4-pattern-remix",
               },
             ],
           },
           {
-            title: 'Libraries',
+            title: "Libraries",
             items: [
               {
-                label: 'µClock',
-                to: '/uClock',
+                label: "µClock",
+                to: "/uClock",
               },
               {
-                label: 'µCtrl',
-                to: '/uCtrl',
+                label: "µCtrl",
+                to: "/uCtrl",
               },
               {
-                label: 'µMODULAR',
-                to: '/umodular',
+                label: "µMODULAR",
+                to: "/umodular",
               },
             ],
           },
           {
-            title: 'Community',
+            title: "Community",
             items: [
               {
-                label: 'GitHub',
-                href: 'https://github.com/midilab',
+                label: "GitHub",
+                href: "https://github.com/midilab",
               },
               {
-                label: 'Discord',
-                href: 'https://discord.gg/DCb3dy5A',
+                label: "Discord",
+                href: "https://discord.gg/DCb3dy5A",
               },
             ],
           },
@@ -226,9 +226,9 @@ type: 'dropdown',
 
   plugins: [
     [
-      '@docusaurus/plugin-google-gtag',
+      "@docusaurus/plugin-google-gtag",
       {
-        trackingID: 'G-30TXP5JF0Q',
+        trackingID: "G-30TXP5JF0Q",
         anonymizeIP: true,
       },
     ],
