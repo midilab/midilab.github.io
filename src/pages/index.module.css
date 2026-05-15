@@ -192,10 +192,17 @@
     overflow: hidden;
     box-shadow: var(--elevation-3);
     transition: transform 0.3s ease;
+    text-decoration: none;
+    display: block;
 }
 
 .projectCard:hover {
     transform: translateY(-4px);
+    text-decoration: none;
+}
+
+.projectCard:hover .projectTitle {
+    text-decoration: none;
 }
 
 .projectImage {

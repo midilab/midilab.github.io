@@ -57,6 +57,17 @@
     background: var(--colors-canvas-night-elevated);
     box-shadow: var(--elevation-1);
     color: var(--colors-on-primary);
+    text-decoration: none;
+}
+
+[data-theme="dark"] .card:hover {
+    text-decoration: none;
+}
+
+[data-theme="dark"] .card:hover .title,
+[data-theme="dark"] .card:hover h3,
+[data-theme="dark"] .card:hover h4 {
+    text-decoration: none;
 }
 
 [data-theme="dark"] .card:hover {
@@ -69,11 +80,19 @@
     background: var(--colors-canvas-light);
     box-shadow: var(--elevation-3);
     color: var(--colors-ink);
+    text-decoration: none;
 }
 
 [data-theme="light"] .card:hover {
     box-shadow: var(--elevation-4);
     transform: translateY(-4px);
+    text-decoration: none;
+}
+
+[data-theme="light"] .card:hover .title,
+[data-theme="light"] .card:hover h3,
+[data-theme="light"] .card:hover h4 {
+    text-decoration: none;
 }
 
 /* ============================================
