@@ -135,9 +135,9 @@ export default function Home() {
             </Link>
             <Link
               className="button button--outline"
-              href="https://github.com/midilab"
+              href="https://discord.gg/EzbaPqwCJG"
             >
-              View on GitHub
+              Join Community
             </Link>
           </div>
         </div>
@@ -183,16 +183,13 @@ export default function Home() {
             Want to build your own instruments?
           </h2>
           <p className={styles.ctaDescription}>
-            Dive into our documentation and start creating. All projects are
-            open source and community-driven.
+            Get involved via discord server. All projects are open source and
+            community-driven.
           </p>
           <div className={styles.ctaButtons}>
-            <Link className="button button--primary" to="/docs/intro">
-              Get Started
-            </Link>
             <Link
-              className="button button--outline"
-              href="https://discord.gg/DCb3dy5A"
+              className="button button--primary"
+              href="https://discord.gg/EzbaPqwCJG"
             >
               Join Community
             </Link>
