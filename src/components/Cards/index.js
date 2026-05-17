@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { createPortal } from "react-dom";
 import { paramCase } from "param-case";
 import Markdown from "react-markdown";
 import Link from "@docusaurus/Link";
@@ -89,12 +90,16 @@ export function Card({
           </span>
         </div>
       )}
-      {isOverlayVisible && (
+      {isOverlayVisible && createPortal(
         <div className={clsx(styles.overlay)} onClick={toggleOverlay}>
-          <div className={clsx(styles.overlayContent)}>
+          <div className={clsx(styles.overlayContent)} onClick={(e) => e.stopPropagation()}>
+            <button className={clsx(styles.closeButton)} onClick={toggleOverlay} aria-label="Close">
+              ×
+            </button>
             <img src={photo} alt="Full-size view" />
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </Link>
   );

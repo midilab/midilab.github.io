@@ -284,14 +284,37 @@
 }
 
 .overlayContent {
+    position: relative;
     max-width: 90%;
     max-height: 90%;
 }
 
 .overlayContent img {
     max-width: 100%;
-    max-height: 100%;
+    max-height: 90vh;
     border-radius: var(--rounded-lg);
+}
+
+.closeButton {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    color: white;
+    font-size: 28px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+}
+
+.closeButton:hover {
+    background: rgba(0, 0, 0, 0.8);
 }
 
 /* ============================================

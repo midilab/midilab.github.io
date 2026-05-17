@@ -630,10 +630,6 @@ a.projectCard:hover .title {
     font-weight: 550;
 }
 
-.menu__caret::before {
-    background: var(--colors-link-cool-3) !important;
-}
-
 .menu__list-item-collapsible:hover {
     background: rgba(255, 255, 255, 0.05);
 }
@@ -965,10 +961,6 @@ article img {
     background: rgba(0, 0, 0, 0.08);
     color: var(--colors-ink);
     font-weight: 550;
-}
-
-[data-theme="light"] .menu__caret::before {
-    background: var(--colors-shade-50) !important;
 }
 
 [data-theme="light"] .menu__list-item-collapsible:hover {
