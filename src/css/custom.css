@@ -446,14 +446,7 @@ a.projectCard:hover .title {
 
 .navbar {
     background: var(--colors-canvas-night);
-    /*
-    position: sticky;
-    top: 0;
-    z-index: 200;
-    */
     border-bottom: 1px solid var(--colors-hairline-dark);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
@@ -1143,6 +1136,14 @@ article img {
     article h1 {
         font-size: 2rem;
     }
+
+    .navbar__toggle {
+        color: var(--colors-on-primary);
+    }
+
+    [data-theme="light"] .navbar__toggle {
+        color: var(--colors-ink);
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -1162,141 +1163,12 @@ article img {
     }
 
     .navbar__toggle {
-        min-width: 44px;
-        min-height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         color: var(--colors-on-primary);
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        padding: var(--spacing-xs);
-    }
-
-    .navbar__toggle:hover {
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: var(--rounded-md);
-    }
-
-    .navbar__toggle svg {
-        width: 24px;
-        height: 24px;
-        fill: currentColor;
     }
 
     [data-theme="light"] .navbar__toggle {
         color: var(--colors-ink);
     }
-
-    [data-theme="light"] .navbar__toggle:hover {
-        background: rgba(0, 0, 0, 0.05);
-    }
-
-    .navbar-sidebar {
-        background: var(--colors-canvas-night);
-        position: fixed;
-        top: 0 !important;
-        left: 0;
-        bottom: 0 !important;
-        width: 300px;
-        max-width: 85vw;
-        height: 100vh !important;
-        z-index: 9999;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
-
-    .navbar-sidebar--show {
-        transform: translateX(0);
-    }
-
-    .navbar-sidebar__brand {
-        background: var(--colors-canvas-night);
-        padding: var(--spacing-md) var(--spacing-lg);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid var(--colors-hairline-dark);
-    }
-
-    .navbar-sidebar__items {
-        background: var(--colors-canvas-night);
-        padding: var(--spacing-lg);
-        padding-top: var(--spacing-xl);
-    }
-
-    .navbar-sidebar__items .navbar__link {
-        display: block;
-        padding: var(--spacing-sm) var(--spacing-md);
-        color: var(--colors-on-primary);
-        font-size: var(--typography-body-md);
-    }
-
-    .navbar-sidebar__items .navbar__link:hover {
-        background: rgba(255, 255, 255, 0.1);
-        color: var(--colors-on-primary);
-    }
-
-    .navbar-sidebar__close {
-        min-width: 44px;
-        min-height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--colors-on-primary);
-    }
-
-    .navbar-sidebar__backdrop {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 400;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease, visibility 0.3s ease;
-    }
-
-    .navbar-sidebar__backdrop--show {
-        opacity: 1;
-        visibility: visible;
-    }
-}
-
-/* Light mode - Mobile sidebar */
-[data-theme="light"] .navbar-sidebar {
-    background: var(--colors-canvas-light);
-}
-
-[data-theme="light"] .navbar-sidebar__brand {
-    background: var(--colors-canvas-light);
-    border-bottom-color: var(--colors-hairline-light);
-}
-
-[data-theme="light"] .navbar-sidebar__items {
-    background: var(--colors-canvas-light);
-}
-
-[data-theme="light"] .navbar-sidebar__items .navbar__link {
-    color: var(--colors-ink);
-}
-
-[data-theme="light"] .navbar-sidebar__items .navbar__link:hover {
-    background: rgba(0, 0, 0, 0.05);
-    color: var(--colors-ink);
-}
-
-[data-theme="light"] .navbar-sidebar__close {
-    color: var(--colors-ink);
-}
-
-[data-theme="light"] .navbar-sidebar__backdrop {
-    background: rgba(0, 0, 0, 0.3);
 }
 
 /* ============================================
