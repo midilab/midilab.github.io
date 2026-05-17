@@ -10,13 +10,13 @@ export const Blocks = ({ blocks }) => {
             switch (block._template) {
               case "hero":
                 return (
-                  <div data-tinafield={`blocks.${i}`} key={i + block._template}>
+                  <div key={i + block._template}>
                     <Hero data={block} index={i} />
                   </div>
                 );
               case "features":
                 return (
-                  <div data-tinafield={`blocks.${i}`} key={i + block._template}>
+                  <div key={i + block._template}>
                     <Features data={block} index={i} />
                   </div>
                 );

@@ -2,18 +2,16 @@
 title: µClock Timing Library
 description: Hardware-timer based BPM clock generation for Arduino/PlatformIO.
 blocks:
-  - title: µClock Library
-    subtitle: >-
-      Precision BPM Clock Generation for Arduino/PlatformIO using Hardware
-      Timers.
+  - _template: "hero"
+    title: "µClock"
+    subtitle: "Music Clock Library for Arduino/PlatformIO using Hardware Timers."
     actions:
-      - title: View Releases on GitHub
-        href: 'https://github.com/midilab/uClock/releases'
-        _template: link
-      - title: Browse µClock Repository
-        href: 'https://github.com/midilab/uClock'
-        _template: link
-    _template: hero
+      - title: "View Releases on GitHub"
+        href: "https://github.com/midilab/uClock/releases"
+        _template: "link"
+      - title: "Browse µClock Repository"
+        href: "https://github.com/midilab/uClock"
+        _template: "link"
 ---
 
 **µClock** is a dedicated library for generating highly accurate, stable BPM (Beats Per Minute) clock signals on microcontroller platforms like Arduino and PlatformIO. It leverages hardware timer interrupts, avoiding the inconsistencies of software-based timing, making it ideal for demanding real-time music applications.
@@ -48,7 +46,7 @@ Whether you're building a sequencer, drum machine, MIDI clock master/slave, or a
       _template: "Card",
       title: "Shuffle/Swing Templates",
       content:
-        "Built-in support for swing template build-up, emulate various classic groove machines swings using uClock."
+        "Built-in support for swing template build-up, emulate various classic groove machines swings using µClock."
     },
     {
       _template: "Card",
@@ -85,7 +83,7 @@ You can set the main output or input PPQN resolution using `setOutputPPQN(value)
 
 ## Applications Powered by µClock
 
-µClock serves as the timing core for many DIY music projects:
+µClock serves as the timing core for many DIY and commercial music projects:
 
 <CardSection
   cards={[
@@ -95,13 +93,6 @@ You can set the main output or input PPQN resolution using `setOutputPPQN(value)
       youtubeVid: "7D5RpPdX0to",
       content:
         "The precise step sequencing and timing rely heavily on µClock's hardware-based clock generation for its Roland-inspired workflow - **by Midilab**."
-    },
-    {
-      _template: "Card",
-      title: "XR-1 Groovebox",
-      youtubeVid: "s68AS_JNLJU",
-      content:
-        "This full-featured groovebox showcases µClock's ability to provide a stable master clock for complex pattern playback - **by James Gray**."
     },
     {
       _template: "Card",
@@ -116,6 +107,41 @@ You can set the main output or input PPQN resolution using `setOutputPPQN(value)
       youtubeVid: "OYtPbgozCbE",
       content:
         "A perfect example of µClock used for synchronization tasks, generating or locking to MIDI and DIN Sync timing signals reliably - **by ymnkmusic**."
+    },
+    {
+      _template: "Card",
+      youtubeVid: "ATvXg2jaVuM",
+      title: "Oberheim Matrix Controller",
+      content:
+        "A commercial controller for Oberheim Matrix with powerfull arpergiator based on µClock - by **Alpes Machines**"
+    },
+    {
+      _template: "Card",
+      youtubeVid: "sI0n5H2NAZI?start=308",
+      title: "Polyphonic Step Sequencer",
+      content:
+        "A DIY powerfull MIDI polyphonic step sequencer with eurorack sync capabilities based on µClock - **by savt22**"
+    },
+    {
+      _template: "Card",
+      youtubeVid: "rXl1gpWJp-g",
+      title: "ESP32 DRUM SYNTH MACHINE",
+      content:
+        "A Wavetable synthesizer with 16 sound polyphony and lowpass filter, the sequencer has 16 step/pattern editor and random generators and its based on µClock - **by Carlos Lopez**"
+    },
+    {
+      _template: "Card",
+      youtubeVid: "siliA0u4QeY?start=137",
+      title: "SIPquencer",
+      content:
+        "Using an old telephone to create a functional computer music system while retaining its original keypad, handset, and circuits. Main clock engine for sequencer based on µClock - **by Rolandos**"
+    },
+    {
+      _template: "Card",
+      youtubeVid: "klbXwwKKW7c?start=32",
+      title: "Gesture Sequencer",
+      content:
+        "Mudras is a Eurorack Gesture Sequencer Looper based on µClock. It can be clocked from any source like an Oscillator - **by  IC-Alchemy**"
     }
   ]}
 />

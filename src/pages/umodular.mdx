@@ -2,17 +2,16 @@
 title: µMODULAR
 description: Open-source hardware & firmware toolkit for DIY music electronics.
 blocks:
-  - background: ''
-    title: µMODULAR
-    subtitle: Open-Source Toolkit for Building Custom MIDI Controllers & Instruments.
+  - _template: "hero"
+    title: "µMODULAR"
+    subtitle: "Open-Source Toolkit for Building Custom MIDI Controllers & Instruments."
     actions:
-      - title: Download Toolkit
-        href: 'https://github.com/midilab/uMODULAR/archive/master.zip'
-        _template: link
-      - title: Browse Repository
-        href: 'https://github.com/midilab/uMODULAR'
-        _template: link
-    _template: hero
+      - title: "Download Toolkit"
+        href: "https://github.com/midilab/uMODULAR/archive/master.zip"
+        _template: "link"
+      - title: "Browse Repository"
+        href: "https://github.com/midilab/uMODULAR"
+        _template: "link"
 ---
 
 ![](/img/umodular/umodular-v02.jpeg)
@@ -20,6 +19,87 @@ blocks:
 **µMODULAR** is your open-source launchpad for crafting unique electronic music gear. We provide a collection of modular hardware building blocks (schematics or ready-to-use PCBs) and streamlined firmware libraries, empowering you to design and build the exact MIDI controller, sequencer, instrument, or signal processor you envision.
 
 Focus on your creative idea, not reinventing the wheel. µMODULAR handles common hardware interfaces and simplifies complex firmware tasks.
+
+## Firmware: Simplified Coding
+
+Spend your time on creative features, not low-level coding headaches. Our firmware libraries, built for the **Arduino platform** (with PlatformIO support), abstract away the complexities of real-time operation, concurrency, and hardware interfacing.
+
+* **Cross-Platform:** Compatible with various microcontroller architectures (AVR, ARM).
+* **Intuitive API:** Provides safe and easy-to-use functions for handling timing (like the popular `µClock`), inputs, outputs, MIDI, and more.
+
+## Applications: See µMODULAR in Action
+
+µMODULAR provides the foundation for diverse DIY and commercial projects. Here are some examples built using its hardware modules or firmware libraries:
+
+<CardSection
+  cards={[
+    {
+      _template: "Card",
+      title: "Aciduino V2 Sequencer",
+      youtubeVid: "7D5RpPdX0to",
+      content:
+        "Roland-inspired step sequencer (up to 16 tracks) with deep control grid. Uses µClock and µCtrl for clock, MIDI I/O, controls, & display - **by Midilab**."
+    },
+    {
+      _template: "Card",
+      title: "Atari 2600 MIDI Station",
+      youtubeVid: "2uJZTJCUkSI",
+      content:
+        "Custom live/production unit: 16-track step sequencer and advanced MIDI controller. Based on µClock and µCtrl - **by Midilab**."
+    },
+    {
+      _template: "Card",
+      title: "MIDI Looper",
+      youtubeVid: "7VqLjlL3LzU",
+      content:
+        "Real-time MIDI looping and sequencing capabilities, built upon the reliable timing provided by the µClock firmware library - **by ymnkmusic**.",
+      to: ""
+    },
+    {
+      _template: "Card",
+      title: "MIDI/DIN Sync Box",
+      youtubeVid: "OYtPbgozCbE",
+      content:
+        "A practical utility box for synchronizing MIDI and DIN Sync gear, showcasing the flexibility of the µClock library for timing tasks - **by ymnkmusic**.",
+      to: ""
+    },
+    {
+      _template: "Card",
+      youtubeVid: "ATvXg2jaVuM",
+      title: "Oberheim Matrix Controller",
+      content:
+        "A commercial controller for Oberheim Matrix with powerfull arpergiator based on µClock - by **Alpes Machines**"
+    },
+    {
+      _template: "Card",
+      youtubeVid: "sI0n5H2NAZI?start=308",
+      title: "Polyphonic Step Sequencer",
+      content:
+        "A DIY powerfull MIDI polyphonic step sequencer with eurorack sync capabilities based on µClock - **by savt22**"
+    },
+    {
+      _template: "Card",
+      youtubeVid: "rXl1gpWJp-g",
+      title: "ESP32 DRUM SYNTH MACHINE",
+      content:
+        "A Wavetable synthesizer with 16 sound polyphony and lowpass filter, the sequencer has 16 step/pattern editor and random generators and its based on µClock - **by Carlos Lopez**"
+    },
+    {
+      _template: "Card",
+      youtubeVid: "siliA0u4QeY?start=137",
+      title: "SIPquencer",
+      content:
+        "Using an old telephone to create a functional computer music system while retaining its original keypad, handset, and circuits. Main clock engine for sequencer based on µClock - **by Rolandos**"
+    },
+    {
+      _template: "Card",
+      youtubeVid: "klbXwwKKW7c?start=32",
+      title: "Gesture Sequencer",
+      content:
+        "Mudras is a Eurorack Gesture Sequencer Looper based on µClock. It can be clocked from any source like an Oscillator - **by  IC-Alchemy**"
+    }
+  ]}
+/>
 
 ## Hardware: Modular Building Blocks
 
@@ -61,58 +141,6 @@ Build your device piece by piece. Our hardware modules are designed to work toge
   ]}
 />
 
-## Firmware: Simplified Coding
-
-Spend your time on creative features, not low-level coding headaches. Our firmware libraries, built for the **Arduino platform** (with PlatformIO support), abstract away the complexities of real-time operation, concurrency, and hardware interfacing.
-
-* **Cross-Platform:** Compatible with various microcontroller architectures (AVR, ARM).
-* **Intuitive API:** Provides safe and easy-to-use functions for handling timing (like the popular `uClock`), inputs, outputs, MIDI, and more.
-
-## Applications: See µMODULAR in Action
-
-µMODULAR provides the foundation for diverse DIY projects. Here are some examples built using its hardware concepts or firmware libraries:
-
-<CardSection
-  cards={[
-    {
-      _template: "Card",
-      title: "Aciduino V2 Sequencer",
-      youtubeVid: "7D5RpPdX0to",
-      content:
-        "Roland-inspired step sequencer (up to 16 tracks) with deep control grid. Uses µMODULAR hardware/firmware for MIDI I/O, controls & display."
-    },
-    {
-      _template: "Card",
-      title: "Atari 2600 MIDI Station",
-      youtubeVid: "2uJZTJCUkSI",
-      content:
-        "Midilab's custom live/production unit: 16-track step sequencer, advanced MIDI controller, real-time programming, and named controls via display."
-    },
-    {
-      _template: "Card",
-      title: "XR-1 Groovebox (by James Gray)",
-      youtubeVid: "s68AS_JNLJU",
-      content:
-        "A complete groovebox demonstrating the power of the uClock timing library (part of the µMODULAR firmware ecosystem) for tight sequencing."
-    },
-    {
-      _template: "Card",
-      title: "MIDI Looper (by ymnkmusic)",
-      youtubeVid: "7VqLjlL3LzU",
-      content:
-        "Real-time MIDI looping and sequencing capabilities, built upon the reliable timing provided by the uClock firmware library.",
-      to: ""
-    },
-    {
-      _template: "Card",
-      title: "MIDI/DIN Sync Box (by ymnkmusic)",
-      youtubeVid: "OYtPbgozCbE",
-      content:
-        "A practical utility box for synchronizing MIDI and DIN Sync gear, showcasing the flexibility of the uClock library for timing tasks.",
-      to: ""
-    }
-  ]}
-/>
-
 ## Getting Started with µMODULAR
+
 Ready to start building your dream machine? Dive into the **[µMODULAR GitHub Repository](https://github.com/midilab/uMODULAR)** for all schematics, PCB files, and firmware libraries.

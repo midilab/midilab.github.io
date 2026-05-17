@@ -1,120 +1,174 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
 .cardPhoto {
-  margin: auto auto;
-  max-width: 100%;
-  max-height: 170px;
-  /* box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50); */
+    margin: auto auto;
+    max-width: 100%;
+    max-height: 170px;
+    object-fit: contain;
 }
 
 .cardsSection {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: stretch;
-  margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-huge);
 }
 
 .section {
-  margin-bottom: 3rem;
+    margin-bottom: var(--spacing-xxl);
+    padding: var(--spacing-huge) var(--spacing-xl);
 }
 
 .section h3 {
-  font-weight: 600;
+    font-family: var(--font-display);
+    font-weight: 330;
+    font-size: var(--typography-display-md);
+    line-height: 1.14;
+    color: var(--colors-on-primary);
+    margin: 0 0 var(--spacing-lg);
+    text-align: center;
 }
 
 .sectionDescription {
-  /* color: var(--docs-color-text-100); */
-  margin: 0rem 0 1.25rem 0;
-  margin-top: -0.5rem;
+    font-family: var(--font-ui);
+    font-size: var(--typography-body-md);
+    font-weight: 420;
+    color: var(--colors-link-cool-3);
+    line-height: 1.5;
+    margin: 0 0 var(--spacing-xl);
+    text-align: center;
 }
 
 .card {
-  margin: 20px;
-  margin-bottom: 80px;
-  display: flex;
-  flex-grow: 0;
-  flex-shrink: 0;
-  align-items: center;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex-basis: calc(20% - 10px);
-  text-decoration: none;
-
-  /*align-items: flex-start;
-  gap: 10px;
-*/
-  text-decoration: none;
-  color: var(--docs-color-text);
-  --ifm-link-hover-decoration: none;
-  --ifm-link-hover-color: inherit;
-  cursor: pointer;
-  /*border-width: 1px;
-  border-style: solid;*/
-  /* transition-property: background-color, color; */
-  /* background-color:  #f6f3ef;
- */
-  border-radius: 8px;
-  position: relative;
-  overflow: hidden;
-
-  border-color: var(--ifm-color-primary-lightest);
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--colors-ink);
+    background: var(--colors-canvas-light);
+    border-radius: var(--rounded-lg);
+    overflow: hidden;
+    box-shadow: var(--elevation-3);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    position: relative;
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
 }
 
-/* [data-theme='dark'] .card { */
-  /* background-color: var(--ifm-dropdown-background-color); */
-  /* box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 4px 0px; */
-/* } */
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--elevation-4);
+}
 
 .card.row {
-  flex-direction: row;
-}
-
-.card .icon svg {
-  width: auto;
-  height: 100%;
+    flex-direction: row;
 }
 
 .card .icon {
-  width: 48px;
-  height: 48px;
+    width: 48px;
+    height: 48px;
+    margin-bottom: var(--spacing-md);
+}
+
+.card .icon svg {
+    width: auto;
+    height: 100%;
+    stroke: var(--colors-aloe-10);
 }
 
 .cardContent {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-lg);
+    text-align: center;
+}
+
+.cardContent .button {
+    margin-top: var(--spacing-md);
+    width: 100%;
 }
 
 .title {
-  font-size: 16px;
-  letter-spacing: -0.5px;
-  font-weight: 600;
-  margin-bottom: 3px;
-  color: var(--docs-color-text-100);
-  /* border-bottom: solid #5f7766 1px; */
+    font-family: var(--font-ui);
+    font-size: var(--typography-body-md);
+    font-weight: 550;
+    color: var(--colors-ink);
+    margin: 0;
+    text-align: center;
 }
 
 .content {
-  font-size: 14px;
-  color: var(--docs-color-text-100);
-  line-height: 1.5;
-  margin-bottom: 3px;
+    font-family: var(--font-ui);
+    font-size: var(--typography-caption);
+    font-weight: 420;
+    color: var(--colors-shade-60);
+    line-height: 1.4;
+    text-align: center;
 }
 
 .tag {
-  font-size: 12px;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  font-weight: 500;
-  position: absolute;
+    font-size: var(--typography-micro);
+    font-weight: 500;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.tag span {
+    display: block;
+    width: 80px;
+    text-align: center;
+    padding: var(--spacing-xs) 0;
+    color: var(--colors-on-primary);
+    font-family: var(--font-ui);
+    font-size: var(--typography-micro);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.28px;
+    transform: rotate(45deg) translateX(16px) translateY(-4px);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .cardsSection {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 996px) {
+    .cardsSection {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media screen and (max-width: 768px) {
-  .cardsSection {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
+    .cardsSection {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+
+    .section {
+        padding: var(--spacing-xxl) var(--spacing-lg);
+    }
+
+    .card {
+        opacity: 1;
+        animation: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cardsSection {
+        grid-template-columns: 1fr;
+    }
 }

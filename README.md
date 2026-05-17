@@ -1,29 +1,41 @@
-## Midilab.co website
+# Website
 
-```
-$ npm install && npm run tina
-```
+This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-Or
+## Installation
 
-```
-$ yarn && yarn tina
+```bash
+yarn
 ```
 
-This will install dependencies and open the website in your browser.
+## Local Development
 
-Visit the CMS at [http://localhost:3000/admin](http://localhost:3000/admin) to start editing.
-
-### Build
-
-```
-$ npm run build
+```bash
+yarn start
 ```
 
-Or
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-```
-$ yarn build
+## Build
+
+```bash
+yarn build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+## Deployment
+
+Using SSH:
+
+```bash
+USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```bash
+GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
