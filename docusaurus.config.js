@@ -64,14 +64,8 @@ const config = {
       "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          sidebarPath: "./sidebars.js",
-          editUrl: "https://github.com/midilab/midilab.github.io/tree/main/",
-        },
-        blog: {
-          showReadingTime: true,
-          editUrl: "https://github.com/midilab/midilab.github.io/tree/main/",
-        },
+        docs: false,
+        blog: false,
         theme: {
           customCss: "./src/css/custom.css",
         },
