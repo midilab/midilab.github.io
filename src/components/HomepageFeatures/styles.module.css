@@ -6,31 +6,6 @@
   background: var(--colors-canvas-night);
 }
 
-.features p {
-  margin: 0;
-  font-family: var(--font-ui);
-  font-size: var(--typography-body-md);
-  font-weight: 420;
-  line-height: 1.5;
-  color: var(--colors-link-cool-3);
-}
-
-.features h3 {
-  font-family: var(--font-ui);
-  font-size: var(--typography-heading-md);
-  font-weight: 500;
-  line-height: 1.4;
-  color: var(--colors-on-primary);
-  margin: var(--spacing-md) 0 0;
-}
-
-.featureSvg {
-  height: 80px;
-  width: 80px;
-  filter: invert(100%) sepia(0%) saturate(2452%) hue-rotate(179deg) brightness(113%) contrast(107%);
-  transition: filter 0.3s ease, transform 0.3s ease;
-}
-
 .featureItem {
   text-align: center;
   padding: var(--spacing-xl);
@@ -38,16 +13,39 @@
   animation: fadeInUp 0.6s ease forwards;
 }
 
-.featureItem:nth-child(1) { animation-delay: 0.1s; }
-.featureItem:nth-child(2) { animation-delay: 0.2s; }
-.featureItem:nth-child(3) { animation-delay: 0.3s; }
-.featureItem:nth-child(4) { animation-delay: 0.4s; }
-.featureItem:nth-child(5) { animation-delay: 0.5s; }
-.featureItem:nth-child(6) { animation-delay: 0.6s; }
+.featureItem:nth-child(1) { animation-delay: 0.4s; }
+.featureItem:nth-child(2) { animation-delay: 0.5s; }
+.featureItem:nth-child(3) { animation-delay: 0.6s; }
+
+.featureSvg {
+  height: 80px;
+  width: 80px;
+  margin-bottom: var(--spacing-md);
+  filter: invert(100%) sepia(0%) saturate(2452%) hue-rotate(179deg) brightness(113%) contrast(107%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
 
 .featureItem:hover .featureSvg {
   filter: invert(76%) sepia(20%) saturate(953%) hue-rotate(69deg) brightness(101%) contrast(93%);
   transform: scale(1.05);
+}
+
+.featureTitle {
+  font-family: var(--font-ui);
+  font-size: var(--typography-heading-md);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--colors-on-primary);
+  margin: 0 0 var(--spacing-sm);
+}
+
+.featureDescription {
+  font-family: var(--font-ui);
+  font-size: var(--typography-body-md);
+  font-weight: 420;
+  line-height: 1.5;
+  color: var(--colors-link-cool-3);
+  margin: 0;
 }
 
 @keyframes fadeInUp {
@@ -66,10 +64,6 @@
     padding: var(--spacing-xxl) 0;
   }
 
-  .featureItem {
-    padding: var(--spacing-lg);
-  }
-
   .featureSvg {
     height: 64px;
     width: 64px;
@@ -80,5 +74,10 @@
   .featureItem {
     opacity: 1;
     animation: none;
+  }
+
+  .featureSvg {
+    height: 56px;
+    width: 56px;
   }
 }

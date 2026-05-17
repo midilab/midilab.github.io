@@ -4,10 +4,10 @@ import styles from "./styles.module.css";
 
 const Feature = ({ image, title, description }) => {
   return (
-    <div className={clsx("col col--4")}>
+    <div className={clsx("col col--4", styles.featureItem)}>
       {image && (
         <div className="text--center">
-          <img className={styles.featureSvg} src={image} role="img" />
+          <img className={styles.featureSvg} src={image} role="img" alt={title || ""} />
         </div>
       )}
       <div className="text--center padding-horiz--md">
