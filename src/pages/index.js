@@ -167,7 +167,7 @@ export default function Home() {
         <div className={styles.sectionHeader}>
           <h2 className={styles.sectionTitle}>Featured Projects</h2>
           <p className={styles.sectionSubtitle}>
-            Explore our open source electronic music instruments and libraries
+            Explore our TOP 3 open source electronic music instruments and libraries
           </p>
         </div>
         <div className={styles.projectsGrid}>
