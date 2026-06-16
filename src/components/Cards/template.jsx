@@ -4,15 +4,20 @@ const CardBlockTemplate = {
     name: "Card",
     label: "Card",
     ui: {
-        /* defaultItem: {
-            type: "title",
-            title: "Title",
-        }, */
+        defaultItem: {
+            variant: "light",
+        },
         itemProps: (item) => {
             return { label: item?.title };
         },
     },
     fields: [
+        {
+            name: "variant",
+            label: "Variant",
+            type: "string",
+            options: ["light", "featured", "cinematic", "pistachioband", "photoframe"],
+        },
         {
             name: "photo",
             label: "Photo",
@@ -27,8 +32,6 @@ const CardBlockTemplate = {
             name: "title",
             label: "Title",
             type: "string",
-            /* isTitle: true,
-            required: true, */
         },
         {
             name: "content",

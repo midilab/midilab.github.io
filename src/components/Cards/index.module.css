@@ -37,7 +37,7 @@
 }
 
 /* ============================================
- * BASE CARD - Theme-aware
+ * BASE CARD - Structural only
  * ============================================ */
 
 .card {
@@ -46,96 +46,53 @@
     text-decoration: none;
     border-radius: var(--rounded-lg);
     overflow: hidden;
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
     position: relative;
 }
 
-/* DARK THEME - Cinematic Track */
-[data-theme="dark"] .card {
-    background: var(--colors-canvas-night-elevated);
-    box-shadow: var(--elevation-1);
-    color: var(--colors-on-primary);
-    text-decoration: none;
-}
-
-[data-theme="dark"] .card:hover {
-    text-decoration: none;
-}
-
-[data-theme="dark"] .card:hover .title,
-[data-theme="dark"] .card:hover h3,
-[data-theme="dark"] .card:hover h4 {
-    text-decoration: none;
-}
-
-[data-theme="dark"] .card:hover {
-    box-shadow: var(--elevation-2);
-    transform: translateY(-4px);
-}
-
-/* LIGHT THEME - Transactional Track */
-[data-theme="light"] .card {
-    background: var(--colors-canvas-light);
-    box-shadow: var(--elevation-3);
-    color: var(--colors-ink);
-    text-decoration: none;
-}
-
-[data-theme="light"] .card:hover {
-    box-shadow: var(--elevation-4);
-    transform: translateY(-4px);
-    text-decoration: none;
-}
-
-[data-theme="light"] .card:hover .title,
-[data-theme="light"] .card:hover h3,
-[data-theme="light"] .card:hover h4 {
+.card.card:hover {
     text-decoration: none;
 }
 
 /* ============================================
- * FEATURED CARD VARIANT
+ * CARD VARIANTS - Surface & Theme
  * ============================================ */
 
-.cardFeatured {
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    border-radius: var(--rounded-lg);
-    overflow: hidden;
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-    position: relative;
-}
-
-/* DARK THEME - Featured cinematic (dark teal) */
-[data-theme="dark"] .cardFeatured {
-    background: var(--colors-surface-elevated-dark);
-    box-shadow: var(--elevation-2);
-    color: var(--colors-on-primary);
-}
-
-[data-theme="dark"] .cardFeatured:hover {
-    transform: translateY(-4px);
+/* "light" — Pricing card on light canvas */
+.light {
+    background: var(--colors-canvas-light);
+    border: 1px solid var(--colors-hairline-light);
     box-shadow:
-        0 0 0 1px rgba(255, 255, 255, 0.12),
-        0 4px 6px rgba(0, 0, 0, 0.4),
-        0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-/* LIGHT THEME - Featured (aloe mint) */
-[data-theme="light"] .cardFeatured {
-    background: var(--colors-aloe-10);
-    box-shadow: var(--elevation-3);
+        0 8px 8px rgba(0, 0, 0, 0.1),
+        0 4px 4px rgba(0, 0, 0, 0.1),
+        0 2px 2px rgba(0, 0, 0, 0.1);
     color: var(--colors-ink);
 }
 
-[data-theme="light"] .cardFeatured:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--elevation-4);
+/* "featured" — Highlighted pricing tier (aloe mint) */
+.featured {
+    background: var(--colors-aloe-10);
+    color: var(--colors-ink);
+}
+
+/* "cinematic" — Feature card on dark canvas */
+.cinematic {
+    background: var(--colors-canvas-night-elevated);
+    box-shadow: var(--elevation-1);
+    color: var(--colors-on-primary);
+}
+
+/* "pistachioband" — Wide pistachio band on light track */
+.pistachioband {
+    background: var(--colors-pistachio-10);
+    color: var(--colors-ink);
+}
+
+/* "photoframe" — Full-bleed photo container on dark canvas */
+.photoframe {
+    background: var(--colors-canvas-night);
+    border-radius: var(--rounded-xl);
+    overflow: hidden;
+    color: var(--colors-on-primary);
 }
 
 /* ============================================
@@ -161,12 +118,15 @@
     height: 100%;
 }
 
-[data-theme="dark"] .card .icon svg {
-    stroke: var(--colors-aloe-10);
+.light .icon svg,
+.featured .icon svg,
+.pistachioband .icon svg {
+    stroke: var(--colors-ink);
 }
 
-[data-theme="light"] .card .icon svg {
-    stroke: var(--colors-ink);
+.cinematic .icon svg,
+.photoframe .icon svg {
+    stroke: var(--colors-aloe-10);
 }
 
 /* ============================================
@@ -177,9 +137,7 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding-left: var(--spacing-xl);
-    padding-right: var(--spacing-xl);
-    padding-bottom: var(--spacing-xl);
+    padding: var(--spacing-xxl);
 }
 
 .cardContent > .content {
@@ -187,27 +145,16 @@
 }
 
 /* ============================================
- * CARD TYPOGRAPHY - Theme-aware
+ * CARD TYPOGRAPHY - Variant-aware
  * ============================================ */
 
-.title {
+.card .title {
     font-family: var(--font-display);
-    font-size: var(--typography-heading-lg);
-    font-weight: 330;
-    line-height: 1.14;
-    letter-spacing: 0.36px;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 0.42px;
     margin: 0 0 var(--spacing-sm);
-    padding-bottom: var(--spacing-sm);
-    border-bottom: 1px solid var(--colors-hairline-dark);
-}
-
-[data-theme="dark"] .title {
-    color: var(--colors-on-primary);
-}
-
-[data-theme="light"] .title {
-    color: var(--colors-ink);
-    border-bottom-color: var(--colors-hairline-light);
+    color: inherit;
 }
 
 .content {
@@ -218,20 +165,25 @@
     margin: 0;
 }
 
-[data-theme="dark"] .content {
-    color: var(--colors-link-cool-3);
+.light .content,
+.featured .content,
+.pistachioband .content {
+    color: var(--colors-shade-60);
 }
 
-[data-theme="light"] .content {
-    color: var(--colors-shade-60);
+.cinematic .content,
+.photoframe .content {
+    color: var(--colors-link-cool-3);
 }
 
 .content p {
     margin: 0;
+    color: inherit;
+    line-height: inherit;
 }
 
 /* ============================================
- * CARD BUTTON - Theme-aware
+ * CARD BUTTON
  * ============================================ */
 
 .cardButton {
@@ -392,10 +344,5 @@
     .cardAnimated {
         animation: none;
         opacity: 1;
-    }
-
-    .card,
-    .cardFeatured {
-        transition: none;
     }
 }

@@ -1,3 +1,8 @@
+# for now only
+/docs
+/blog
+/shop
+
 # Dependencies
 /node_modules
 

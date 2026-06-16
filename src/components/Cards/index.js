@@ -3,6 +3,7 @@ import { createPortal } from "react-dom";
 import { paramCase } from "param-case";
 import Markdown from "react-markdown";
 import Link from "@docusaurus/Link";
+import { useColorMode } from "@docusaurus/theme-common";
 import clsx from "clsx";
 import styles from "./index.module.css";
 import YouTubeEmbed from "../YouTube";
@@ -17,11 +18,15 @@ export function Card({
   to,
   actionButton,
   tag,
-  featured = false,
+  variant,
   animated = false,
   animationIndex = 0,
 }) {
+  const { colorMode } = useColorMode();
   const [isOverlayVisible, setOverlayVisible] = useState(false);
+
+  const resolvedVariant =
+    variant ?? (colorMode === "dark" ? "cinematic" : "light");
 
   const background = photo
     ? {
@@ -34,7 +39,8 @@ export function Card({
   };
 
   const cardClasses = clsx(
-    featured ? styles.cardFeatured : styles.card,
+    styles.card,
+    styles[resolvedVariant],
     animated && styles.cardAnimated,
     animated && animationIndex === 1 && styles.cardStagger1,
     animated && animationIndex === 2 && styles.cardStagger2,
@@ -63,9 +69,9 @@ export function Card({
       {youtubeVid && <YouTubeEmbed videoId={youtubeVid} />}
       <div className={clsx(styles.cardContent)}>
         {title && (
-          <h4 className={clsx(styles.title)} id={id && paramCase(title)}>
+          <h3 className={clsx(styles.title)} id={id && paramCase(title)}>
             {title}
-          </h4>
+          </h3>
         )}
         {content && (
           <Markdown className={clsx(styles.content)}>{content}</Markdown>
@@ -113,6 +119,7 @@ export function CardSection({
   HeadingTag = "h3",
   cards,
   animated = false,
+  variant,
 }) {
   return (
     <div className={clsx(styles.section, className)}>
@@ -129,6 +136,7 @@ export function CardSection({
                 key={i}
                 animationIndex={i + 1}
                 animated={animated}
+                variant={variant ?? card.variant}
               />
             );
           })}

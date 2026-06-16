@@ -63,7 +63,7 @@ Whether you're building a sequencer, drum machine, MIDI clock master/slave, or a
   ]}
 />
 
-## Concepts & Key points
+## Concepts
 
 * **Callback-Driven API:** Interact with the clock through simple callback functions triggered at specific timing events.
 * **Hardware Timer Interrupts:** Ensures maximum timing precision (on supported boards).
@@ -71,7 +71,7 @@ Whether you're building a sequencer, drum machine, MIDI clock master/slave, or a
 * **Internal/External Clock Modes:** Operate as a master clock source or sync reliably to an external input.
 * **Software Timer Fallback:** Provides basic timing functionality even on boards where hardware timer access is limited or unavailable.
 
-## Supported PPQN Resolutions
+## Supported Resolutions
 
 You can set the main output or input PPQN resolution using `setOutputPPQN(value)` or `setInputPPQN(value)` respectively. Available values (constants):
 
@@ -81,7 +81,7 @@ You can set the main output or input PPQN resolution using `setOutputPPQN(value)
 * `PPQN_48`, `PPQN_96` (Common for old-school Sequencers)
 * `PPQN_384`, `PPQN_480`, `PPQN_960` (High Resolution modern Sequencers)
 
-## Applications Powered by µClock
+## Applications
 
 µClock serves as the timing core for many DIY and commercial music projects:
 

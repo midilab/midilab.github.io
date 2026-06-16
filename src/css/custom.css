@@ -427,14 +427,10 @@ a.projectCard {
     text-decoration: none;
 }
 
-a.card:hover,
 a.projectCard:hover {
     text-decoration: none;
 }
 
-a.card:hover .title,
-a.card:hover h3,
-a.card:hover h4,
 a.projectCard:hover .projectTitle,
 a.projectCard:hover .title {
     text-decoration: none;
