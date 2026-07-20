@@ -1,0 +1,27 @@
+.navbarItemsLeft {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.navbarItemsCenter {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navbarItemsRight {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+@media (max-width: 996px) {
+  .navbarItemsCenter {
+    display: none;
+  }
+}

@@ -1,0 +1,270 @@
+---
+title: Aciduino V2
+description: Multi-architecture TB-303 / TR-808 step sequencer with OLED display, 16 tracks, generative engine, and Euclidean drums — built on uMODULAR
+tags:
+  - Aciduino
+  - TB-303
+  - TR-808
+  - Step Sequencer
+  - MIDI
+  - DIY
+  - uMODULAR
+---
+
+# Aciduino V2
+
+A multi-architecture **Roland TB-303 and TR-808 step sequencer clone** built for live performance. Up to 16 tracks, OLED display, pattern/mute grid, and a modular design that lets you plug in more controls, MIDI, or CV/Gate interfaces.
+
+Aciduino V2 is the first official [uMODULAR](https://github.com/midilab/uMODULAR) app, leveraging [uCtrl](https://github.com/midilab/uCtrl) drivers and [uClock](https://github.com/midilab/uClock) for precise timing.
+
+![Aciduino V2 on protoboard](https://raw.githubusercontent.com/midilab/aciduino/master/v2/hardware/imgs/aciduino_v2_teensy_bb.jpg)
+
+---
+
+## Features
+
+- **Up to 16 tracks** — mix TB-303 and TR-808 tracks freely
+- **303 step sequencer** with rest, tie, glide, accent, per-step pitch/octave
+- **808 drum sequencer** with voice, note, roll per step
+- **OLED display** — real-time access to all parameters
+- **Generative engine** — harmonized 303 lines + Euclidean algorithm for drums
+- **MIDI controller** — 16 assignable CCs per track
+- **Pattern grid** — mute/unmute tracks or voices, save/load scenes
+- **Multi-architecture** — Arduino Mega, Teensy ≥ 3.2, ESP32
+- **Modular I/O** — extend with more pots, buttons, MIDI, or CV/Gate
+
+---
+
+## Supported Platforms
+
+| Platform | Port file to uncomment |
+|----------|----------------------|
+| Arduino Mega | `#include "src/ports/avr/mega.h"` |
+| Teensy (protoboard) | `#include "src/ports/teensy/protoboard.h"` |
+| Teensy (uOne) | `#include "src/ports/teensy/uone.h"` |
+| ESP32 WROOM | `#include "src/ports/esp32/wroom.h"` |
+| ESP32 + Ext1 | `#include "src/ports/esp32/wroom-ext1.h"` |
+| Midilab Mega | `#include "src/ports/avr/midilab_mega.h"` |
+
+![Aciduino V2 Mega](https://raw.githubusercontent.com/midilab/aciduino/master/v2/hardware/imgs/aciduino_v2-avr_mega_bb.png)
+![Aciduino V2 ESP32](https://raw.githubusercontent.com/midilab/aciduino/master/v2/hardware/imgs/aciduino_v2-esp32_bb.png)
+
+---
+
+## Download
+
+**Recommended:** Download the latest release pack named `aciduino-v2_xxx.zip` from the [Releases page](https://github.com/midilab/aciduino/releases).
+
+For the latest development version, clone the repository with submodules:
+
+```console
+git clone https://github.com/midilab/aciduino.git
+cd aciduino/
+git submodule update --init --recursive
+```
+
+Open `v2/AciduinoV2/AciduinoV2.ino` and uncomment the port file for your platform.
+
+## Getting Started
+
+1. **Build** your device following the [assembly guide](https://github.com/midilab/aciduino/tree/master/v2#assembly)
+2. **Download** the latest [software release](https://github.com/midilab/aciduino/releases)
+3. **Configure** your hardware in `AciduinoV2/0_hardware_setup.ino`
+4. **Tweak** sequencer defaults in `AciduinoV2/src/sequencer/setup.h`
+
+---
+
+## User Interface
+
+![Aciduino V2 interface](https://raw.githubusercontent.com/midilab/aciduino/master/v2/docs/images/cheatsheet.png)
+
+### Controls
+
+| Control | Description |
+|---------|-------------|
+| **Nav buttons** (4 rightmost) | UP, DOWN, LEFT, RIGHT — navigate page elements. Selected element blinks |
+| **Function buttons** (2 upper) | Context-sensitive actions shown at the bottom of the display |
+| **Generic buttons** (2 lower) | Decrement / increment the selected element's value |
+| **Pot** | Value changer — works on most elements alongside generic buttons |
+| **Shift** (bottom left) | Hold while pressing another button for alternate functions |
+| **Transport** (middle left) | Start / stop the sequencer |
+
+### Navigation Shortcuts
+
+| Command | Action |
+|---------|--------|
+| Shift + Nav UP/DOWN | Change page |
+| Shift + Nav LEFT/RIGHT | Change subpage |
+| Shift + Generic 1 | Previous track |
+| Shift + Generic 2 | Next track |
+| Pot | Change notes |
+| Shift + Pot | Change octave (303) or voice config (808) |
+
+### OLED Layout
+
+- **Header bar** — Track number (T1–T5) and type (303/808), page name + subpage, clock source, tempo (40–180)
+- **Subpage display** — the active editing grid
+- **Function labels** — shows the action for each function button
+
+---
+
+## System Page
+
+Common parameters that apply to all tracks.
+
+| Parameter | Description | Controls |
+|-----------|-------------|----------|
+| **Tempo** | uClock BPM from 40 to 180 | pot = coarse, F1 = rec, F2 = play, generic = fine |
+| **Clock** | Clock source: internal, MIDI1, or MIDI2 | pot / generic |
+| **Shuffle** | Groove on/off | pot / generic |
+| **Sig.** | Swing signature (54, 58, 62, 68, 71%) | pot / generic |
+| **Rec** | Record input source: MIDI1 or MIDI2 | pot / generic |
+| **Mode** | Record mode: real-time or step | pot / generic |
+| **Session** | Save/load to EEPROM or SD card | pot = storage, F1 = load, F2 = save |
+| **Track out** | MIDI output port per track | pot / generic |
+
+---
+
+## Sequencer Page
+
+Edit the track's sequence step by step. Parameters differ between 303 and 808 tracks.
+
+### Common
+
+| Parameter | Description |
+|-----------|-------------|
+| **Length** | Number of steps (303: 0–max from setup.h, 808: 0–64, each voice can have different length) |
+| **Shift** | Offset the entire sequence forward or backward |
+
+### 303 Sequencer
+
+![303 Sequencer](https://raw.githubusercontent.com/midilab/aciduino/master/v2/docs/images/PageSeqr303.png)
+
+| Element | Description |
+|---------|-------------|
+| **Tune** | Set the tonic note (off, C1–B1) |
+| **Transpose** | Transpose the entire sequence |
+| **Bar selector** | Top bar — each division is a 16-step bar. Bold = playing, blinking = editing |
+| **Step selector** | Grid of steps. Rest (small square) or gated (bold). Label shows step note/octave. Blinking outline = editing, moving outline = playing |
+
+- Default velocity: 70, accent velocity: 127 (configurable in `setup.h`)
+- Pot = select pitch, Shift + pot = select octave
+- F1 = accent, F2 = slide (gated) or tie (rest)
+- Generic buttons = trigger step on/off
+
+### 808 Sequencer
+
+![808 Sequencer](https://raw.githubusercontent.com/midilab/aciduino/master/v2/docs/images/PageSeqr808.png)
+
+| Parameter | Description |
+|-----------|-------------|
+| **Voice** | Set the drum voice |
+| **Note** | Set the drum part MIDI note number |
+| **Roll** | Set the roll type |
+
+- Pot = change note, Shift + pot = change drum voice
+
+---
+
+## Generator Page
+
+Generate automatic sequences. Fill percentage affects the next generated sequence only.
+
+| Parameter | Description |
+|-----------|-------------|
+| **Fill** | Percentage of activated steps (affects next generation only) |
+
+### 303 Generator
+
+![303 Generator](https://raw.githubusercontent.com/midilab/aciduino/master/v2/docs/images/PageGene303.png)
+
+- **Tune** — set the tonic note
+- **Transpose** — transpose the generated sequence
+
+### 808 Generator
+
+![808 Generator](https://raw.githubusercontent.com/midilab/aciduino/master/v2/docs/images/PageGene808.png)
+
+- Pot = change voice
+- Shift + pot = change voice config (MIDI CC or CV port)
+
+---
+
+## Pattern Page
+
+Performance-oriented page for muting, saving, and loading patterns.
+
+![Pattern Page](https://raw.githubusercontent.com/midilab/aciduino/master/v2/docs/images/PagePtrn.png)
+
+| Control | Action |
+|---------|--------|
+| F1 | Copy pattern |
+| F2 | Select all |
+| Shift + F1 | Save pattern as |
+| Shift + F2 | Save pattern |
+| Generic 1 | Play selected pattern |
+| Generic 2 | Play selected scene |
+
+---
+
+## MIDI Page
+
+Assign and tweak up to 16 MIDI CCs per track. Labels and CC numbers vary between 303 and 808 tracks.
+
+![MIDI 303](https://raw.githubusercontent.com/midilab/aciduino/master/v2/docs/images/PageMidi303.png)
+![MIDI 808](https://raw.githubusercontent.com/midilab/aciduino/master/v2/docs/images/PageMidi808.png)
+
+CCs are sent on the selected track's MIDI channel. To change CC mappings, edit `AciduinoV2/page_midi.ino`:
+
+```cpp
+midiControllerComponent.set303Control("filter", 74);
+```
+
+---
+
+## Assembly
+
+Build on a solderless breadboard. Key steps:
+
+1. Place buttons, knobs, and power lines
+2. Enlarge two holes for pot base support on the (+) power rail
+3. Run signal lines for buttons
+
+![Assembly step 1](https://raw.githubusercontent.com/midilab/aciduino/master/v2/hardware/imgs/step1.jpg)
+![Assembly step 2](https://raw.githubusercontent.com/midilab/aciduino/master/v2/hardware/imgs/step2.jpg)
+
+For detailed instructions, see the [assembly guide](https://github.com/midilab/aciduino/tree/master/v2#assembly).
+
+---
+
+## uMODULAR uOne
+
+A dedicated uMODULAR hardware board for Aciduino V2, coming soon.
+
+![uOne front](https://raw.githubusercontent.com/midilab/aciduino/master/v2/hardware/imgs/uone_umodular.jpg)
+![uOne back](https://raw.githubusercontent.com/midilab/aciduino/master/v2/hardware/imgs/uone_back.jpeg)
+
+---
+
+## Configuration
+
+- **`AciduinoV2/0_hardware_setup.ino`** — select your microcontroller and pin mappings
+- **`AciduinoV2/src/sequencer/setup.h`** — adjust sequencer defaults (max steps, velocity, accent, etc.)
+
+## Dependencies
+
+- [uClock](https://github.com/midilab/uClock) — BPM clock generator
+- [uCtrl](https://github.com/midilab/uCtrl) — hardware abstraction and interface library
+- [uMODULAR](https://github.com/midilab/uMODULAR) — modular app framework
+
+All included as git submodules — run `git submodule update --init --recursive` after cloning.
+
+## Cheatsheet
+
+![Cheatsheet](https://raw.githubusercontent.com/midilab/aciduino/master/v2/docs/images/cheatsheet.png)
+
+## Support
+
+- [Official website](https://midilab.co/) for latest news
+- [GitHub Issues](https://github.com/midilab/aciduino/issues) for bugs and feature requests
+- [Discord](https://discord.com/channels/1137685010967703582/1137685011416498236) for discussion and ideas

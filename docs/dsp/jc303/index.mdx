@@ -1,0 +1,225 @@
+---
+title: JC-303
+description: Free and open-source TB-303 emulation plugin — VST2, VST3, LV2, CLAP, AU for Windows, macOS, and Linux, with AI-driven overdrive and Devilfish-inspired mods
+tags:
+  - JC-303
+  - TB-303
+  - Synthesizer
+  - VST
+  - Audio Plugin
+  - DSP
+  - Open-Source
+  - Cross-Platform
+---
+
+# JC-303
+
+Unlock the iconic sound of Roland's TB-303 with JC-303, a **faithful emulation of the legendary acid house and techno synth**, available free of charge as a VST2, VST3, LV2, CLAP, and AU plugin for Linux, macOS, or Windows DAWs.
+
+![JC-303 UI](https://raw.githubusercontent.com/midilab/jc303/main/img/jc303.png)
+
+---
+
+## Key Features
+
+- **Authentic TB-303 sound engine** — based on Open303, over 15 years of community reverse engineering and development
+- **AI Overdrive section** — GuitarML-driven pedal and cabinet emulations using machine learning models
+- **Devilfish-inspired mods** — select parameters from Robin Whittle's legendary 1993 modification
+- **Open-source** — all DSP and GUI source code freely available under GPLv3
+- **Cross-platform** — Windows, macOS, and Linux
+- **Plugin versatility** — VST2, VST3, LV2, CLAP, and Audio Unit formats
+
+---
+
+## Download
+
+| Platform | Architecture | Link |
+|----------|-------------|------|
+| **Windows** | Intel x64 | [jc303-windows_x64-plugins.zip](https://github.com/midilab/jc303/releases/download/v0.12.3/jc303-0.12.3-windows_x64-plugins.zip) |
+| **macOS** | Universal (Intel + ARM) | [jc303-macos_universal-plugins.zip](https://github.com/midilab/jc303/releases/download/v0.12.3/jc303-0.12.3-macos_universal-plugins.zip) |
+| **Linux** | Intel x64 | [jc303-linux_x64-plugins.zip](https://github.com/midilab/jc303/releases/download/v0.12.3/jc303-0.12.3-linux_x64-plugins.zip) |
+| **Linux** | ARM64 | Coming soon |
+
+---
+
+## Installation
+
+Each platform ZIP contains folders per plugin format. Copy the desired format(s) to your system's standard plugin directory.
+
+### Windows
+
+| Format | Default Path |
+|--------|-------------|
+| **VST2 (.dll)** | `C:\Program Files\VSTPlugins` or `C:\Program Files\Steinberg\VSTPlugins` |
+| **VST3 (.vst3)** | `C:\Program Files\Common Files\VST3` |
+| **CLAP (.clap)** | `C:\Program Files\Common Files\CLAP` |
+| **LV2 (.lv2)** | `%APPDATA%\LV2` or `C:\Program Files\Common Files\LV2` |
+
+### macOS
+
+| Format | Default Path |
+|--------|-------------|
+| **Audio Unit (.component)** | `/Library/Audio/Plug-Ins/Components` |
+| **VST2 (.vst)** | `/Library/Audio/Plug-Ins/VST` |
+| **VST3 (.vst3)** | `/Library/Audio/Plug-Ins/VST3` |
+| **CLAP (.clap)** | `/Library/Audio/Plug-Ins/CLAP` |
+| **LV2 (.lv2)** | `/Library/Audio/Plug-Ins/LV2` |
+
+#### macOS De-Quarantine
+
+macOS Gatekeeper blocks unsigned plugins. De-quarantine after copying:
+
+```shell
+# Audio Unit
+sudo xattr -rd com.apple.quarantine /Library/Audio/Plug-Ins/Components/JC303.component
+
+# VST3
+sudo xattr -rd com.apple.quarantine /Library/Audio/Plug-Ins/VST3/JC303.vst3
+
+# VST2
+sudo xattr -rd com.apple.quarantine /Library/Audio/Plug-Ins/VST/JC303.vst
+
+# CLAP
+sudo xattr -rd com.apple.quarantine /Library/Audio/Plug-Ins/CLAP/JC303.clap
+
+# LV2
+sudo xattr -rd com.apple.quarantine /Library/Audio/Plug-Ins/LV2/JC303.lv2
+```
+
+### Linux
+
+| Format | Default Path |
+|--------|-------------|
+| **VST2 (.so)** | `~/.vst`, `/usr/lib/vst` |
+| **VST3 (.vst3)** | `~/.vst3`, `/usr/lib/vst3` |
+| **LV2 (.lv2)** | `~/.lv2`, `/usr/lib/lv2` |
+| **CLAP (.clap)** | `~/.clap`, `/usr/lib/clap` |
+
+After copying, rescan plugins in your DAW.
+
+---
+
+## Sound Engine
+
+The JC-303 synthesis core is based on **Open303**, an open-source digital emulation of the TB-303 that began in 2009 when Robin Schmidt posted a [call for collaborators](https://www.kvraudio.com/forum/viewtopic.php?t=262829) on the KVR Audio forum.
+
+Over 15 years, a community of TB-303 enthusiasts dove into oscilloscope measurements, circuit reverse engineering, and deep analysis of the original hardware's quirks and character. The result is one of the most accurate open-source TB-303 emulations available.
+
+---
+
+## AI Overdrive Section
+
+JC-303 integrates [GuitarML](https://guitarml.com/) technology, which uses **machine learning** to capture the sound of real overdrive pedals and guitar cabinets. The trained models recreate the response of actual analog hardware in real time.
+
+- Community-driven project with a growing library of models
+- Sheer unlimited tonal possibilities beyond the original TB-303
+
+---
+
+## Devilfish-Inspired Mods
+
+Created by **Robin Whittle** in 1993, the Devil Fish modification is one of the most sought-after third-party modifications of the original TB-303. JC-303 brings select Devil Fish parameters into the plugin, expanding the sonic palette beyond the stock 303 architecture.
+
+---
+
+## Plugin Formats
+
+| Format | Windows | macOS | Linux |
+|--------|---------|-------|-------|
+| **VST2** | ✅ (self-build) | ✅ (self-build) | ✅ (self-build) |
+| **VST3** | ✅ | ✅ | ✅ |
+| **LV2** | ✅ | ✅ | ✅ |
+| **CLAP** | ✅ | ✅ | ✅ |
+| **Audio Unit** | — | ✅ | — |
+
+VST2 binaries require a Steinberg VST2 SDK license and must be compiled from source.
+
+---
+
+## Building from Source
+
+JC-303 uses **CMake** and JUCE. Clone the repository and generate build files for your platform.
+
+### Dependencies
+
+**Ubuntu / Debian:**
+
+```sh
+sudo apt install build-essential gcc cmake libx11-dev libxrandr-dev libxinerama-dev libxcursor-dev libfreetype6-dev libasound2-dev
+```
+
+**macOS:** Xcode command line tools
+
+**Windows:** Visual Studio 2022
+
+### Generate Build Files
+
+```sh
+git clone https://github.com/midilab/jc303.git
+cd jc303
+```
+
+**macOS (Universal binary):**
+
+```sh
+cmake -B build -G Xcode -D CMAKE_OSX_ARCHITECTURES="arm64;x86_64" -D CMAKE_OSX_DEPLOYMENT_TARGET=10.13
+```
+
+**Windows:**
+
+```sh
+cmake -B build -G "Visual Studio 17" -A x64
+```
+
+**Linux:**
+
+```sh
+cmake -B build
+```
+
+### Compile
+
+```sh
+cmake --build build --config Release
+```
+
+### GUI Themes
+
+Choose a theme at CMake configuration time:
+
+```sh
+cmake -B build -D GUI=midilab
+```
+
+Available themes: `amadeusp` (default), `midilab`
+
+### VST2
+
+Copy the `vstsdk2.4/` folder to the project root before running CMake to enable VST2 builds.
+
+---
+
+## Roadmap
+
+- ✅ Binary releases for macOS, Windows, Linux
+- ✅ Graphical user interface
+- ✅ Internal engine tuning parameters (Devilfish inspired)
+- ✅ Overdrive section
+- 🔄 Preset support
+- 🔄 Step sequencer
+
+---
+
+## Community
+
+JC-303 is a **community-driven** project open to contributions in coding, testing, bug reporting, design, and ideas.
+
+- [GitHub Repository](https://github.com/midilab/jc303)
+- [GitHub Issues](https://github.com/midilab/jc303/issues)
+- [Discord](https://discord.gg/EzbaPqwCJG)
+
+## License
+
+JC-303 is released under the **GNU General Public License v3**. The Open303 engine portion is additionally licensed under the MIT License.
+
+*Roland and TB-303 are registered trademarks of Roland Corporation. JC-303 is not affiliated with or endorsed by Roland Corporation.*

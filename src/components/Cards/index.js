@@ -78,7 +78,7 @@ export function Card({
         )}
         {actionButton && (
           <Link
-            className={clsx("button button--outline", styles.cardButton)}
+            className={clsx("button button--primary", styles.cardButton)}
             to={to}
           >
             {actionButton}

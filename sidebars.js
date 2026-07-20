@@ -5,22 +5,22 @@ const sidebars = {
   tutorialSidebar: [
     {
       type: 'doc',
-      id: 'intro',
-      label: 'DIY Devices',
+      id: 'index',
+      label: 'Introduction',
     },
     {
       type: 'category',
       label: 'Sequencer',
-      collapsed: false,
+      collapsed: true,
       items: [
         {
           type: 'doc',
-          id: 'sequencer/aciduino/intro',
+          id: 'sequencer/aciduino-v1/index',
           label: 'Aciduino V1',
         },
         {
           type: 'doc',
-          id: 'sequencer/aciduino-v2/V2-Manual',
+          id: 'sequencer/aciduino-v2/index',
           label: 'Aciduino V2',
         },
       ],
@@ -28,85 +28,41 @@ const sidebars = {
     {
       type: 'category',
       label: 'Libraries',
-      collapsed: false,
+      collapsed: true,
       items: [
         {
           type: 'doc',
-          id: 'libraries/uclock/intro',
+          id: 'libraries/uclock/index',
           label: 'µClock',
         },
         {
           type: 'doc',
-          id: 'libraries/uctrl/intro',
+          id: 'libraries/uctrl/index',
           label: 'µCtrl',
         },
         {
-          type: 'category',
+          type: 'doc',
+          id: 'libraries/umodular/index',
           label: 'µMODULAR',
-          collapsed: false,
-          items: [
-            {
-              type: 'doc',
-              id: 'libraries/umodular/umodular',
-              label: 'Introduction',
-            },
-            {
-              type: 'category',
-              label: 'Modules',
-              items: [
-                {
-                  type: 'doc',
-                  id: 'libraries/umodular/pcb_kit/pot16',
-                  label: 'POT16',
-                },
-              ],
-            },
-            {
-              type: 'category',
-              label: 'PCBs and Kits',
-              items: [
-                {
-                  type: 'doc',
-                  id: 'libraries/umodular/pcb_kit/shields/mega2560',
-                  label: 'Mega Shield',
-                },
-                {
-                  type: 'doc',
-                  id: 'libraries/umodular/pcb_kit/shields/mini',
-                  label: 'Mini Shield',
-                },
-              ],
-            },
-          ],
         },
       ],
     },
     {
       type: 'category',
       label: 'DSP',
-      collapsed: false,
+      collapsed: true,
       items: [
         {
           type: 'doc',
-          id: 'dsp/opendsp/intro',
+          id: 'dsp/opendsp/index',
           label: 'OpenDSP',
         },
         {
           type: 'doc',
-          id: 'dsp/jc303/intro',
+          id: 'dsp/jc303/index',
           label: 'JC-303',
         },
       ],
-    },
-    {
-      type: 'link',
-      href: 'https://github.com/midilab/',
-      label: 'GitHub',
-    },
-    {
-      type: 'link',
-      href: 'https://discord.gg/DCb3dy5A',
-      label: 'Discord',
     },
   ],
 };

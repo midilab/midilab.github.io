@@ -8,7 +8,7 @@ const ActionButtons = ({ actions }) => {
   return (
     <div className={styles.buttonsContainer}>
      {actions.map((action, idx) => {
-       const isPrimary = action.style === 'primary';
+       const isPrimary = action.style ? action.style : 'primary';
        const buttonClass = isPrimary ? 'button--primary' : 'button--outline';
 
        return (

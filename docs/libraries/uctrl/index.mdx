@@ -1,0 +1,577 @@
+---
+title: uCtrl
+description: Comprehensive driver and UI library for uMODULAR hardware — potentiometers, buttons, LEDs, MIDI, OLED, storage, and capacitive touch for Arduino/PlatformIO
+tags:
+  - uCtrl
+  - uMODULAR
+  - Drivers
+  - UI
+  - Library
+  - Arduino
+  - PlatformIO
+  - MIDI
+  - DIY
+---
+
+# uCtrl
+
+A comprehensive driver and user interface library for the [uMODULAR](https://github.com/midilab/uMODULAR) hardware ecosystem. It provides a unified driver layer for all uMODULAR modules and a UI framework that simplifies building, extending, and sharing advanced Arduino/PlatformIO applications.
+
+With uCtrl, you can achieve realtime-like functionality within the Arduino/PlatformIO ecosystem by leveraging hardware timer interruptions for precise task management, with resource-safe access through its API.
+
+---
+
+## Features
+
+- **Hardware driver layer** — unified API for AIN, DIN, DOUT, Touch, MIDI, OLED, Storage, and RAM modules
+- **Up to 64 channels per module** — scale from a few pots to complex control surfaces
+- **Multiplexer support** — 4051, 4067 for analog; 165/595 shift registers for digital I/O
+- **Built-in debouncing and filtering** — averaged ADC reads, button debounce, encoder handling
+- **Realtime callback system** — standard and realtime (interrupt-context) callbacks
+- **Page UI framework** — component-based interface for building menu systems and control surfaces
+- **Multi-architecture** — AVR, ARM, ESP32, SAMD21
+
+## Supported Platforms
+
+| Family | Microcontrollers |
+|--------|-----------------|
+| **AVR** | ATmega168, ATmega328, ATmega16u4, ATmega32u4, ATmega2560 |
+| **ARM** | All Teensy (1.57.2+), SAMD21, ESP32 |
+| **Boards** | Arduino boards (AVR), Teensy (AVR/ARM), ESP32 boards, Seeed Studio XIAO M0 |
+
+## Modules Overview
+
+| Module | Max I/O | Typical Use |
+|--------|---------|-------------|
+| [AIN](#ain) | 64 | Potentiometers, faders, sensors |
+| [DIN](#din) | 64 | Push buttons, rotary encoders |
+| [DOUT](#dout) | 64 | LEDs, relays, digital outputs |
+| [TOUCH](#touch) | 32 | Capacitive touch buttons |
+| [MIDI](#midi) | — | MIDI I/O aggregation |
+| [OLED](#oled) | — | Display output (U8g2) |
+| [STORAGE](#storage) | — | EEPROM / SD card |
+| [RAM](#ram) | — | External SRAM (23LC1024) |
+| [PAGE](#page) | — | UI page/component framework |
+
+---
+
+## Installation
+
+### Submodule (recommended for versioned projects)
+
+```console
+cd YourSketch/
+mkdir src/
+cd src/
+git submodule add https://github.com/midilab/uCtrl.git
+git add uCtrl/
+git commit -m "uCtrl library added to project"
+```
+
+After cloning your repository elsewhere:
+
+```console
+git submodule update --init --recursive
+```
+
+### Download
+
+Create a `src/` directory inside your sketch, then [download](https://github.com/midilab/uCtrl/archive/refs/heads/main.zip) the repository. Unzip and move `uCtrl-main/` to `YourSketch/src/uCtrl/`.
+
+### Project Structure
+
+```
+/YourSketch/
+├── YourSketch.ino
+├── modules.h              ← module configuration
+└── src/
+    └── uCtrl/             ← library source
+```
+
+### modules.h
+
+Create a `modules.h` file in your sketch root to enable the modules your application needs:
+
+```c
+#ifndef __U_CTRL_MODULES_H__
+#define __U_CTRL_MODULES_H__
+
+//#define USE_AIN
+//#define USE_DIN
+//#define USE_DOUT
+//#define USE_TOUCH
+//#define USE_MIDI
+//#define USE_OLED
+//#define USE_STORAGE
+//#define USE_RAM
+
+#endif
+```
+
+Each module section below documents its specific `modules.h` macros.
+
+---
+
+## AIN
+
+Wire up to **64 potentiometers** using direct ADC pins or multiplexed via 4051/4067.
+
+[AIN 8 Schematic](https://github.com/midilab/uMODULAR/blob/master/lib/pot8.pdf)
+[AIN 16 Schematic](https://github.com/midilab/uMODULAR/blob/master/lib/pot16.pdf)
+
+**modules.h**
+
+```c
+#define USE_AIN
+
+// Max direct ADC ports (default 8)
+//#define USE_AIN_MAX_PORTS   8
+
+// Multiplexer driver (choose one)
+#define USE_AIN_4051_DRIVER
+//#define USE_AIN_4067_DRIVER
+```
+
+**Arduino Sketch**
+
+```c
+#include <Arduino.h>
+#include "src/uCtrl/uCtrl.h"
+
+enum {
+  POT_1, POT_2, POT_3, POT_4,
+  // ...
+};
+
+void ainInput(uint8_t port, uint16_t value) {
+  switch (port) {
+    case POT_1:
+      // value: 0 ~ maxAdcValue (default 1023)
+      break;
+    case POT_2:
+      break;
+    // ...
+  }
+}
+
+void setup() {
+  // For 4051: uCtrl.initAin(mux_a, mux_b, mux_c);
+  // For 4067: uCtrl.initAin(mux_a, mux_b, mux_c, mux_d);
+  // Direct ADC only: uCtrl.initAin();
+  uCtrl.initAin(6, 7, 8);
+
+  // Direct ADC pins
+  uCtrl.ain->plug(A0);
+  uCtrl.ain->plug(A1);
+
+  // Multiplexed via 4051/4067
+  uCtrl.ain->plugMux(A2);
+  uCtrl.ain->plugMux(A3);
+
+  uCtrl.ain->setCallback(ainInput);
+  // Real-time callback (interrupt context) if needed:
+  // uCtrl.ain->setRTCallback(ainInput);
+
+  uCtrl.ain->setMaxAdcValue(1023);
+  uCtrl.ain->setAvgReads(8);
+
+  uCtrl.init();
+}
+
+void loop() {
+  uCtrl.run();
+}
+```
+
+---
+
+## DIN
+
+Wire up to **64 digital inputs** — push buttons or rotary encoders — using direct pins or 165 shift registers.
+
+[DIN 8 Schematic](https://github.com/midilab/uMODULAR/blob/master/lib/push8.pdf)
+[DIN 16 Schematic](https://github.com/midilab/uMODULAR/blob/master/lib/push16.pdf)
+
+**modules.h**
+
+```c
+#define USE_DIN
+
+//#define USE_DIN_MAX_PORTS   8
+
+// Shift register driver (choose one)
+#define USE_DIN_SPI_DRIVER
+//#define USE_DIN_BITBANG_DRIVER
+//#define DIN_LATCH_PIN   4
+//#define DIN_DATA_PIN    5
+//#define DIN_CLOCK_PIN   6
+```
+
+**Arduino Sketch**
+
+```c
+#include <Arduino.h>
+#include "src/uCtrl/uCtrl.h"
+
+enum {
+  BUTTON_1, BUTTON_2,
+  ENCODER_DEC, ENCODER_INC,
+  SR_BUTTON_1, SR_BUTTON_2, SR_BUTTON_3, SR_BUTTON_4,
+  // ...
+};
+
+void dinInput(uint8_t port, uint16_t value) {
+  switch (port) {
+    case BUTTON_1:
+      // value: HIGH or LOW (internal pull-up, LOW = pressed)
+      break;
+    case ENCODER_DEC:
+      // value: HIGH on decrement
+      break;
+    case ENCODER_INC:
+      // value: HIGH on increment
+      break;
+    // ...
+  }
+}
+
+void setup() {
+  uCtrl.initDin(&SPI, 6);  // SPI mode with latch pin
+  // or: uCtrl.initDin(); for direct pins only
+
+  // Direct digital pins
+  uCtrl.din->plug(13);
+  uCtrl.din->plug(12);
+
+  // 1x 165 shift register = 8 inputs
+  uCtrl.din->plugSR(1);
+
+  uCtrl.din->setCallback(dinInput);
+
+  // Encoder pairs (sequential even/odd IDs, call after all plug/plugSR)
+  uCtrl.din->encoder(ENCODER_DEC, ENCODER_INC);
+
+  uCtrl.init();
+}
+
+void loop() {
+  uCtrl.run();
+}
+```
+
+---
+
+## DOUT
+
+Wire up to **64 digital outputs** — LEDs, relays — using direct pins or 595 shift registers.
+
+[DOUT 8 Schematic](https://github.com/midilab/uMODULAR/blob/master/lib/led8.pdf)
+[DOUT 16 Schematic](https://github.com/midilab/uMODULAR/blob/master/lib/led16.pdf)
+
+**modules.h**
+
+```c
+#define USE_DOUT
+
+//#define USE_DOUT_MAX_PORTS   8
+
+// Shift register driver (choose one)
+#define USE_DOUT_SPI_DRIVER
+//#define USE_DOUT_BITBANG_DRIVER
+//#define DOUT_LATCH_PIN   7
+//#define DOUT_DATA_PIN    8
+//#define DOUT_CLOCK_PIN   9
+```
+
+**Arduino Sketch**
+
+```c
+#include <Arduino.h>
+#include "src/uCtrl/uCtrl.h"
+
+enum {
+  ON_BOARD_LED_1, ON_BOARD_LED_2,
+  SR_LED_1, SR_LED_2, SR_LED_3, SR_LED_4,
+  // ...
+};
+
+void setup() {
+  uCtrl.initDout(&SPI, 8);  // SPI mode with latch pin
+  // or: uCtrl.initDout(); for direct pins only
+
+  // Direct digital pins
+  uCtrl.dout->plug(5);
+  uCtrl.dout->plug(6);
+
+  // 1x 595 shift register = 8 outputs
+  uCtrl.dout->plugSR(1);
+
+  uCtrl.init();
+
+  uCtrl.dout->writeAll(LOW);
+}
+
+void loop() {
+  uCtrl.run();
+
+  uCtrl.dout->write(SR_LED_1, HIGH);
+}
+```
+
+---
+
+## TOUCH
+
+Wire up to **32 capacitive touch buttons** using common ADC ports multiplexed via 4067.
+
+**modules.h**
+
+```c
+#define USE_TOUCH
+
+// Touch driver for 4067 multiplexer
+#define USE_TOUCH_4067_DRIVER
+```
+
+**Arduino Sketch**
+
+```c
+#include <Arduino.h>
+#include "src/uCtrl/uCtrl.h"
+
+enum {
+  TOUCH_1, TOUCH_2, TOUCH_3, TOUCH_4,
+  // ...
+};
+
+void touchInput(uint8_t port, uint16_t value) {
+  switch (port) {
+    case TOUCH_1:
+      // value: normalized touch reading
+      break;
+    // ...
+  }
+}
+
+void setup() {
+  // initTouch(mux_a, mux_b, mux_c, mux_d, adc_pin)
+  uCtrl.initTouch(6, 7, 8, 9, A0);
+
+  uCtrl.touch->plug(TOUCH_1);
+  uCtrl.touch->plug(TOUCH_2);
+  uCtrl.touch->plug(TOUCH_3);
+  uCtrl.touch->plug(TOUCH_4);
+
+  uCtrl.touch->setCallback(touchInput);
+  uCtrl.touch->setThreshold(500);
+
+  uCtrl.init();
+}
+
+void loop() {
+  uCtrl.run();
+}
+```
+
+---
+
+## MIDI
+
+MIDI I/O aggregation built on [Francois Best's Arduino MIDI Library](https://github.com/FortySevenEffects/arduino_midi_library). Handles realtime MIDI operations safely within uCtrl's interrupt context.
+
+**modules.h**
+
+```c
+#define USE_MIDI
+```
+
+**Arduino Sketch**
+
+```c
+#include <Arduino.h>
+#include "src/uCtrl/uCtrl.h"
+
+void onNoteOn(uint8_t channel, uint8_t note, uint8_t velocity) {
+  // Handle incoming Note On
+}
+
+void onNoteOff(uint8_t channel, uint8_t note, uint8_t velocity) {
+  // Handle incoming Note Off
+}
+
+void onControlChange(uint8_t channel, uint8_t cc, uint8_t value) {
+  // Handle incoming CC
+}
+
+void setup() {
+  uCtrl.initMidi();
+
+  // Configure serial MIDI (default: 31250 baud)
+  uCtrl.midi->begin();
+
+  // Register callbacks
+  uCtrl.midi->setHandleNoteOn(onNoteOn);
+  uCtrl.midi->setHandleNoteOff(onNoteOff);
+  uCtrl.midi->setHandleControlChange(onControlChange);
+
+  uCtrl.init();
+}
+
+void loop() {
+  uCtrl.run();
+}
+
+```
+
+---
+
+## OLED
+
+Display helper for [U8g2 OLED library](https://github.com/olikraus/U8g2_Arduino). Supports I2C and SPI displays.
+
+**modules.h**
+
+```c
+#define USE_OLED
+```
+
+**Arduino Sketch**
+
+```c
+#include <Arduino.h>
+#include "src/uCtrl/uCtrl.h"
+
+void setup() {
+  // I2C example: uCtrl.initOled(&U8G2_SSD1306_128X64_NONAME_1_HW_I2C);
+  // SPI example: uCtrl.initOled(&U8G2_SSD1306_128X64_NONAME_1_4W_HW_SPI, cs, dc, rst);
+
+  uCtrl.initOled();
+
+  uCtrl.init();
+}
+
+void loop() {
+  uCtrl.run();
+
+  uCtrl.oled->firstPage();
+  do {
+    uCtrl.oled->setFont(u8g2_font_ncenB08_tr);
+    uCtrl.oled->drawStr(0, 20, "Hello uCtrl!");
+  } while (uCtrl.oled->nextPage());
+}
+```
+
+---
+
+## STORAGE
+
+Abstraction layer for EEPROM and SD card storage. SD card support uses [SdFat library](https://github.com/greiman/SdFat/).
+
+**modules.h**
+
+```c
+#define USE_STORAGE
+```
+
+**Arduino Sketch**
+
+```c
+#include <Arduino.h>
+#include "src/uCtrl/uCtrl.h"
+
+struct MySettings {
+  uint8_t volume;
+  uint8_t brightness;
+  uint8_t midiChannel;
+};
+
+void setup() {
+  uCtrl.initStorage();
+
+  // EEPROM
+  MySettings settings = {127, 255, 1};
+  uCtrl.storage->eepromWrite(0, settings);
+  uCtrl.storage->eepromRead(0, settings);
+
+  // SD card (if available)
+  if (uCtrl.storage->sdBegin(10)) {  // CS pin 10
+    uCtrl.storage->sdWrite("/config.bin", &settings, sizeof(settings));
+    uCtrl.storage->sdRead("/config.bin", &settings, sizeof(settings));
+  }
+
+  uCtrl.init();
+}
+
+void loop() {
+  uCtrl.run();
+}
+```
+
+---
+
+## RAM
+
+External SRAM support via SPI (23LC1024).
+
+**modules.h**
+
+```c
+#define USE_RAM
+```
+
+**Arduino Sketch**
+
+```c
+#include <Arduino.h>
+#include "src/uCtrl/uCtrl.h"
+
+void setup() {
+  // initRam(spi_device, cs_pin)
+  uCtrl.initRam(&SPI, 15);
+  uCtrl.ram->begin();
+
+  uint8_t buffer[64];
+  uCtrl.ram->read(0, buffer, 64);
+  uCtrl.ram->write(0, buffer, 64);
+
+  uCtrl.init();
+}
+
+void loop() {
+  uCtrl.run();
+}
+```
+
+---
+
+## PAGE
+
+Modular UI framework for building page-based interfaces using components. Each page can contain multiple components (buttons, sliders, labels, etc.) that handle their own rendering and input.
+
+**modules.h**
+
+```c
+#define USE_PAGE
+```
+
+**Arduino Sketch**
+
+```c
+#include <Arduino.h>
+#include "src/uCtrl/uCtrl.h"
+
+void setup() {
+  uCtrl.initPage();
+
+  // Create a page with components
+  // page->addComponent(type, id, x, y, w, h, label);
+
+  uCtrl.init();
+}
+
+void loop() {
+  uCtrl.run();
+}
+```
+
+The PAGE module is designed to work alongside AIN, DIN, and OLED to create complete interactive interfaces. Components handle their own state, rendering, and input routing automatically within uCtrl's event system.

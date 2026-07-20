@@ -1,0 +1,165 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+}
+
+.bgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in oklab, var(--bg) 60%, transparent) 0%,
+    color-mix(in oklab, var(--bg) 85%, transparent) 50%,
+    var(--bg) 100%
+  );
+}
+
+.content {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 6rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .content {
+    padding: 6rem 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding: 8rem 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content {
+    padding: 10rem 1.5rem;
+  }
+}
+
+.inner {
+  max-width: 48rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  border: 1px solid color-mix(in oklab, var(--primary) 30%, transparent);
+  background: color-mix(in oklab, var(--primary) 10%, transparent);
+  padding: 0.25rem 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+  color: var(--primary);
+}
+
+.title {
+  margin-top: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+  color: var(--fg);
+}
+
+.titleAccent {
+  color: var(--primary);
+}
+
+.typing {
+  display: block;
+}
+
+.typing::after {
+  content: '';
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: var(--primary);
+  margin-left: 2px;
+  animation: blink 0.7s step-end infinite;
+  vertical-align: text-bottom;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 4.5rem;
+  }
+}
+
+.description {
+  margin-top: 1.5rem;
+  max-width: 36rem;
+  font-size: 1.125rem;
+  line-height: 1.625;
+  text-wrap: pretty;
+  color: var(--muted-fg);
+}
+
+.ctas {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .ctas {
+    flex-direction: row;
+  }
+}
+
+.metadata {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem 1rem;
+  font-size: 0.875rem;
+  color: var(--muted-fg);
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.metaMono {
+  font-family: var(--font-mono);
+}

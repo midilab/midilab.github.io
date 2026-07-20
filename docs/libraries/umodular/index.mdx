@@ -1,0 +1,243 @@
+---
+title: µMODULAR
+description: Open-source KiCad library and PCB modules for building custom MIDI controllers and instruments.
+tags: [umodular, kicad, pcb, midi, diy, hardware]
+---
+
+µMODULAR is an open-source toolkit for building custom MIDI controllers and instruments. It provides a **KiCad schematic library** (`lib/`) of reusable hardware building blocks and a set of **tested PCB modules** (`v1/`) that you can build, combine, and expand.
+
+- **License:** CC-BY-SA 4.0
+- **Repository:** [github.com/midilab/uMODULAR](https://github.com/midilab/uMODULAR)
+- **Website:** [midilab.co/umodular](https://midilab.co/umodular)
+
+---
+
+## `lib/` — KiCad Schematic Library
+
+The `lib/` directory contains KiCad schematic modules (`.sch`) and PDF reference sheets that serve as reusable building blocks. Open the combined project `umodular_libs.kicad_pcb` in KiCad to mix and match these modules into your own custom PCB designs.
+
+| Module | Description | Files |
+|--------|-------------|-------|
+| **POT8** | 8× potentiometer input (multiplexed) | `pot8.sch`, `pot8.pdf` |
+| **POT16** | 16× potentiometer input (multiplexed) | `pot16.sch`, `pot16.pdf` |
+| **PUSH8** | 8× button + LED matrix | `push8.sch`, `push8.pdf` |
+| **PUSH16** | 16× button + LED matrix | `push16.sch`, `push16.pdf` |
+| **LED8** | 8× LED output | `led8.sch`, `led8.pdf` |
+| **LED16** | 16× LED output | `led16.sch`, `led16.pdf` |
+| **MIDI** | MIDI I/O (5V) | `midi.sch` |
+| **midi-io-5v** | MIDI interface reference | `midi-io-5v.pdf` |
+
+An overview schematic (`overview.pdf`) shows how the modules interconnect.
+
+To use: clone the repo, open `lib/umodular_libs.kicad_pcb` in KiCad, copy the desired schematic sheets into your project, and wire them to your microcontroller.
+
+---
+
+## `v1/` — First Generation PCB Modules
+
+These are ready-to-build PCBs designed using `lib/` schematics. Each module connects to an Arduino-based shield via ribbon cable headers.
+
+### Arduino Mega Shield
+
+Base shield compatible with Arduino Mega, Micro, and Mini 5V boards. Provides power distribution, MIDI interface, and expansion headers for all µMODULAR modules.
+
+**Dimensions:** fits Arduino Mega form factor
+
+![Mega Shield top](https://raw.githubusercontent.com/midilab/uMODULAR/refs/heads/master/v1/arduino_mega_shield/umodular_mega_shield_rev02_top.png)
+![Mega Shield bottom](https://raw.githubusercontent.com/midilab/uMODULAR/refs/heads/master/v1/arduino_mega_shield/umodular_mega_shield_rev02_bottom.png)
+
+#### BOM
+
+**ICs**
+- 1× 23LC1024-I/P
+- 1× 74HC4050
+- 1× 6N138
+- 1× Socket 16P DUAL WIPE
+- 2× Socket 08P DUAL WIPE
+
+**Capacitors**
+- 2× 50V 100nf (.1uF) ceramic disc
+
+**Resistors (1/4W)**
+- 3× 220Ω
+- 1× 1kΩ
+- 1× 2.2kΩ
+- 1× 4.7kΩ
+- 2× 10kΩ
+
+**Diodes**
+- 1× 1N4148
+
+**Connectors**
+- 2× Circular DIN 5P R/A PCB shielded (MIDI)
+- 12× 05+05 DIL vertical pin header
+- 1× 18+18 DIL vertical pin header
+- 5× 08 SIL vertical pin header
+- 1× 06 SIL vertical pin header
+- 1× 02 SIL vertical pin header
+
+---
+
+### CTRL16
+
+10cm × 12.5cm PCB module with 16 potentiometers and 8 buttons with LEDs.
+
+![CTRL16 top](https://raw.githubusercontent.com/midilab/uMODULAR/refs/heads/master/v1/ctrl16/umodular_ctrl16_top.png)
+![CTRL16 bottom](https://raw.githubusercontent.com/midilab/uMODULAR/refs/heads/master/v1/ctrl16/umodular_ctrl16_bottom.png)
+
+#### BOM
+
+**Buttons & LEDs**
+- 8× Tactile switch 6.0×4.3mm 160g
+- 8× Through-hole diffused T-1 (3mm) LED
+
+**Potentiometers**
+- 16× 10K linear 20% (Bourns PTV09A-4015F-B103)
+
+**ICs**
+- 2× CD4051BE
+- 1× 74HC595N
+- 1× 74HC165N
+- 4× Socket 16P DUAL WIPE
+
+**Capacitors**
+- 4× 50V 100nf (.1uF) ceramic disc
+
+**Resistors (1/4W)**
+- 8× 220Ω
+- 9× 10kΩ
+
+**Headers**
+- 4× 05+05 DIL vertical pin header
+
+**Cable connection**
+- Ribbon cable 10 conductors 28 AWG .050 (length to suit)
+- 8× Female ribbon cable header 10 pos, 2 rows, 2.54mm pitch
+
+---
+
+### MIDI4
+
+10cm × 2.5cm PCB module with 2 MIDI In and 2 MIDI Out ports.
+
+![MIDI4 top](https://raw.githubusercontent.com/midilab/uMODULAR/refs/heads/master/v1/midi4/umodular_midi4_rev02_top.png)
+![MIDI4 bottom](https://raw.githubusercontent.com/midilab/uMODULAR/refs/heads/master/v1/midi4/umodular_midi4_rev02_bottom.png)
+
+#### BOM
+
+**Connectors**
+- 4× Circular DIN 5P R/A PCB shielded
+
+**ICs**
+- 2× 6N138
+- 2× Socket 08P DUAL WIPE
+
+**Resistors (1/4W)**
+- 2× 4.7kΩ
+- 6× 220Ω
+- 2× 1kΩ
+
+**Diodes**
+- 2× 1N4148
+
+**Headers**
+- 1× 05+05 DIL vertical pin header
+
+**Cable connection**
+- Ribbon cable 10 conductors 28 AWG .050
+- 2× Female ribbon cable header 10 pos, 2 rows, 2.54mm pitch
+
+---
+
+### MIX4
+
+10cm × 12.5cm PCB module with 4 slide faders, 4 potentiometers, and 8 buttons with LEDs.
+
+![MIX4 top](https://raw.githubusercontent.com/midilab/uMODULAR/refs/heads/master/v1/mix4/umodular_mix4_top.png)
+![MIX4 bottom](https://raw.githubusercontent.com/midilab/uMODULAR/refs/heads/master/v1/mix4/umodular_mix4_bottom.png)
+
+#### BOM
+
+**Buttons & LEDs**
+- 8× Tactile switch 6.0×4.3mm 160g
+- 8× Through-hole diffused T-1 (3mm) LED
+
+**Potentiometers**
+- 4× 10K linear 20% (Bourns PTV09A-4015F-B103)
+- 4× Slide 60mm stroke, single linear (Bourns PTA6043-2015DPB103)
+
+**ICs**
+- 1× CD4051BE
+- 1× 74HC595N
+- 1× 74HC165N
+- 3× Socket 16P DUAL WIPE
+
+**Capacitors**
+- 3× 50V 100nf (.1uF) ceramic disc
+
+**Resistors (1/4W)**
+- 8× 220Ω
+- 9× 10kΩ
+
+**Headers**
+- 3× 05+05 DIL vertical pin header
+
+**Cable connection**
+- Ribbon cable 10 conductors 28 AWG .050
+- 6× Female ribbon cable header 10 pos, 2 rows, 2.54mm pitch
+
+---
+
+### POT16
+
+10cm × 10cm PCB module with 16 potentiometers.
+
+![POT16 top](https://raw.githubusercontent.com/midilab/uMODULAR/refs/heads/master/v1/pot16/umodular_pot16_top.png)
+![POT16 bottom](https://raw.githubusercontent.com/midilab/uMODULAR/refs/heads/master/v1/pot16/umodular_pot16_bottom.png)
+
+#### BOM
+
+**Potentiometers**
+- 16× 10K linear 20% (Bourns PTV09A-4015F-B103)
+
+**ICs**
+- 2× CD4051BE
+- 2× Socket 16P DUAL WIPE
+
+**Capacitors**
+- 2× 50V 100nf (.1uF) ceramic disc
+
+**Headers**
+- 2× 05+05 DIL vertical pin header
+
+**Cable connection**
+- Ribbon cable 10 conductors 28 AWG .050
+- 4× Female ribbon cable header 10 pos, 2 rows, 2.54mm pitch
+
+---
+
+## Firmware Libraries
+
+µMODULAR hardware pairs with two firmware libraries built for Arduino (PlatformIO):
+
+- [**µClock**](/docs/libraries/uclock/intro) — BPM-accurate clock generator using hardware interrupts
+- [**µCtrl**](/docs/libraries/uctrl/intro) — Driver layer and UI framework for all µMODULAR modules
+
+Both support AVR (ATmega168/328/16u4/32u4/2560) and ARM (ESP32, SAMD21, Teensy) architectures.
+
+## Applications
+
+Real-world projects built with µMODULAR:
+
+- **Aciduino V2** — 16-track Roland-inspired step sequencer
+- **Atari 2600 MIDI Station** — Live sequencer and MIDI controller
+- **Oberheim Matrix Controller** — Commercial controller with arpeggiator (by Alpes Machines)
+- Various community projects: gesture sequencers, drum synths, looper pedals
+
+## Getting Started
+
+1. Clone the repository: `git clone https://github.com/midilab/uMODULAR.git`
+2. Browse `lib/` for schematics or `v1/` for ready-to-build PCBs
+3. Order PCBs from your favorite fab house using the Gerber files
+4. Pair with [µClock](/docs/libraries/uclock/intro) and [µCtrl](/docs/libraries/uctrl/intro) firmware
+5. Join the [Discord community](https://discord.gg/DCb3dy5A) for help and project sharing

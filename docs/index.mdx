@@ -1,0 +1,69 @@
+---
+title: Midilab Docs
+description: Open hardware designs, modular firmware libraries, and free DSP plugins for electronic musicians.
+tags: [midilab, diy, open-hardware, firmware, dsp, community]
+---
+
+import { CardSection } from '@site/src/components/Cards';
+
+Open hardware designs, modular firmware libraries, and free DSP plugins — all fully open source. Understand it, adapt it, build it yourself.
+
+<CardSection
+  title="Hardware — Sequencers"
+  animated
+  cards={[
+    {
+      title: 'Aciduino V1',
+      content: '2-track TB-303 step sequencer with generative engine, MIDI control, and clock sync.',
+      to: '/docs/sequencer/aciduino-v1/',
+    },
+    {
+      title: 'Aciduino V2',
+      content: '16-track TB-303/808 sequencer with OLED, generative engine, Euclidean drums, and modular I/O.',
+      to: '/docs/sequencer/aciduino-v2/',
+    },
+  ]}
+/>
+
+<CardSection
+  title="Libraries"
+  animated
+  cards={[
+    {
+      title: 'µClock',
+      content: 'BPM-accurate clock generator for Arduino/PlatformIO using hardware timer interrupts. Multi-track, shuffle/groove, external sync, MIDI clock.',
+      to: '/docs/libraries/uclock/',
+    },
+    {
+      title: 'µCtrl',
+      content: 'Driver and UI framework for buttons, pots, encoders, OLED, MIDI, and storage. Built for modular hardware expandability.',
+      to: '/docs/libraries/uctrl/',
+    },
+    {
+      title: 'µMODULAR',
+      content: 'KiCad schematic library and tested PCB modules for custom MIDI controllers. Reuse schematics or build ready-to-use boards.',
+      to: '/docs/libraries/umodular/',
+    },
+  ]}
+/>
+
+<CardSection
+  title="DSP — Audio Plugins"
+  animated
+  cards={[
+    {
+      title: 'JC-303',
+      content: 'Free Roland TB-303 emulation plugin for Windows, macOS, and Linux. Ships as VST2, VST3, LV2, CLAP, and AU.',
+      to: '/docs/dsp/jc303/',
+    },
+    {
+      title: 'OpenDSP',
+      content: 'Headless OS for real-time audio/video DSP on RPi and PC. Turn old hardware into a standalone synth, effects, or DJ rig.',
+      to: '/docs/dsp/opendsp/',
+    },
+  ]}
+/>
+
+---
+
+All projects are open source. Contributions of code, documentation, testing, and ideas are welcome — get in touch via [GitHub](https://github.com/midilab) or [Discord](https://discord.gg/DCb3dy5A).

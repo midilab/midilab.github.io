@@ -1,5 +1,4 @@
 # for now only
-/docs
 /blog
 /shop
 
@@ -30,6 +29,8 @@ yarn-debug.log*
 yarn-error.log*
 
 node_modules
+
+redesign/
 
 tina/__generated__
 .env

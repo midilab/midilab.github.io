@@ -1,0 +1,94 @@
+.section {
+  border-top: 1px solid color-mix(in oklab, var(--border) 60%, transparent);
+  background: var(--bg);
+  padding: 5rem 0;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 7rem 0;
+  }
+}
+
+.container {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+.header {
+  max-width: 42rem;
+}
+
+.heading {
+  font-family: var(--font-mono);
+  font-size: 1.875rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+  color: var(--fg);
+}
+
+@media (min-width: 640px) {
+  .heading {
+    font-size: 2.25rem;
+  }
+}
+
+.desc {
+  margin-top: 1rem;
+  line-height: 1.625;
+  text-wrap: pretty;
+  color: var(--muted-fg);
+}
+
+.grid {
+  margin-top: 3rem;
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  padding: 1.5rem;
+  transition: border-color 0.2s ease;
+}
+
+.card:hover {
+  border-color: color-mix(in oklab, var(--primary) 50%, transparent);
+}
+
+.cardTitle {
+  margin-top: 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.cardDesc {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.625;
+  color: var(--muted-fg);
+}

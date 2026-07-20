@@ -8,32 +8,33 @@
 .cardsSection {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-huge);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
 }
 
 .section {
-    margin-bottom: var(--spacing-xxl);
-    padding: var(--spacing-huge) var(--spacing-xl);
+    margin-bottom: 2rem;
+    padding: 4rem 1.5rem;
 }
 
 .section h3 {
-    font-family: var(--font-display);
-    font-weight: 330;
-    font-size: var(--typography-display-md);
-    line-height: 1.14;
-    color: var(--colors-on-primary);
-    margin: 0 0 var(--spacing-lg);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: var(--fg);
+    margin: 0 0 1rem;
     text-align: center;
 }
 
 .sectionDescription {
     font-family: var(--font-ui);
-    font-size: var(--typography-body-md);
-    font-weight: 420;
-    color: var(--colors-link-cool-3);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--muted-fg);
     line-height: 1.5;
-    margin: 0 0 var(--spacing-xl);
+    margin: 0 0 1.5rem;
     text-align: center;
 }
 
@@ -41,11 +42,14 @@
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    color: var(--colors-ink);
-    background: var(--colors-canvas-light);
-    border-radius: var(--rounded-lg);
+    color: var(--fg);
+    background: var(--card-bg);
+    border-radius: 0.75rem;
     overflow: hidden;
-    box-shadow: var(--elevation-3);
+    box-shadow:
+        0 8px 8px rgba(0, 0, 0, 0.1),
+        0 4px 4px rgba(0, 0, 0, 0.1),
+        0 2px 2px rgba(0, 0, 0, 0.1);
     transition:
         transform 0.3s ease,
         box-shadow 0.3s ease;
@@ -56,7 +60,7 @@
 
 .card:hover {
     transform: translateY(-4px);
-    box-shadow: var(--elevation-4);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
 .card.row {
@@ -66,48 +70,48 @@
 .card .icon {
     width: 48px;
     height: 48px;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 0.75rem;
 }
 
 .card .icon svg {
     width: auto;
     height: 100%;
-    stroke: var(--colors-aloe-10);
+    stroke: var(--primary);
 }
 
 .cardContent {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xs);
-    padding: var(--spacing-lg);
+    gap: 0.25rem;
+    padding: 1rem;
     text-align: center;
 }
 
 .cardContent .button {
-    margin-top: var(--spacing-md);
+    margin-top: 0.75rem;
     width: 100%;
 }
 
 .title {
     font-family: var(--font-ui);
-    font-size: var(--typography-body-md);
+    font-size: 1rem;
     font-weight: 550;
-    color: var(--colors-ink);
+    color: var(--fg);
     margin: 0;
     text-align: center;
 }
 
 .content {
     font-family: var(--font-ui);
-    font-size: var(--typography-caption);
-    font-weight: 420;
-    color: var(--colors-shade-60);
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--muted-fg);
     line-height: 1.4;
     text-align: center;
 }
 
 .tag {
-    font-size: var(--typography-micro);
+    font-size: 0.75rem;
     font-weight: 500;
     position: absolute;
     right: 0;
@@ -118,10 +122,10 @@
     display: block;
     width: 80px;
     text-align: center;
-    padding: var(--spacing-xs) 0;
-    color: var(--colors-on-primary);
+    padding: 0.25rem 0;
+    color: var(--primary-fg);
     font-family: var(--font-ui);
-    font-size: var(--typography-micro);
+    font-size: 0.75rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.28px;
@@ -154,11 +158,11 @@
 @media screen and (max-width: 768px) {
     .cardsSection {
         grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-md);
+        gap: 0.75rem;
     }
 
     .section {
-        padding: var(--spacing-xxl) var(--spacing-lg);
+        padding: 2rem 1rem;
     }
 
     .card {

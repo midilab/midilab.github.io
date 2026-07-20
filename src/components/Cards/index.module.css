@@ -4,36 +4,42 @@
     background-position: 50%;
     width: 100%;
     height: 230px;
-    border-radius: var(--rounded-lg) var(--rounded-lg) 0 0;
+    border-radius: 0.75rem 0.75rem 0 0;
     cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.card:hover .cardPhoto {
+    transform: scale(1.05);
 }
 
 .cardsSection {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--spacing-xl);
+    gap: 1.5rem;
 }
 
 .section {
-    margin-bottom: var(--spacing-huge);
+    margin-bottom: 4rem;
 }
 
 .section h3 {
-    font-family: var(--font-display);
-    font-weight: 330;
-    font-size: var(--typography-display-md);
-    line-height: 1.14;
-    color: var(--colors-on-primary);
-    margin: 0 0 var(--spacing-md);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: var(--fg);
+    margin: 0 0 0.75rem;
 }
 
 .sectionDescription {
     font-family: var(--font-ui);
-    font-size: var(--typography-body-md);
-    font-weight: 420;
-    color: var(--colors-link-cool-3);
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--muted-fg);
     line-height: 1.5;
-    margin: 0 0 var(--spacing-xl);
+    margin: 0 0 1.5rem;
 }
 
 /* ============================================
@@ -44,55 +50,58 @@
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    border-radius: var(--rounded-lg);
+    border-radius: 0.75rem;
+    border: 1px solid var(--border);
+    background: var(--card-bg);
     overflow: hidden;
     position: relative;
+    transition: border-color 0.2s ease;
 }
 
 .card.card:hover {
     text-decoration: none;
+    border-color: color-mix(in oklab, var(--primary) 50%, transparent);
 }
 
 /* ============================================
  * CARD VARIANTS - Surface & Theme
  * ============================================ */
 
-/* "light" — Pricing card on light canvas */
+/* "light" — Card on light surface */
 .light {
-    background: var(--colors-canvas-light);
-    border: 1px solid var(--colors-hairline-light);
+    background: var(--card-bg);
     box-shadow:
         0 8px 8px rgba(0, 0, 0, 0.1),
         0 4px 4px rgba(0, 0, 0, 0.1),
         0 2px 2px rgba(0, 0, 0, 0.1);
-    color: var(--colors-ink);
+    color: var(--fg);
 }
 
-/* "featured" — Highlighted pricing tier (aloe mint) */
+/* "featured" — Highlighted tier (primary mint) */
 .featured {
-    background: var(--colors-aloe-10);
-    color: var(--colors-ink);
+    background: var(--primary);
+    color: var(--primary-fg);
 }
 
 /* "cinematic" — Feature card on dark canvas */
 .cinematic {
-    background: var(--colors-canvas-night-elevated);
-    box-shadow: var(--elevation-1);
-    color: var(--colors-on-primary);
+    background: var(--card-bg);
+    box-shadow: 0 1px 2px rgba(255, 255, 255, 0.05);
+    color: var(--fg);
 }
 
-/* "pistachioband" — Wide pistachio band on light track */
+/* "pistachioband" — Wide band background */
 .pistachioband {
-    background: var(--colors-pistachio-10);
-    color: var(--colors-ink);
+    background: color-mix(in oklab, var(--primary) 80%, var(--bg));
+    color: var(--primary-fg);
 }
 
 /* "photoframe" — Full-bleed photo container on dark canvas */
 .photoframe {
-    background: var(--colors-canvas-night);
-    border-radius: var(--rounded-xl);
+    background: var(--bg);
+    border-radius: 1.25rem;
     overflow: hidden;
-    color: var(--colors-on-primary);
+    color: var(--fg);
 }
 
 /* ============================================
@@ -110,7 +119,7 @@
 .card .icon {
     width: 48px;
     height: 48px;
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 0.75rem;
 }
 
 .card .icon svg {
@@ -121,12 +130,12 @@
 .light .icon svg,
 .featured .icon svg,
 .pistachioband .icon svg {
-    stroke: var(--colors-ink);
+    stroke: var(--fg);
 }
 
 .cinematic .icon svg,
 .photoframe .icon svg {
-    stroke: var(--colors-aloe-10);
+    stroke: var(--primary);
 }
 
 /* ============================================
@@ -137,7 +146,7 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    padding: var(--spacing-xxl);
+    padding: 2rem;
 }
 
 .cardContent > .content {
@@ -149,18 +158,18 @@
  * ============================================ */
 
 .card .title {
-    font-family: var(--font-display);
-    font-size: 28px;
-    font-weight: 500;
-    letter-spacing: 0.42px;
-    margin: 0 0 var(--spacing-sm);
+    font-family: var(--font-mono);
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    margin: 0 0 0.5rem;
     color: inherit;
 }
 
 .content {
     font-family: var(--font-ui);
-    font-size: var(--typography-body-md);
-    font-weight: 420;
+    font-size: 1rem;
+    font-weight: 400;
     line-height: 1.5;
     margin: 0;
 }
@@ -168,12 +177,12 @@
 .light .content,
 .featured .content,
 .pistachioband .content {
-    color: var(--colors-shade-60);
+    color: var(--muted-fg);
 }
 
 .cinematic .content,
 .photoframe .content {
-    color: var(--colors-link-cool-3);
+    color: var(--muted-fg);
 }
 
 .content p {
@@ -187,8 +196,8 @@
  * ============================================ */
 
 .cardButton {
-    margin-top: var(--spacing-lg);
-    align-self: flex-start;
+    margin-top: 1rem;
+    width: 100%;
 }
 
 /* ============================================
@@ -196,7 +205,7 @@
  * ============================================ */
 
 .tag {
-    font-size: var(--typography-micro);
+    font-size: 0.75rem;
     font-weight: 500;
     position: absolute;
     right: 0;
@@ -207,10 +216,10 @@
     display: block;
     width: 80px;
     text-align: center;
-    padding: var(--spacing-xs) 0;
-    color: var(--colors-on-primary);
+    padding: 0.25rem 0;
+    color: var(--primary-fg);
     font-family: var(--font-ui);
-    font-size: var(--typography-micro);
+    font-size: 0.75rem;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 0.28px;
@@ -244,7 +253,7 @@
 .overlayContent img {
     max-width: 100%;
     max-height: 90vh;
-    border-radius: var(--rounded-lg);
+    border-radius: 0.75rem;
 }
 
 .closeButton {
@@ -289,30 +298,14 @@
     animation: fadeInUp 0.6s ease forwards;
 }
 
-.cardStagger1 {
-    animation-delay: 0.1s;
-}
-.cardStagger2 {
-    animation-delay: 0.2s;
-}
-.cardStagger3 {
-    animation-delay: 0.3s;
-}
-.cardStagger4 {
-    animation-delay: 0.4s;
-}
-.cardStagger5 {
-    animation-delay: 0.5s;
-}
-.cardStagger6 {
-    animation-delay: 0.6s;
-}
-.cardStagger7 {
-    animation-delay: 0.7s;
-}
-.cardStagger8 {
-    animation-delay: 0.8s;
-}
+.cardStagger1 { animation-delay: 0.1s; }
+.cardStagger2 { animation-delay: 0.2s; }
+.cardStagger3 { animation-delay: 0.3s; }
+.cardStagger4 { animation-delay: 0.4s; }
+.cardStagger5 { animation-delay: 0.5s; }
+.cardStagger6 { animation-delay: 0.6s; }
+.cardStagger7 { animation-delay: 0.7s; }
+.cardStagger8 { animation-delay: 0.8s; }
 
 /* ============================================
  * RESPONSIVE
@@ -320,7 +313,7 @@
 
 @media screen and (max-width: 1024px) {
     .cardsSection {
-        gap: var(--spacing-lg);
+        gap: 1rem;
     }
 }
 
@@ -330,7 +323,7 @@
     }
 
     .section h3 {
-        font-size: var(--typography-display-md);
+        font-size: 1.5rem;
     }
 
     .cardAnimated {
