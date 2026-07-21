@@ -26,6 +26,30 @@ const config = {
     {
       tagName: "link",
       attributes: {
+        rel: "preconnect",
+        href: "https://www.googletagmanager.com",
+      },
+    },
+    {
+      tagName: "script",
+      attributes: {
+        async: true,
+        src: "https://www.googletagmanager.com/gtag/js?id=G-30TXP5JF0Q",
+      },
+    },
+    {
+      tagName: "script",
+      attributes: {},
+      innerHTML: `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-30TXP5JF0Q', { 'anonymize_ip': true });
+      `,
+    },
+    {
+      tagName: "link",
+      attributes: {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550&family=Space+Grotesk:wght@400;500;600;700&display=swap",
       },
@@ -231,13 +255,13 @@ Support
     }),
 
   plugins: [
-    [
-      "@docusaurus/plugin-google-gtag",
-      {
-        trackingID: "G-30TXP5JF0Q",
-        anonymizeIP: true,
-      },
-    ],
+  //   [
+  //     "@docusaurus/plugin-google-gtag",
+  //     {
+  //       trackingID: "G-30TXP5JF0Q",
+  //       anonymizeIP: true,
+  //     },
+  //   ],
   ],
 };
 export default config;
