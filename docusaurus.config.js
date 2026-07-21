@@ -5,7 +5,7 @@ import { themes as prismThemes } from "prism-react-renderer";
 const config = {
   title: "midilab",
   tagline: "DIY Electronic Music Instruments",
-  favicon: "img/favicon.ico",
+  favicon: "img/favicon.svg",
 
   headTags: [
     {
@@ -28,6 +28,14 @@ const config = {
       attributes: {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550&family=Space+Grotesk:wght@400;500;600;700&display=swap",
+      },
+    },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "icon",
+        type: "image/x-icon",
+        href: "/img/favicon.ico",
       },
     },
     {
