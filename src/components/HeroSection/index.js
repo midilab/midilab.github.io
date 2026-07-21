@@ -14,12 +14,29 @@ export default function HeroSection() {
   return (
     <section className={styles.hero}>
       <div className={styles.bg}>
-        <img
-          src="/img/header_test2.jpg"
-          alt=""
-          aria-hidden="true"
-          className={styles.bgImage}
-        />
+        <picture>
+          <source
+            type="image/avif"
+            srcSet="/img/header-480.avif 480w, /img/header-800.avif 800w, /img/header-1200.avif 1200w, /img/header-1600.avif 1600w"
+            sizes="100vw"
+          />
+          <source
+            type="image/webp"
+            srcSet="/img/header-480.webp 480w, /img/header-800.webp 800w, /img/header-1200.webp 1200w, /img/header-1600.webp 1600w"
+            sizes="100vw"
+          />
+          <img
+            src="/img/header-1200.jpg"
+            srcSet="/img/header-480.jpg 480w, /img/header-800.jpg 800w, /img/header-1200.jpg 1200w, /img/header-1600.jpg 1600w"
+            sizes="100vw"
+            width="1600"
+            height="1067"
+            alt=""
+            aria-hidden="true"
+            className={styles.bgImage}
+            fetchpriority="high"
+          />
+        </picture>
         <div className={styles.overlay} />
       </div>
 

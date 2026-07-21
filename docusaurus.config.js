@@ -30,6 +30,18 @@ const config = {
         href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;550&family=Space+Grotesk:wght@400;500;600;700&display=swap",
       },
     },
+    {
+      tagName: "link",
+      attributes: {
+        rel: "preload",
+        as: "image",
+        type: "image/avif",
+        imagesrcset:
+          "/img/header-480.avif 480w, /img/header-800.avif 800w, /img/header-1200.avif 1200w, /img/header-1600.avif 1600w",
+        imagesizes: "100vw",
+        fetchpriority: "high",
+      },
+    },
   ],
 
   url: "https://midilab.co/",
