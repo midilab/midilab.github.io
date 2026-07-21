@@ -4,5 +4,4 @@ yarn build
 cp CNAME build/
 
 # remove for now until we get it done.
-rm -rf build/docs
 rm -rf build/blog

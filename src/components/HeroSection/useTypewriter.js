@@ -5,7 +5,7 @@ const DEFAULT = { typeSpeed: 80, deleteSpeed: 40, pauseDuration: 2000 };
 export default function useTypewriter(phrases, opts = {}) {
   const { typeSpeed, deleteSpeed, pauseDuration } = { ...DEFAULT, ...opts };
 
-  const [displayText, setDisplayText] = useState('');
+  const [displayText, setDisplayText] = useState(phrases[0]);
   const idxRef = useRef(0);
   const charRef = useRef(0);
   const deletingRef = useRef(false);

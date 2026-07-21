@@ -1,7 +1,5 @@
-import React, { useState, useCallback, useEffect } from 'react';
-import { useLocation } from '@docusaurus/router';
-import Link from '@docusaurus/Link';
-import { Heart, Copy, Check, ExternalLink } from 'lucide-react';
+import React, { useState, useCallback } from 'react';
+import { Heart, Copy, Check } from 'lucide-react';
 import { BitcoinIcon, EthereumIcon, MoneroIcon } from '../Icons';
 import styles from './index.module.css';
 
@@ -11,33 +9,21 @@ const methods = [
     icon: BitcoinIcon,
     title: 'Bitcoin',
     description: 'Send directly on-chain, no middleman.',
-    action: {
-      type: 'copy',
-      value: '1Ef5TRH4yPB8d4hqC2gA5Cdin1eW2bJA74',
-      label: 'Copy BTC address',
-    },
+    address: '1Ef5TRH4yPB8d4hqC2gA5Cdin1eW2bJA74',
   },
   {
     id: 'ethereum',
     icon: EthereumIcon,
     title: 'Ethereum',
     description: 'ETH or stablecoins (USDC/USDT) on mainnet.',
-    action: {
-      type: 'copy',
-      value: '0xBc8b89B79Bd38a9dbe3469F92A644FfeD0958194',
-      label: 'Copy ETH address',
-    },
+    address: '0xBc8b89B79Bd38a9dbe3469F92A644FfeD0958194',
   },
   {
     id: 'monero',
     icon: MoneroIcon,
     title: 'Monero',
     description: 'Private, untraceable donations, no middleman.',
-    action: {
-      type: 'copy',
-      value: '46MoKa4GBRK9gSAWFxDJXK3RbV7jUyEsrfSMdggwtJFPQDQfqunj3DBMkzxTL3vfzMDNDKFTQHkbPdGkRz66M6fAUaQYgfY',
-      label: 'Copy XMR address',
-    },
+    address: '46MoKa4GBRK9gSAWFxDJXK3RbV7jUyEsrfSMdggwtJFPQDQfqunj3DBMkzxTL3vfzMDNDKFTQHkbPdGkRz66M6fAUaQYgfY',
   }
 ];
 
@@ -52,7 +38,7 @@ function CopyButton({ text }) {
   }, [text]);
 
   return (
-    <button className={styles.actionBtn} onClick={handleCopy} type="button">
+    <div className={styles.actionBtn} onClick={handleCopy} type="button">
       {copied ? (
         <>
           <Check className="icon-sm" />
@@ -64,7 +50,7 @@ function CopyButton({ text }) {
           Copy address
         </>
       )}
-    </button>
+    </div>
   );
 }
 
@@ -85,12 +71,11 @@ export default function SupportMidilabSection() {
                 Help us turn open designs into kits you can buy
               </h2>
               <p className={styles.desc}>
-                Every schematic, board file, and line of
-                firmware we publish stays open and free. We're now moving into
-                producing our own kits and assembled devices, for makers who'd rather
-                buy one than build it from raw files. Support at this stage funds
-                prototypes, components, and the first manufacturing runs. It's
-                optional, it's temporary, and it's genuinely appreciated.
+                Every schematic, board file, and line of firmware we publish stays open and free.
+                We're now moving into producing our own kits and assembled devices, for makers who'd
+                rather buy one than build it from raw files. Support at this stage funds prototypes,
+                components, and the first manufacturing runs. It's optional, it's temporary, and
+                it's genuinely appreciated.
               </p>
             </div>
 
@@ -98,16 +83,7 @@ export default function SupportMidilabSection() {
               {methods.map((method) => {
                 const Icon = method.icon;
                 const isSelected = selected === method.id;
-const location = useLocation();
-
-  useEffect(() => {
-    if (location.hash === '#support') {
-      const el = document.getElementById('support');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [location.hash]);
-
-  return (
+                return (
                   <button
                     key={method.id}
                     className={`${styles.method} ${isSelected ? styles.methodSelected : ''}`}
@@ -124,18 +100,7 @@ const location = useLocation();
                       <p className={styles.methodDesc}>{method.description}</p>
                       {isSelected && (
                         <div className={styles.methodAction}>
-                          {method.action.type === 'link' ? (
-                            <Link
-                              className={styles.actionBtn}
-                              to={method.action.url}
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              {method.action.label}
-                              <ExternalLink className="icon-sm" />
-                            </Link>
-                          ) : (
-                            <CopyButton text={method.action.value} />
-                          )}
+                          <CopyButton text={method.address} />
                         </div>
                       )}
                     </div>
